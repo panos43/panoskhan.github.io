@@ -13,6 +13,49 @@ if(!canvas){
   function init(){
     renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMobile });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  let resizeObserver;
+  let isCleanedUp = false;
+  
+  // Event listeners to be cleaned up
+  const eventListeners = [];
+  
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 720;
+  const particlesCount = isMobile ? 300 : 900;
+
+  /**
+   * Generate a simple particle sprite as data URI to avoid external CDN dependency
+   */
+  function generateParticleTexture() {
+    const size = 64;
+    const canvas = document.createElement('canvas');
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext('2d');
+    
+    // Radial gradient for soft particle glow
+    const gradient = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
+    gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+    gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.5)');
+    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+    
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, size, size);
+    
+    return new THREE.CanvasTexture(canvas);
+  }
+
+  function init(){
+    // Enable antialias for desktop for better quality, disable on mobile for performance
+    renderer = new THREE.WebGLRenderer({ 
+      canvas: canvas, 
+      alpha: true, 
+      antialias: !isMobile,
+      powerPreference: 'high-performance'
+    });
+    
+    // Clamp pixel ratio: 1.5–2x is a good balance between quality and performance
+    const targetPixelRatio = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 1.5);
+    renderer.setPixelRatio(targetPixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
 
