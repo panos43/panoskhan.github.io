@@ -7,6 +7,12 @@ if(!canvas){
   console.warn('3D canvas not found, aborting 3D init.');
 } else {
   let renderer, scene, camera, particlesMesh, animationId;
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 720;
+  const particlesCount = isMobile ? 300 : 900;
+
+  function init(){
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMobile });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   let resizeObserver;
   let isCleanedUp = false;
   
@@ -74,190 +80,110 @@ if(!canvas){
       transparent: true,
       opacity: 0.8,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      map: generateParticleTexture() // Use local generated texture instead of CDN
+      blending: THREE.AdditiveBlending
     });
 
     particlesMesh = new THREE.Points(geometry, material);
     scene.add(particlesMesh);
 
-    // Resize handler
-    const onResize = () => {
-      if(isCleanedUp) return;
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-    
-    window.addEventListener('resize', onResize);
-    eventListeners.push({ target: window, event: 'resize', handler: onResize });
+    // subtle ambient glow via additive sprite
+    const sprite = new THREE.TextureLoader().load('https://threejs.org/examples/textures/sprites/disc.png');
+    material.map = sprite;
 
-    // Card tilt effect with throttling
+    // mouse
+    let mouseX = 0, mouseY = 0;
+    document.addEventListener('mousemove', (e) => {
+      mouseX = (e.clientX / window.innerWidth) - 0.5;
+      mouseY = (e.clientY / window.innerHeight) - 0.5;
+    });
+
+    // resize
+    window.addEventListener('resize', onResize);
+
+    // tilt effect for UI cards
     initCardTilt();
 
-    // Start animation loop
     animate();
   }
 
   function animate(){
-    if(isCleanedUp) return;
-    
     const time = performance.now() * 0.0005;
-    
-    // Particle rotation for subtle drift
+    // slow drift
     particlesMesh.rotation.y = time * 0.07;
     particlesMesh.rotation.x = Math.sin(time * 0.3) * 0.02;
 
-    // Removed: expensive per-particle position updates with imperceptible 0.00002 offsets
-    // Removed: unused mouse tracking that never affected animation
-    // The rotation alone provides sufficient organic movement.
+    // subtle parallax based on mouse
+    const positions = particlesMesh.geometry.attributes.position.array;
+    const len = positions.length/3;
+    for(let i=0;i<len;i++){
+      const i3 = i*3;
+      // apply a tiny offset for organic movement
+      positions[i3 + 0] += Math.sin(time + i) * 0.00002;
+      positions[i3 + 1] += Math.cos(time + i*0.7) * 0.00002;
+    }
+    particlesMesh.geometry.attributes.position.needsUpdate = true;
 
     renderer.render(scene, camera);
     animationId = requestAnimationFrame(animate);
   }
 
-  /**
-   * Initialize card tilt with throttling to reduce repaints
-   */
+  function onResize(){
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  }
+
   function initCardTilt(){
     const cards = document.querySelectorAll('.glass-card');
-    const THROTTLE_INTERVAL = 16; // ~60fps, one update per frame
-    
     cards.forEach(card => {
-      let lastUpdateTime = 0;
-      let currentTiltX = 0;
-      let currentTiltY = 0;
-
-      const handleMouseMove = (e) => {
-        const now = performance.now();
-        
-        // Throttle: only recalculate if enough time has passed
-        if(now - lastUpdateTime < THROTTLE_INTERVAL) return;
-        
-        lastUpdateTime = now;
-        
+      let raf = null;
+      card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
-        
-        currentTiltX = (y * -1) * 8; // invert
-        currentTiltY = (x) * 8;
-        
-        // Apply transform immediately (no RAF cancellation overhead)
-        card.style.transform = `rotateX(${currentTiltX}deg) rotateY(${currentTiltY}deg) translateZ(15px) scale3d(1.03,1.03,1.03)`;
-      };
-
-      const handleMouseLeave = () => {
+        const tiltX = (y * -1) * 8; // invert
+        const tiltY = (x) * 8;
+        if(raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(()=>{
+          card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(15px) scale3d(1.03,1.03,1.03)`;
+        });
+      });
+      card.addEventListener('mouseleave', ()=>{
+        if(raf) cancelAnimationFrame(raf);
         card.style.transform = '';
-        currentTiltX = 0;
-        currentTiltY = 0;
-      };
-      
-      card.addEventListener('mousemove', handleMouseMove);
-      card.addEventListener('mouseleave', handleMouseLeave);
-      
-      eventListeners.push({ target: card, event: 'mousemove', handler: handleMouseMove });
-      eventListeners.push({ target: card, event: 'mouseleave', handler: handleMouseLeave });
+      });
     });
   }
 
-  /**
-   * Use requestIdleCallback for initialization (with setTimeout fallback)
-   * This defers 3D init until the browser is idle, preventing blocking of critical rendering
-   */
-  function scheduleInit() {
-    if('requestIdleCallback' in window) {
-      requestIdleCallback(() => {
-        try {
-          init();
-          canvas.style.pointerEvents = 'auto';
-          canvas.removeAttribute('aria-hidden');
-        } catch (err) {
-          console.error('3D init failed:', err);
-          cleanup();
-        }
-      }, { timeout: 2000 }); // Fallback timeout: init within 2 seconds max
-    } else {
-      // Fallback for browsers without requestIdleCallback
-      setTimeout(() => {
-        try {
-          init();
-          canvas.style.pointerEvents = 'auto';
-          canvas.removeAttribute('aria-hidden');
-        } catch (err) {
-          console.error('3D init failed:', err);
-          cleanup();
-        }
-      }, 100);
+  // initialize with a small delay so that CSS transitions have applied
+  setTimeout(() => {
+    try{
+      init();
+      // enable pointer events on canvas (so GPU interaction possible)
+      canvas.style.pointerEvents = 'auto';
+      canvas.removeAttribute('aria-hidden');
+    } catch (err){
+      console.error('3D init failed', err);
+      if(animationId) cancelAnimationFrame(animationId);
     }
-  }
+  }, 80);
 
-  /**
-   * Cleanup function: called automatically on exit or page unload
-   */
-  function cleanup() {
-    if(isCleanedUp) return;
-    isCleanedUp = true;
-
-    // Cancel animation loop
-    if(animationId) {
-      cancelAnimationFrame(animationId);
-      animationId = null;
-    }
-
-    // Remove all event listeners
-    eventListeners.forEach(({ target, event, handler }) => {
-      target.removeEventListener(event, handler);
-    });
-    eventListeners.length = 0;
-
-    // Clean up ResizeObserver if used
-    if(resizeObserver) {
-      resizeObserver.disconnect();
-      resizeObserver = null;
-    }
-
-    // Dispose Three.js resources
-    if(particlesMesh) {
+  // Expose a cleanup hook in case the host wants to remove the scene later
+  window.__PK_3D_CLEANUP = function(){
+    if(animationId) cancelAnimationFrame(animationId);
+    window.removeEventListener('resize', onResize);
+    // dispose geometries/materials
+    if(particlesMesh){
       particlesMesh.geometry.dispose();
-      if(particlesMesh.material.map) {
-        particlesMesh.material.map.dispose();
-      }
+      if(particlesMesh.material.map) particlesMesh.material.map.dispose();
       particlesMesh.material.dispose();
-      if(scene) {
-        scene.remove(particlesMesh);
-      }
+      scene.remove(particlesMesh);
       particlesMesh = null;
     }
-
-    if(renderer) {
+    if(renderer){
       renderer.dispose();
-      if(renderer.forceContextLoss) {
-        renderer.forceContextLoss();
-      }
-      if(renderer.domElement) {
-        renderer.domElement.style.display = 'none';
-      }
-      renderer = null;
+      renderer.forceContextLoss && renderer.forceContextLoss();
+      renderer.domElement && (renderer.domElement.style.display = 'none');
     }
-
-    if(scene) {
-      scene = null;
-    }
-
-    if(camera) {
-      camera = null;
-    }
-
-    console.log('3D experience cleaned up');
   }
-
-  // Expose cleanup hook for external control
-  window.__PK_3D_CLEANUP = cleanup;
-
-  // Auto-cleanup on page unload to prevent memory leaks
-  window.addEventListener('beforeunload', cleanup);
-
-  // Schedule init to run when idle
-  scheduleInit();
 }

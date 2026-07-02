@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panos Khan | AI & Digital Transformation Consultant</title>
-    <meta name="description" content="Panos Khan - Principal AI SEO Architect at Panos Khan Agency. Specializing in ethical AI integration, advanced SEO frameworks, and high-scale e-commerce systems.">
+    <meta name="description" content="Panos Khan - Principal AI SEO Architect at Panos Khan Agency. Specializing in ethical AI integration, advanced SEO frameworks, and high-scale e-commerce system[...]">
     <meta name="keywords" content="AI SEO, e-commerce, web development, digital strategy, Athens, systems architecture">
     <meta name="author" content="Panos Khan">
     <meta name="theme-color" content="#0f1419">
@@ -51,7 +51,7 @@
         "E-commerce Development",
         "Systems Architecture",
         "Digital Strategy",
-        "Web Development"
+ "Web Development"
       ]
     }
     </script>
@@ -558,6 +558,12 @@
     </style>
 </head>
 <body>
+    <!-- Progressive-enhancement 3D canvas (hidden until user activates) -->
+    <canvas id="webgl-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:100;pointer-events:none;opacity:0;transition:opacity 400ms ease;" aria-hidden="true"></canvas>
+
+    <!-- Launch button for the 3D experience -->
+    <button id="launch-3d" aria-pressed="false" aria-label="Enter immersive 3D experience" style="position:fixed;right:20px;bottom:20px;z-index:1100;padding:12px 16px;border-radius:10px;background:linear-gradient(135deg,#00d4ff,#00f0a0);border:none;color:#081018;font-weight:700;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.45);">Enter 3D Experience</button>
+
     <!-- Navigation -->
     <nav>
         <div class="container">
@@ -580,7 +586,7 @@
                     <p class="subtitle">Owner & Principal AI SEO Architect</p>
                     <p class="location">Athens, Greece — Operating Globally (Greece & Switzerland)</p>
                     
-                    <p>Bridging the gap between complex software systems architecture and algorithmic visibility. Over a decade of verified hands-on web engineering specializing in the strategic deployment of ethical, multi-agent generative AI integrations inside advanced Search Engine Optimization (SEO) frameworks to drive high-ticket digital scale and long-term user acquisition.</p>
+                    <p>Bridging the gap between complex software systems architecture and algorithmic visibility. Over a decade of verified hands-on web engineering specializing in the strategic [...]
                     
                     <div class="hero-buttons">
                         <a href="https://linkedin.com/in/panos-khan" target="_blank" class="btn btn-primary">Schedule Systems Consultation</a>
@@ -603,7 +609,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Vetted Industry Integrations</h2>
-                <p>Elite systems integration requires a deep understanding of corporate architectures. My engineering profile is backed by over 10 years of direct background delivering solutions for recognized multinational technology ecosystems.</p>
+                <p>Elite systems integration requires a deep understanding of corporate architectures. My engineering profile is backed by over 10 years of direct background delivering solutions [...]
             </div>
             
             <div class="credentials-grid">
@@ -691,7 +697,7 @@
     <section class="cta-section" id="cta">
         <div class="container">
             <h2>Secure Your Digital Transformation Blueprint</h2>
-            <p>Transition your legacy digital properties into completely automated, high-yield search capture platforms. Let us deploy an enterprise-vetted infrastructure layout specifically structured to match your conversion metrics this quarter.</p>
+            <p>Transition your legacy digital properties into completely automated, high-yield search capture platforms. Let us deploy an enterprise-vetted infrastructure layout specifically stru[...]</p>
             <a href="https://linkedin.com/in/panos-khan" target="_blank" class="btn btn-primary">Launch Engineering Audit</a>
         </div>
     </section>
@@ -705,5 +711,55 @@
         </div>
         <p style="margin-top: 2rem; font-size: 0.8rem;">Based in Athens, Greece • Operating Globally (GR & CH)</p>
     </footer>
+
+    <noscript>
+      <style>#webgl-canvas{display:none}</style>
+    </noscript>
+
+    <!-- Lazy-loader for the 3D experience -->
+    <script>
+      (function(){
+        const btn = document.getElementById('launch-3d');
+        const canvas = document.getElementById('webgl-canvas');
+        let moduleLoaded = false;
+        let moduleEl = null;
+
+        function enableCanvasInteraction(){
+          canvas.style.pointerEvents = 'auto';
+          canvas.setAttribute('aria-hidden','false');
+        }
+
+        function disableCanvasInteraction(){
+          canvas.style.pointerEvents = 'none';
+          canvas.setAttribute('aria-hidden','true');
+        }
+
+        btn.addEventListener('click', async function(){
+          if(!moduleLoaded){
+            // show canvas
+            canvas.style.opacity = '1';
+            // dynamically load the module script
+            moduleEl = document.createElement('script');
+            moduleEl.type = 'module';
+            moduleEl.src = '/assets/3d-app.js';
+            moduleEl.onload = () => { moduleLoaded = true; enableCanvasInteraction(); btn.textContent = 'Exit 3D Experience'; btn.setAttribute('aria-pressed','true'); };
+            moduleEl.onerror = () => { console.error('Failed to load 3D module'); canvas.style.opacity = '0'; };
+            document.body.appendChild(moduleEl);
+          } else {
+            // toggle off — simple graceful fallback: hide canvas (cleanup handled in module if implemented)
+            canvas.style.opacity = canvas.style.opacity === '1' ? '0' : '1';
+            const pressed = btn.getAttribute('aria-pressed') === 'true';
+            btn.setAttribute('aria-pressed', String(!pressed));
+            btn.textContent = pressed ? 'Enter 3D Experience' : 'Exit 3D Experience';
+          }
+        });
+
+        // Respect users who prefer reduced motion
+        if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+          btn.style.display = 'none';
+          disableCanvasInteraction();
+        }
+      })();
+    </script>
 </body>
 </html>
