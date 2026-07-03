@@ -56,6 +56,8 @@
     }
     </script>
 
+    <link rel="stylesheet" href="assets/joke.css">
+
     <style>
         * {
             margin: 0;
@@ -317,63 +319,6 @@
             color: var(--text-muted);
             font-size: 0.95rem;
         }
-
-        /* Joke widget styles */
-        .joke-section {
-            margin: 2rem auto;
-            max-width: 900px;
-            text-align: center;
-            color: var(--white-secondary);
-        }
-
-        .joke-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-            border: 1px solid var(--border-subtle);
-            padding: 1.25rem 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            align-items: center;
-        }
-
-        .joke-text {
-            font-size: 1.05rem;
-            color: var(--white-secondary);
-            min-height: 2.5em;
-        }
-
-        .joke-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .joke-actions {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-        }
-
-        .btn-joke {
-            background: transparent;
-            border: 1px solid var(--accent-blue);
-            color: var(--accent-blue);
-            padding: 0.5rem 0.85rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .btn-joke:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        @media (max-width: 700px) {
-            .hero-content { grid-template-columns: 1fr; }
-            .hero-asset-container { height: 360px; }
-        }
     </style>
 </head>
 <body>
@@ -409,7 +354,7 @@
                     <div class="canvas-overlay-text">
                         <h3 id="panel-status">Systems Architecture Active</h3>
                     </div>
-                    <button class="btn-3d-toggle" id="btn-3d">Enter 3D Experience</button>
+                    <button class="btn-3d-toggle" id="btn-3d" aria-pressed="false">Enter 3D Experience</button>
                 </div>
 
             </div>
@@ -424,8 +369,8 @@
                 <div class="joke-text" id="joke-text">Click the button to fetch a joke — powered by public joke APIs.</div>
                 <div class="joke-meta" id="joke-source">Source: —</div>
                 <div class="joke-actions">
-                    <button class="btn-joke" id="joke-btn">Tell me a joke</button>
-                    <button class="btn-joke" id="joke-copy" title="Copy joke">Copy</button>
+                    <button class="btn-joke" id="joke-btn" aria-label="Tell me a joke">Tell me a joke</button>
+                    <button class="btn-joke" id="joke-copy" aria-label="Copy joke" title="Copy joke">Copy</button>
                 </div>
             </div>
         </div>
@@ -609,81 +554,6 @@
     })();
     </script>
 
-    <!-- Joke generator script -->
-    <script>
-    (function(){
-        'use strict';
-        const jokeBtn = document.getElementById('joke-btn');
-        const jokeText = document.getElementById('joke-text');
-        const jokeSource = document.getElementById('joke-source');
-        const jokeCopy = document.getElementById('joke-copy');
-
-        async function fetchJSON(url, options = {}) {
-            const controller = new AbortController();
-            const id = setTimeout(() => controller.abort(), 8000);
-            try {
-                const res = await fetch(url, Object.assign({signal: controller.signal}, options));
-                clearTimeout(id);
-                if (!res.ok) throw new Error('HTTP ' + res.status);
-                return await res.json();
-            } catch (err) {
-                clearTimeout(id);
-                throw err;
-            }
-        }
-
-        async function getJoke() {
-            jokeBtn.disabled = true;
-            jokeBtn.textContent = 'Loading...';
-            jokeText.textContent = '';
-            jokeSource.textContent = 'Source: fetching...';
-
-            // Try icanhazdadjoke first (clean short jokes), then fallback
-            try {
-                const data = await fetchJSON('https://icanhazdadjoke.com/', {headers: {'Accept':'application/json'}});
-                if (data && data.joke) {
-                    jokeText.textContent = data.joke;
-                    jokeSource.textContent = 'Source: icanhazdadjoke.com';
-                } else throw new Error('no-joke');
-            } catch (err1) {
-                try {
-                    const data = await fetchJSON('https://official-joke-api.appspot.com/random_joke');
-                    if (data && data.setup) {
-                        jokeText.textContent = data.setup + (data.punchline ? '\n\n' + data.punchline : '');
-                        jokeSource.textContent = 'Source: official-joke-api.appspot.com';
-                    } else throw new Error('no-joke-2');
-                } catch (err2) {
-                    jokeText.textContent = 'Sorry — could not fetch a joke right now. Try again.';
-                    jokeSource.textContent = 'Source: unavailable';
-                    console.warn('Joke fetch errors:', err1, err2);
-                }
-            }
-
-            jokeBtn.disabled = false;
-            jokeBtn.textContent = 'Tell me a joke';
-        }
-
-        jokeBtn.addEventListener('click', getJoke);
-
-        jokeCopy.addEventListener('click', async function(){
-            const text = jokeText.textContent || '';
-            if (!text) return;
-            try {
-                await navigator.clipboard.writeText(text);
-                jokeCopy.textContent = 'Copied!';
-                setTimeout(()=> jokeCopy.textContent = 'Copy', 1500);
-            } catch(e) {
-                console.warn('copy failed', e);
-            }
-        });
-
-        // keyboard shortcut: press 'j' to fetch a new joke
-        window.addEventListener('keydown', function(e){ if (e.key === 'j' || e.key === 'J') getJoke(); });
-
-        // Expose
-        window.getJoke = getJoke;
-    })();
-    </script>
-
+    <script src="assets/joke.js" defer></script>
 </body>
 </html>
