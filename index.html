@@ -4,36 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panos Khan | AI & Digital Transformation Consultant</title>
-    <meta name="description" content="Panos Khan - Principal AI SEO Architect at Panos Khan Agency. Specializing in ethical AI integration, advanced SEO frameworks, and high-scale e-commerce system[...]">
-    <meta name="keywords" content="AI SEO, e-commerce, web development, digital strategy, Athens, systems architecture">
-    <meta name="author" content="Panos Khan">
-    <meta name="theme-color" content="#0f1419">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panos Khan | AI & Digital Transformation Consultant</title>
-    <meta name="description" content="Panos Khan - Principal AI SEO Architect at Panos Khan Agency. Specializing in ethical AI integration, advanced SEO frameworks, and high-scale e-commerce system[...]">
+    <meta name="description" content="Panos Khan - Principal AI SEO Architect at Panos Khan Agency. Specializing in ethical AI integration, advanced SEO frameworks, and high-scale e-commerce systems.">
     <meta name="keywords" content="AI SEO, e-commerce, web development, digital strategy, Athens, systems architecture">
     <meta name="author" content="Panos Khan">
     <meta name="theme-color" content="#0f1419">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://panoskhan.github.io">
-    <meta property="og:title" content="Panos Khan | Principal AI SEO Architect">
-    <meta property="og:description" content="Owner & Principal AI SEO Architect specializing in AI integration and advanced SEO frameworks">
-    <meta property="profile:first_name" content="Panos">
-    <meta property="profile:last_name" content="Khan">
-    <meta property="profile:username" content="panos43">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary">
-    <meta property="twitter:url" content="https://panoskhan.github.io">
-    <meta property="twitter:title" content="Panos Khan | Principal AI SEO Architect">
-    <meta property="twitter:description" content="Owner & Principal AI SEO Architect specializing in e-commerce and ethical AI integration">
-    
+    <!-- Three.js CDN Engine Dependencies for 3D Option Activation -->
+    <script src="https://cloudflare.com"></script>
+
     <!-- Google Knowledge Panel Schema Markup -->
     <script type="application/ld+json">
     {
@@ -42,7 +20,7 @@
       "name": "Panos Khan",
       "jobTitle": "Owner & Principal AI SEO Architect",
       "nationality": "Greek",
-      "url": "https://panoskhan.github.io",
+      "url": "https://github.io",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Athens",
@@ -50,7 +28,16 @@
       },
       "description": "Panos Khan is owner of Panos Khan Agency with over 10 years of systems architecture expertise in AI SEO, high-scale e-commerce, and ethical generative AI integration.",
       "sameAs": [
-        "https://github.com/panos43"
+        "https://github.com/panos43",
+        "https://linkedin.com",
+        "https://instagram.com",
+        "https://crunchbase.com",
+        "https://blogspot.com",
+        "https://paloaltonetworks.com",
+        "https://about.me",
+        "https://medium.com",
+        "https://reddit.com",
+        "https://wikidata.org"
       ],
       "brand": {
         "@type": "Organization",
@@ -61,7 +48,7 @@
         "E-commerce Development",
         "Systems Architecture",
         "Digital Strategy",
- "Web Development"
+        "Web Development"
       ]
     }
     </script>
@@ -81,7 +68,6 @@
             --white-secondary: #e0e6ed;
             --accent-blue: #00d4ff;
             --accent-mint: #00f0a0;
-            --accent-gold: #ffd700;
             --text-muted: #8b94a5;
             --border-subtle: #2a3142;
         }
@@ -91,14 +77,13 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             background-color: var(--dark-bg);
             color: var(--white-primary);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Navigation Bar */
         nav {
             position: fixed;
             top: 0;
@@ -124,7 +109,6 @@
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         nav .nav-links {
@@ -144,14 +128,12 @@
             color: var(--accent-blue);
         }
 
-        /* Container Utility */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* Block 1: Hero Section */
         .hero {
             margin-top: 80px;
             min-height: 100vh;
@@ -162,23 +144,6 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-30px); }
-        }
-
         .hero-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -186,6 +151,7 @@
             align-items: center;
             position: relative;
             z-index: 1;
+            width: 100%;
         }
 
         .hero-text h1 {
@@ -193,7 +159,6 @@
             font-weight: 800;
             margin-bottom: 1rem;
             line-height: 1.1;
-            color: var(--white-primary);
         }
 
         .hero-text .subtitle {
@@ -207,14 +172,6 @@
             font-size: 0.95rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .hero-text .location::before {
-            content: '📍';
-            font-size: 1rem;
         }
 
         .hero-text p {
@@ -250,7 +207,6 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 48px rgba(0, 212, 255, 0.5);
         }
 
         .btn-secondary {
@@ -264,1266 +220,97 @@
             transform: translateY(-2px);
         }
 
-        .hero-asset {
+        /* Continuous Digital Moving AI Canvas Container */
+        .hero-asset-container {
             position: relative;
-            height: 400px;
-            background: linear-gradient(135deg, var(--slate-light) 0%, var(--slate-bg) 100%);
+            height: 450px;
+            background: rgba(26, 31, 46, 0.6);
             border-radius: 12px;
-            border: 2px solid var(--border-subtle);
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
         }
 
-        .hero-asset::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(0, 240, 160, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-asset-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .hero-asset-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-asset-text {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        /* Block 2: Enterprise Credentials */
-        .credentials {
-            padding: 5rem 0;
-            background: var(--slate-bg);
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--white-primary), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--white-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        .credentials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .credential-card {
-            background: var(--slate-light);
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .credential-card::before {
-            content: '';
+        #ai-canvas {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-mint));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .credential-card:hover {
-            border-color: var(--accent-blue);
-            background: rgba(0, 212, 255, 0.05);
-            transform: translateY(-4px);
-        }
-
-        .credential-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .credential-card.highlight {
-            border: 2px solid var(--accent-mint);
-            background: rgba(0, 240, 160, 0.05);
-        }
-
-        .credential-card.highlight::before {
-            background: linear-gradient(90deg, var(--accent-mint), var(--accent-blue));
-        }
-
-        .credential-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .credential-card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--white-primary);
-        }
-
-        .credential-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* Block 3: Services */
-        .services {
-            padding: 5rem 0;
-            background: var(--dark-bg);
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .service-item {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .service-item::before {
-            content: '→';
-            font-size: 1.5rem;
-            color: var(--accent-blue);
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .service-content h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--white-primary);
-        }
-
-        .service-content p {
-            font-size: 0.95rem;
-            color: var(--white-secondary);
-            line-height: 1.7;
-        }
-
-        /* Block 4: Call to Action */
-        .cta-section {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, var(--slate-light) 0%, rgba(0, 212, 255, 0.08) 100%);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            color: var(--white-secondary);
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.8;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--slate-light);
-            border-top: 1px solid var(--border-subtle);
-            padding: 3rem 2rem;
-            text-align: center;
-            color: var(--text-muted);
-        }
-
-        footer p {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-mint);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-text .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero-asset {
-                height: 300px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .credentials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            nav .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.5rem;
-            }
-
-            .cta-section h2 {
-                font-size: 1.8rem;
-            }
-
-            nav .nav-links {
-                display: none;
-            }
-
-            nav .logo {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Progressive-enhancement 3D canvas (hidden until user activates) -->
-    <canvas id="webgl-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:100;pointer-events:none;opacity:0;transition:opacity 400ms ease;" aria-hidden="true"></canvas>
-
-    <!-- Launch button for the 3D experience -->
-    <button id="launch-3d" aria-pressed="false" aria-label="Enter immersive 3D experience" style="position:fixed;right:20px;bottom:20px;z-index:1100;padding:12px 16px;border-radius:10px;background:linear-gradient(135deg,#00d4ff,#00f0a0);border:none;color:#081018;font-weight:700;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.45);">Enter 3D Experience</button>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">PK</div>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#credentials">Credentials</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#cta">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Block 1: Hero Section -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Panos Khan</h1>
-                    <p class="subtitle">Owner & Principal AI SEO Architect</p>
-                    <p class="location">Athens, Greece — Operating Globally (Greece & Switzerland)</p>
-                    
-                    <p>Bridging the gap between complex software systems architecture and algorithmic visibility. Over a decade of verified hands-on web engineering specializing in the strategic [...]
-                    
-                    <div class="hero-buttons">
-                        <a href="https://linkedin.com/in/panos-khan" target="_blank" class="btn btn-primary">Schedule Systems Consultation</a>
-                        <a href="#credentials" class="btn btn-secondary">Explore Enterprise Credentials</a>
-                    </div>
-                </div>
-                
-                <div class="hero-asset">
-                    <div class="hero-asset-content">
-                        <div class="hero-asset-icon">🏗️</div>
-                        <div class="hero-asset-text">Enterprise Systems Architecture & AI Integration</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Block 2: Enterprise Credentials -->
-    <section class="credentials" id="credentials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Vetted Industry Integrations</h2>
-                <p>Elite systems integration requires a deep understanding of corporate architectures. My engineering profile is backed by over 10 years of direct background delivering solutions [...]
-            </div>
-            
-            <div class="credentials-grid">
-                <div class="credential-card highlight">
-                    <div class="credential-icon">🔍</div>
-                    <h3>Google Partner Program</h3>
-                    <p>Certified Professional keeping technical systems running perfectly inside strict modern search engine indexing guidelines.</p>
-                </div>
-                
-                <div class="credential-card">
-                    <div class="credential-icon">🛍️</div>
-                    <h3>AliRoom by AliExpress</h3>
-                    <p>Former systems web developer optimizing heavy backend e-commerce channels, data feeds, and international infrastructure pipelines.</p>
-                </div>
-                
-                <div class="credential-card">
-                    <div class="credential-icon">☁️</div>
-                    <h3>Microsoft Education Partner</h3>
-                    <p>Experienced Sales and Marketing Specialist who designed and automated high-yield cloud-marketing architectures for scale.</p>
-                </div>
-                
-                <div class="credential-card">
-                    <div class="credential-icon">📋</div>
-                    <h3>Athens Chamber of Commerce (EBEA)</h3>
-                    <p>Registered contractor operating under regulatory guidelines in Greece with proven compliance and industry standards adherence.</p>
-                </div>
-                
-                <div class="credential-card">
-                    <div class="credential-icon">🏪</div>
-                    <h3>Greek E-Commerce Association (GRECA)</h3>
-                    <p>Active contributor shaping the strategies of modern digital commerce and automated dropshipping platforms across Europe.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Block 3: Services -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Core Agency Capabilities</h2>
-                <p>The Panos Khan Agency builds production-grade automations that scale traffic and clean operations without sacrificing brand compliance.</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-content">
-                        <h3>Programmatic SEO Infrastructure</h3>
-                        <p>Automating database-driven keyword and entity setups to launch thousands of highly targeted, index-ready layout structures instantly.</p>
-                    </div>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-content">
-                        <h3>Multi-Agent AI Automation Loops</h3>
-                        <p>Hardcoding independent, task-isolated machine learning nodes that process research, categorize search intent, and draft high-scale media data automatically.</p>
-                    </div>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-content">
-                        <h3>High-Scale E-Commerce Frameworks</h3>
-                        <p>Designing heavy-duty web structures built to stabilize multi-supplier dropshipping hubs, coordinate automated inventory tracking, and maximize page-load performance.</p>
-                    </div>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-content">
-                        <h3>Ethical AI & Structural Data Governance</h3>
-                        <p>Programming clear algorithmic guardrails, validation modules, and output sanitizers into web scraper apps to match updating platform safety boundaries.</p>
-                    </div>
-                </div>
-
-                <div class="service-item">
-                    <div class="service-content">
-                        <h3>Corporate Outreach & Revenue Funnels</h3>
-                        <p>Connecting legacy sales infrastructures directly to dynamic digital channels using advanced cloud APIs to seamlessly track and capture leads.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Block 4: Call to Action -->
-    <section class="cta-section" id="cta">
-        <div class="container">
-            <h2>Secure Your Digital Transformation Blueprint</h2>
-            <p>Transition your legacy digital properties into completely automated, high-yield search capture platforms. Let us deploy an enterprise-vetted infrastructure layout specifically stru[...]</p>
-            <a href="https://linkedin.com/in/panos-khan" target="_blank" class="btn btn-primary">Launch Engineering Audit</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Panos Khan Agency. All rights reserved. | AI & Digital Transformation Consulting</p>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/panos-khan" target="_blank">LinkedIn</a>
-            <a href="https://github.com/panos43" target="_blank">GitHub</a>
-        </div>
-        <p style="margin-top: 2rem; font-size: 0.8rem;">Based in Athens, Greece • Operating Globally (GR & CH)</p>
-    </footer>
-
-    <noscript>
-      <style>#webgl-canvas{display:none}</style>
-    </noscript>
-
-    <!-- Lazy-loader for the 3D experience -->
-    <script>
-      (function(){
-        const btn = document.getElementById('launch-3d');
-        const canvas = document.getElementById('webgl-canvas');
-        let moduleLoaded = false;
-        let moduleEl = null;
-
-        function enableCanvasInteraction(){
-          canvas.style.pointerEvents = 'auto';
-          canvas.setAttribute('aria-hidden','false');
-        }
-
-        function disableCanvasInteraction(){
-          canvas.style.pointerEvents = 'none';
-          canvas.setAttribute('aria-hidden','true');
-        }
-
-        btn.addEventListener('click', async function(){
-          if(!moduleLoaded){
-            // show canvas
-            canvas.style.opacity = '1';
-            // dynamically load the module script
-            moduleEl = document.createElement('script');
-            moduleEl.type = 'module';
-            moduleEl.src = '/assets/3d-app.js';
-            moduleEl.onload = () => { moduleLoaded = true; enableCanvasInteraction(); btn.textContent = 'Exit 3D Experience'; btn.setAttribute('aria-pressed','true'); };
-            moduleEl.onerror = () => { console.error('Failed to load 3D module'); canvas.style.opacity = '0'; };
-            document.body.appendChild(moduleEl);
-          } else {
-            // toggle off — simple graceful fallback: hide canvas (cleanup handled in module if implemented)
-            canvas.style.opacity = canvas.style.opacity === '1' ? '0' : '1';
-            const pressed = btn.getAttribute('aria-pressed') === 'true';
-            btn.setAttribute('aria-pressed', String(!pressed));
-            btn.textContent = pressed ? 'Enter 3D Experience' : 'Exit 3D Experience';
-          }
-        });
-
-        // Respect users who prefer reduced motion
-        if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-          btn.style.display = 'none';
-          disableCanvasInteraction();
-        }
-      })();
-    </script>
-</body>
-</html>    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://panoskhan.github.io">
-    <meta property="og:title" content="Panos Khan | Principal AI SEO Architect">
-    <meta property="og:description" content="Owner & Principal AI SEO Architect specializing in AI integration and advanced SEO frameworks">
-    <meta property="profile:first_name" content="Panos">
-    <meta property="profile:last_name" content="Khan">
-    <meta property="profile:username" content="panos43">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary">
-    <meta property="twitter:url" content="https://panoskhan.github.io">
-    <meta property="twitter:title" content="Panos Khan | Principal AI SEO Architect">
-    <meta property="twitter:description" content="Owner & Principal AI SEO Architect specializing in e-commerce and ethical AI integration">
-    
-    <!-- Google Knowledge Panel Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Panos Khan",
-      "jobTitle": "Owner & Principal AI SEO Architect",
-      "nationality": "Greek",
-      "url": "https://panoskhan.github.io",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Athens",
-        "addressCountry": "GR"
-      },
-      "description": "Panos Khan is owner of Panos Khan Agency with over 10 years of systems architecture expertise in AI SEO, high-scale e-commerce, and ethical generative AI integration.",
-      "sameAs": [
-        "https://github.com/panos43"
-      ],
-      "brand": {
-        "@type": "Organization",
-        "name": "Panos Khan Agency"
-      },
-      "knowsAbout": [
-        "AI SEO",
-        "E-commerce Development",
-        "Systems Architecture",
-        "Digital Strategy",
- "Web Development"
-      ]
-    }
-    </script>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --dark-bg: #0f1419;
-            --slate-bg: #1a1f2e;
-            --slate-light: #252d3d;
-            --white-primary: #f5f7fa;
-            --white-secondary: #e0e6ed;
-            --accent-blue: #00d4ff;
-            --accent-mint: #00f0a0;
-            --accent-gold: #ffd700;
-            --text-muted: #8b94a5;
-            --border-subtle: #2a3142;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--white-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Navigation Bar */
-        nav {
-            position: fixed;
-            top: 0;
             width: 100%;
-            background: rgba(15, 20, 25, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 1rem 2rem;
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        nav .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        nav .nav-links a {
-            color: var(--white-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        nav .nav-links a:hover {
-            color: var(--accent-blue);
-        }
-
-        /* Container Utility */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Block 1: Hero Section */
-        .hero {
-            margin-top: 80px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--slate-bg) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-30px); }
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
+            height: 100%;
             z-index: 1;
         }
 
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-            color: var(--white-primary);
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.5rem;
-            color: var(--accent-blue);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-text .location {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .hero-text .location::before {
-            content: '📍';
-            font-size: 1rem;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: var(--white-secondary);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.875rem 2rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
-            color: var(--dark-bg);
-            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 48px rgba(0, 212, 255, 0.5);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--accent-blue);
-            border: 2px solid var(--accent-blue);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(0, 212, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .hero-asset {
+        .canvas-overlay-text {
             position: relative;
-            height: 400px;
-            background: linear-gradient(135deg, var(--slate-light) 0%, var(--slate-bg) 100%);
-            border-radius: 12px;
-            border: 2px solid var(--border-subtle);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .hero-asset::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(0, 240, 160, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-asset-content {
-            position: relative;
-            z-index: 1;
+            z-index: 2;
             text-align: center;
+            pointer-events: none;
         }
 
-        .hero-asset-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-asset-text {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        /* Block 2: Enterprise Credentials */
-        .credentials {
-            padding: 5rem 0;
-            background: var(--slate-bg);
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--white-primary), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--white-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        .credentials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .credential-card {
-            background: var(--slate-light);
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .credential-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-mint));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .credential-card:hover {
-            border-color: var(--accent-blue);
-            background: rgba(0, 212, 255, 0.05);
-            transform: translateY(-4px);
-        }
-
-        .credential-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .credential-card.highlight {
-            border: 2px solid var(--accent-mint);
-            background: rgba(0, 240, 160, 0.05);
-        }
-
-        .credential-card.highlight::before {
-            background: linear-gradient(90deg, var(--accent-mint), var(--accent-blue));
-        }
-
-        .credential-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .credential-card h3 {
+        .canvas-overlay-text h3 {
             font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
             color: var(--white-primary);
-        }
-
-        .credential-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* Block 3: Services */
-        .services {
-            padding: 5rem 0;
-            background: var(--dark-bg);
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .service-item {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .service-item::before {
-            content: '→';
-            font-size: 1.5rem;
-            color: var(--accent-blue);
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .service-content h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--white-primary);
-        }
-
-        .service-content p {
-            font-size: 0.95rem;
-            color: var(--white-secondary);
-            line-height: 1.7;
-        }
-
-        /* Block 4: Call to Action */
-        .cta-section {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, var(--slate-light) 0%, rgba(0, 212, 255, 0.08) 100%);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            color: var(--white-secondary);
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.8;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--slate-light);
-            border-top: 1px solid var(--border-subtle);
-            padding: 3rem 2rem;
-            text-align: center;
-            color: var(--text-muted);
-        }
-
-        footer p {
-            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 1rem;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
+        .btn-3d-toggle {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 3;
+            background: rgba(15, 20, 25, 0.8);
+            border: 1px solid var(--accent-mint);
             color: var(--accent-mint);
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-text .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero-asset {
-                height: 300px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .credentials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            nav .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.5rem;
-            }
-
-            .cta-section h2 {
-                font-size: 1.8rem;
-            }
-
-            nav .nav-links {
-                display: none;
-            }
-
-            nav .logo {
-                font-size: 1.2rem;
-            }
+        .btn-3d-toggle:hover {
+            background: var(--accent-mint);
+            color: var(--dark-bg);
+            box-shadow: 0 0 15px var(--accent-mint);
         }
     </style>
 </head>
 <body>
-    <!-- Progressive-enhancement 3D canvas (hidden until user activates) -->
-    <canvas id="webgl-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:100;pointer-events:none;opacity:0;transition:opacity 400ms ease;" aria-hidden="true"></canvas>
 
-    <!-- Launch button for the 3D experience -->
-    <button id="launch-3d" aria-pressed="false" aria-label="Enter immersive 3D experience" style="position:fixed;right:20px;bottom:20px;z-index:1100;padding:12px 16px;border-radius:10px;background:linear-gradient(135deg,#00d4ff,#00f0a0);border:none;color:#081018;font-weight:700;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.45);">Enter 3D Experience</button>
-
-    <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="logo">PK</div>
             <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#credentials">Credentials</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#cta">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Block 1: Hero Section -->
-    <section class="hero" id="hero">
+    <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Panos Khan</h1>
                     <p class="subtitle">Owner & Principal AI SEO Architect</p>
-                    <p class="location">Athens, Greece — Operating Globally (Greece & Switzerland)</p>
-                    
-                    <p>Bridging the gap between complex software systems architecture and algorithmic visibility. Over a decade of verified hands-on web engineering specializing in the strategic [...]
-                    
+                    <h1>Panos Khan</h1>
+                    <div class="location">Athens, Greece — Operating Globally (GR & CH)</div>
+                    <p>Bridging the gap between complex software systems architecture and algorithmic visibility. Over a decade of verified hands-on web engineering specializing in strategic optimization structures.</p>
                     <div class="hero-buttons">
-                        <a href="https://linkedin.com/in/panos-khan" target="_blank" class="btn btn-primary">Schedule Systems Consultation</a>
-                        <a href="#credentials" class="btn btn-secondary">Explore Enterprise Credentials</a>
+                        <a href="#contact" class="btn btn-primary">Schedule Systems Consultation</a>
+                        <a href="#credentials" class="btn btn-secondary">Explore Credentials</a>
                     </div>
                 </div>
                 
-                <div class="hero-asset">
-                    <div class="hero-asset-content">
-                        <div class="hero-asset-icon">🏗️</div>
-                        <div class="hero-asset-text">Enterprise Systems Architecture & AI Integration</div>
+                <!-- Animated AI Interface Asset without Fixed Icons -->
+                <div class="hero-asset-container">
+                    <canvas id="ai-canvas"></canvas>
+                    <div class="canvas-overlay-text">
+                        <h3 id="panel-status">Systems Architecture Active</h3>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Block 2: Enterprise Credentials -->
-    <section class="credentials" id="credentials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Vetted Industry Integrations</h2>
-                <p>Elite systems integration requires a deep understanding of corporate architectures. My engineering profile is backed by over 10 years of direct background delivering solutions [...]
-            </div>
-            
-            <div class="credentials-grid">
-                <div class="credential-card highlight">
-                    <div class="credential-icon">🔍</div>
-                    <h3>Google Partner Program</h3>
-                    <p>Certified Professional keeping technical systems running perfectly inside strict modern search engine indexing guidelines.</p>
-                </div>
-                
-                <div class="credential-card">
-                    <div class="credential-icon">🛍️</div>
-                    <h3>AliRoom by AliExpress</h3>
-                    <p>Former systems web developer optimizing heavy backend e-commerce channels, data feeds, and international infrastructure pipelines.</p>
-                </div>
-                
-                <div class="credential-card">
-                    <div class="credential-icon">☁️</div>
-                    <h3>Microsoft Education Partner</h3>
-                    <p>Experienced Sales and Marketing Specialist who designed and automated high-yield cloud-marketing architectures for scale.</p>
-                </div>
-                
-                <div class="credential-card">
-                    <div class="credential-icon">📋</div>
-                    <h3>Athens Chamber of Commerce (EBEA)</h3>
-                    <p>Registered contractor operating under regulatory guidelines in Greece with proven compliance and industry standards adherence.</p>
-                </div>
-                
-                <div class="credential-card">
-                    <div class="credential-icon">🏪</div>
-                    <h3>Greek E-Commerce Association (GRECA)</h3>
-                    <p>Active contributor shaping the strategies of modern digital commerce and automated dropshipping platforms across Europe.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Block 3: Services -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Core Agency Capabilities</h2>
-                <p>The Panos Khan Agency builds production-grade automations that scale traffic and clean operations without sacrificing brand compliance.</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-content">
-                        <h3>Programmatic SEO Infrastructure</h3>
-                        <p>Automating database-driven keyword and entity setups to launch thousands of highly targeted, index-ready layout structures instantly.</p>
-                    </div>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-content">
-                        <h3>Multi-Agent AI Automation Loops</h3>
-                        <p>Hardcoding independent, task-isolated machine learning nodes that process research, categorize search intent, and draft high-scale media data automatically.</p>
-                    </div>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-content">
-                        <h3>High-Scale E-Commerce Frameworks</h3>
-                        <p>Designing heavy-duty web structures built to stabilize multi-supplier dropshipping hubs, coordinate automated inventory tracking, and maximize page-load performance.</p>
-                    </div>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-content">
-                        <h3>Ethical AI & Structural Data Governance</h3>
-                        <p>Programming clear algorithmic guardrails, validation modules, and output sanitizers into web scraper apps to match updating platform safety boundaries.</p>
-                    </div>
-                </div>
-
-                <div class="service-item">
-                    <div class="service-content">
-                        <h3>Corporate Outreach & Revenue Funnels</h3>
-                        <p>Connecting legacy sales infrastructures directly to dynamic digital channels using advanced cloud APIs to seamlessly track and capture leads.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Block 4: Call to Action -->
-    <section class="cta-section" id="cta">
-        <div class="container">
-            <h2>Secure Your Digital Transformation Blueprint</h2>
-            <p>Transition your legacy digital properties into completely automated, high-yield search capture platforms. Let us deploy an enterprise-vetted infrastructure layout specifically stru[...]</p>
-            <a href="https://linkedin.com/in/panos-khan" target="_blank" class="btn btn-primary">Launch Engineering Audit</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Panos Khan Agency. All rights reserved. | AI & Digital Transformation Consulting</p>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/panos-khan" target="_blank">LinkedIn</a>
-            <a href="https://github.com/panos43" target="_blank">GitHub</a>
-        </div>
-        <p style="margin-top: 2rem; font-size: 0.8rem;">Based in Athens, Greece • Operating Globally (GR & CH)</p>
-    </footer>
-
-    <noscript>
-      <style>#webgl-canvas{display:none}</style>
-    </noscript>
-
-    <!-- Lazy-loader for the 3D experience -->
-    <script>
-      (function(){
-        const btn = document.getElementById('launch-3d');
-        const canvas = document.getElementById('webgl-canvas');
-        let moduleLoaded = false;
-        let moduleEl = null;
-
-        function enableCanvasInteraction(){
-          canvas.style.pointerEvents = 'auto';
-          canvas.setAttribute('aria-hidden','false');
-        }
-
-        function disableCanvasInteraction(){
-          canvas.style.pointerEvents = 'none';
-          canvas.setAttribute('aria-hidden','true');
-        }
-
-        btn.addEventListener('click', async function(){
-          if(!moduleLoaded){
-            // show canvas
-            canvas.style.opacity = '1';
-            // dynamically load the module script
-            moduleEl = document.createElement('script');
-            moduleEl.type = 'module';
-            moduleEl.src = '/assets/3d-app.js';
-            moduleEl.onload = () => { moduleLoaded = true; enableCanvasInteraction(); btn.textContent = 'Exit 3D Experience'; btn.setAttribute('aria-pressed','true'); };
-            moduleEl.onerror = () => { console.error('Failed to load 3D module'); canvas.style.opacity = '0'; };
-            document.body.appendChild(moduleEl);
-          } else {
-            // toggle off — simple graceful fallback: hide canvas (cleanup handled in module if implemented)
-            canvas.style.opacity = canvas.style.opacity === '1' ? '0' : '1';
-            const pressed = btn.getAttribute('aria-pressed') === 'true';
-            btn.setAttribute('aria-pressed', String(!pressed));
-            btn.textContent = pressed ? 'Enter 3D Experience' : 'Exit 3D Experience';
-          }
-        });
-
-        // Respect users who prefer reduced motion
-        if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-          btn.style.display = 'none';
-          disableCanvasInteraction();
-        }
-      })();
-    </script>
-</body>
-</html>
