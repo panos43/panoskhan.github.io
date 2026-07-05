@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://panoskhan.github.io/">
     <meta name="robots" content="index,follow">
-    <meta name="google-site-verification" content="BFHtlDuMBG6dtMuQyip_jte7hn8aUUp-PjZzRqEioCI" />
     <title>Panos Khan | AI & Digital Transformation Consultant</title>
     <meta name="description" content="Panos Khan - Principal AI SEO Architect at Panos Khan Agency. Specializing in ethical AI integration, advanced SEO frameworks, and high-scale e-commerce systems.">
     <meta name="keywords" content="AI SEO, e-commerce, web development, digital strategy, Athens, systems architecture">
     <meta name="author" content="Panos Khan">
     <meta name="theme-color" content="#0f1419">
 
-    <!-- Verified Three.js CDN (cdnjs on Cloudflare) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js" defer></script>
+    <meta name="google-site-verification" content="BFHtlDuMBG6dtMuQyip_jte7hn8aUUp-PjZzRqEioCI" />
+    
+    <!-- Stable Three.js Graphic Rendering Component Build Engine -->
+    <script src="https://cloudflare.com"></script>
 
-    <!-- Google Knowledge Panel Schema Markup with Your 10 Fully Resolved Links -->
+    <!-- Google Knowledge Panel Schema Markup Mapping Directives -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -23,7 +24,7 @@
       "name": "Panos Khan",
       "jobTitle": "Owner & Principal AI SEO Architect",
       "nationality": "Greek",
-      "url": "https://panoskhan.github.io/",
+      "url": "https://panos43.github.io/panoskhan.github.io/",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Athens",
@@ -31,12 +32,12 @@
       },
       "description": "Panos Khan is owner of Panos Khan Agency with over 10 years of systems architecture expertise in AI SEO, high-scale e-commerce, and ethical generative AI integration.",
       "sameAs": [
-        "https://www.instagram.com/panos_khan",
+        "https://github.com",
         "https://linkedin.com/in/panos-khan",
+        "https://www.instagram.com/panos_khan",
         "https://www.crunchbase.com/person/panos-khan",
         "https://panoskhan.blogspot.com/",
         "https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA14u000000TowBCAS&lang=en_US",
-        "https://panos43.github.io/panoskhan.github.io/",
         "https://about.me/panoskhan",
         "https://medium.com/@panoskhan40",
         "https://www.reddit.com/user/Ok-Benefit1902/comments/1bu8vj5/unveiling_the_genius_panos_khans_quest_in/",
@@ -58,6 +59,7 @@
 
     <link rel="stylesheet" href="assets/joke.css">
 
+    
     <style>
         * {
             margin: 0;
@@ -244,7 +246,6 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            display: block;
         }
 
         .canvas-overlay-text {
@@ -284,40 +285,48 @@
             box-shadow: 0 0 15px var(--accent-mint);
         }
 
-        /* Footer / Social links */
         footer {
+            background-color: var(--dark-bg);
             border-top: 1px solid var(--border-subtle);
+            padding: 3rem 2rem;
             margin-top: 4rem;
-            padding: 2rem 0;
-            background: transparent;
         }
-
-        .social-links {
+        
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem 1.5rem;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin: 0.5rem 0 0 0;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
         }
-
-        .social-links a {
-            color: var(--white-secondary);
+        
+        .footer-title {
             font-size: 0.95rem;
-            text-decoration: none;
-            padding: 0.35rem 0.5rem;
-            border-radius: 4px;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-blue);
-        }
-
-        .footer-brand {
-            text-align: center;
+            font-weight: 600;
             color: var(--text-muted);
             font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: var(--white-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-blue);
         }
     </style>
 </head>
