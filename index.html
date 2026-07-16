@@ -1,1 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panos Khan | AI & Digital Transformation Consultant</title>
+    
+    <!-- Inline Styles to Guarantee Everything Displays Correctly -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --dark-bg: #0f1419;
+            --slate-bg: #1a1f2e;
+            --slate-light: #252d3d;
+            --white-primary: #f5f7fa;
+            --white-secondary: #e0e6ed;
+            --accent-blue: #00d4ff;
+            --accent-mint: #00f0a0;
+            --text-muted: #8b94a5;
+            --border-subtle: #2a3142;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--white-primary);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Top Navigation Header Bar */
+        nav {
+            background: rgba(15, 20, 25, 0.95);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Landing Banner Layout Window */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--slate-bg) 100%);
+            padding: 4rem 2rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .hero-canvas-box { height: 250px !important; }
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text .location {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            color: var(--white-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .hero-canvas-box {
+            position: relative;
+            height: 350px;
+            background: var(--slate-light);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .canvas-label {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            pointer-events: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            color: var(--accent-mint);
+            font-weight: bold;
+            background: rgba(15, 20, 25, 0.6);
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        /* Services & Grid Matrix Sections */
+        .section-container {
+            max-width: 1200px;
+            margin: 4rem auto 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-mint);
+            padding-left: 15px;
+        }
+
+        .grid-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-card {
+            background: var(--slate-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.1);
+        }
+
+        .grid-card h3 {
+            color: var(--accent-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .grid-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navigation Header Area -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Panos Khan</div>
+        </div>
+    </nav>
+
+    
+    <div class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <div class="subtitle">AI & Digital Transformation Consultant</div>
+                <h1>Panos Khan</h1>
+                <div class="location">📍 Athens, Greece | Global Operations</div>
+                <p>Over a decade of systems architecture expertise integrating custom generative artificial intelligence workflows, high-scale e-commerce infrastructures, and advanced search engine optimization frameworks.</p>
+            </div>
+            <div class="hero-canvas-box">
+                <div class="canvas-label">AI Matrix Canvas Engine Active</div>
+                <canvas id="particleCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Expanded Services Matrices Section -->
+    <div class="section-container">
+        <div class="section-title">Core Solutions & Consultative Expertise</div>
+        <div class="grid-matrix">
+            <div class="grid-card">
+                <h3>1. Generative AI SEO Architecture</h3>
+                <p>Building specialized crawling algorithms and content delivery nodes optimized for next-generation AI search models.</p>
+            </div>
+            <div class="grid-card">
+                <h3>2. Enterprise E-Commerce Frameworks</h3>
+                <p>Deploying highly scalable web architecture arrays to manage multi-tiered international catalog infrastructures.</p>
+            </div>
+            <div class="grid-card">
+                <h3>3. Conversion Optimization Matrix</h3>
+                <p>Advanced pipeline layout design utilizing deep structural data sets to maximize global user interaction.</p>
+            </div>
+            <div class="grid-card">
+                <h3>4. Digital Identity & Systems Security</h3>
+                <p>Formulating technical defense matrices, authentication checks, and platform access protocols.</p>
+            </div>
+            <div class="grid-card">
+                <h3>5. Advanced Analytics Nodes</h3>
+                <p>Constructing real-time customer behavior analysis funnels and multi-attribution tracking engines.</p>
+            </div>
+            <div class="grid-card">
+                <h3>6. Squarespace Custom Engineering</h3>
+                <p>Developing deep script configurations and bespoke code modifications for high-end boutique environments.</p>
+            </div>
+            <div class="grid-card">
+                <h3>7. Strategic Automation Roadmaps</h3>
+                <p>Translating standard analog business workloads into efficient, cloud-integrated digital operations.</p>
+            </div>
+            <div class="grid-card">
+                <h3>8. Global Marketplace Integration</h3>
+                <p>Connecting localized retail pipelines seamlessly into high-traffic international digital trading structures.</p>
+            </div>
+            <div class="grid-card">
+                <h3>9. Performance Tuning Protocols</h3>
+                <p>Optimizing server core response times and core web vitals data markers for international page rendering speed.</p>
+            </div>
+            <div class="grid-card">
+                <h3>10. Tech Stack Consultation</h3>
+                <p>Evaluating existing workflows to architect modular modern software frames for long-term growth scaling.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Verified Strategic Networks Network Links Section -->
+    <div class="section-container">
+        <div class="section-title">Verified Corporate Portals</div>
+        <div class="grid-matrix">
+            <a href="https://linkedin.com" target="_blank" class="grid-card">
+                <h3>LinkedIn Network</h3>
+                <p>Review comprehensive historical business contracts and agency verification files history.</p>
+            </a>
+            <a href="https://crunchbase.com" target="_blank" class="grid-card">
+                <h3>Crunchbase Profile</h3>
+                <p>Access active corporate operational records, technology profiles, and advisory data registries.</p>
+            </a>
+            <a href="https://credential.net" target="_blank" class="grid-card">
+                <h3>Google Mastery Wallet</h3>
+                <p>Inspect verified platform engineering credentials, mastery wallet certifications, and badges.</p>
