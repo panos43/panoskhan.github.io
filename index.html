@@ -353,3 +353,201 @@
             padding: 2.5rem;
             transition: all 0.3s ease;
             text-decoration: none;
+            color: var(--white-primary);
+            display: block;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .glass-card {
+            background: rgba(26, 31, 46, 0.7);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(8px);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transform-style: preserve-3d;
+        }
+
+        .glass-card:hover {
+            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-asset-container {
+                height: 280px;
+            }
+
+            nav .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Panos Khan</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#profiles">Profiles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="subtitle">AI &amp; Digital Transformation Consultant</div>
+                    <h1>Panos Khan</h1>
+                    <div class="location">📍 Athens, Greece | Global Operations</div>
+                    <p>Over a decade of systems architecture expertise integrating custom generative AI workflows, high-scale e-commerce infrastructures, and advanced search engine optimisation frameworks.</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn btn-primary">View Services</a>
+                        <a href="#profiles" class="btn btn-secondary">My Profiles</a>
+                    </div>
+                </div>
+                <div class="hero-asset-container">
+                    <canvas id="ai-canvas" aria-hidden="true"></canvas>
+                    <div class="canvas-overlay-text">
+                        <h3>AI Particle Field</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>Experience</h2>
+            <p class="section-desc">A decade of building and leading digital transformation projects across e-commerce, SEO, and AI.</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2014 – Present</div>
+                    <div class="timeline-title">Owner &amp; Principal AI SEO Architect</div>
+                    <div class="timeline-company">Panos Khan Agency · Athens, Greece</div>
+                    <ul>
+                        <li>Architecting bespoke generative AI workflows integrated into enterprise SEO pipelines.</li>
+                        <li>Leading high-scale e-commerce platform builds and performance tuning for international markets.</li>
+                        <li>Delivering advanced SEO frameworks that align with next-generation AI search models.</li>
+                        <li>Consulting on digital identity, systems security, and conversion optimisation strategies.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Services</h2>
+            <p class="section-desc">End-to-end digital solutions across AI, e-commerce, and strategic consulting.</p>
+            <div class="services-grid">
+                <div class="card glass-card">
+                    <h3>Generative AI SEO Architecture</h3>
+                    <p>Building crawling algorithms and content delivery nodes optimised for next-generation AI search models.</p>
+                </div>
+                <div class="card glass-card">
+                    <h3>Enterprise E-Commerce Frameworks</h3>
+                    <p>Deploying scalable web architecture to manage multi-tiered international catalogue infrastructures.</p>
+                </div>
+                <div class="card glass-card">
+                    <h3>Conversion Optimisation</h3>
+                    <p>Advanced pipeline design utilising deep structural data to maximise global user interaction and revenue.</p>
+                </div>
+                <div class="card glass-card">
+                    <h3>Digital Identity &amp; Security</h3>
+                    <p>Formulating technical defence matrices, authentication systems, and platform access protocols.</p>
+                </div>
+                <div class="card glass-card">
+                    <h3>Advanced Analytics</h3>
+                    <p>Real-time customer behaviour analysis funnels and multi-attribution tracking engines.</p>
+                </div>
+                <div class="card glass-card">
+                    <h3>Performance Tuning</h3>
+                    <p>Optimising server response times and Core Web Vitals for international page rendering speed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profiles">
+        <div class="container">
+            <h2>Profiles</h2>
+            <p class="section-desc">Verified corporate portals and professional networks.</p>
+            <div class="profiles-grid">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="card">
+                    <h3>LinkedIn</h3>
+                    <p>Review comprehensive business history, endorsements, and agency verification files.</p>
+                </a>
+                <a href="https://crunchbase.com" target="_blank" rel="noopener noreferrer" class="card">
+                    <h3>Crunchbase</h3>
+                    <p>Access corporate operational records, technology profiles, and advisory data registries.</p>
+                </a>
+                <a href="https://credential.net" target="_blank" rel="noopener noreferrer" class="card">
+                    <h3>Credential.net</h3>
+                    <p>Inspect verified platform engineering credentials, certifications, and achievement badges.</p>
+                </a>
+                <a href="https://github.com/panoskhan" target="_blank" rel="noopener noreferrer" class="card">
+                    <h3>GitHub</h3>
+                    <p>Explore open-source contributions, project repositories, and code samples.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p class="section-desc">Get in touch to discuss your project or consultancy needs.</p>
+            <p style="color: var(--white-secondary); font-size: 1.05rem;">
+                Reach out via <a href="https://linkedin.com" style="color: var(--accent-blue);" target="_blank" rel="noopener noreferrer">LinkedIn</a> or email at
+                <a href="mailto:panoskhan40@gmail.com" style="color: var(--accent-blue);">panoskhan40@gmail.com</a>.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Panos Khan. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="assets/3d-app.js"></script>
+</body>
+</html>

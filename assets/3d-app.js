@@ -2,23 +2,11 @@
 // ES module lazy-loaded at runtime. Imports production Three.js module and initializes a performant particle field.
 import * as THREE from 'https://unpkg.com/three@0.158.0/build/three.module.js';
 
-const canvas = document.getElementById('webgl-canvas');
+const canvas = document.getElementById('ai-canvas');
 if(!canvas){
   console.warn('3D canvas not found, aborting 3D init.');
 } else {
   let renderer, scene, camera, particlesMesh, animationId;
-  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 720;
-  const particlesCount = isMobile ? 300 : 900;
-
-  function init(){
-    renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMobile });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-  let resizeObserver;
-  let isCleanedUp = false;
-  
-  // Event listeners to be cleaned up
-  const eventListeners = [];
-  
   const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 720;
   const particlesCount = isMobile ? 300 : 900;
 
@@ -86,9 +74,8 @@ if(!canvas){
     particlesMesh = new THREE.Points(geometry, material);
     scene.add(particlesMesh);
 
-    // subtle ambient glow via additive sprite
-    const sprite = new THREE.TextureLoader().load('https://threejs.org/examples/textures/sprites/disc.png');
-    material.map = sprite;
+    // subtle ambient glow via additive sprite (canvas-generated, no CDN dependency)
+    material.map = generateParticleTexture();
 
     // mouse
     let mouseX = 0, mouseY = 0;
