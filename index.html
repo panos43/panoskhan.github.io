@@ -1361,7 +1361,7 @@
 <body>
 
     <!-- Scroll progress indicator -->
-    <div id="scroll-progress" role="progressbar" aria-hidden="true"></div>
+    <div id="scroll-progress" aria-hidden="true"></div>
 
     <!-- Back to top -->
     <button id="back-to-top" aria-label="Back to top">↑</button>
@@ -1387,7 +1387,7 @@
     </nav>
 
     <!-- Mobile navigation menu -->
-    <div id="mobile-menu" role="dialog" aria-label="Navigation menu">
+    <nav id="mobile-menu" aria-label="Mobile navigation">
         <ul role="list">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
@@ -1396,7 +1396,7 @@
             <li><a href="#profiles">Profiles</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-    </div>
+    </nav>
 
     <!-- ── Hero ───────────────────────────────────────── -->
     <section class="hero">
@@ -1892,7 +1892,7 @@
 
         /* ── Active nav highlighting ─────────────────── */
         const navLinks = document.querySelectorAll('nav .nav-links a, #mobile-menu a');
-        const sections = document.querySelectorAll('section[id], .metrics-band');
+        const sections = document.querySelectorAll('section[id]');
 
         function updateActiveNav() {
             let current = '';
@@ -1913,15 +1913,17 @@
         /* ── Hamburger / mobile menu ─────────────────── */
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
+        let menuCloseTimeout = null;
 
         hamburger.addEventListener('click', () => {
             const isOpen = hamburger.classList.toggle('open');
             hamburger.setAttribute('aria-expanded', String(isOpen));
             if (isOpen) {
-                mobileMenu.classList.add('open');
+                clearTimeout(menuCloseTimeout);
                 mobileMenu.style.display = 'block';
                 // Force reflow before transition
                 mobileMenu.getBoundingClientRect();
+                mobileMenu.classList.add('open');
             } else {
                 closeMobileMenu();
             }
@@ -1931,7 +1933,7 @@
             hamburger.classList.remove('open');
             hamburger.setAttribute('aria-expanded', 'false');
             mobileMenu.classList.remove('open');
-            setTimeout(() => { mobileMenu.style.display = 'none'; }, 300);
+            menuCloseTimeout = setTimeout(() => { mobileMenu.style.display = 'none'; }, 300);
         }
 
         mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
