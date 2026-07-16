@@ -1,314 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panos Khan | AI Portfolio</title>
-  <meta name="description" content="Panos Khan portfolio - AI tools, projects, and web experiences." />
-  <style>
-    :root{
-      --bg:#070b14;
-      --bg2:#0d1324;
-      --card:#101a33cc;
-      --text:#e6eeff;
-      --muted:#9fb0d4;
-      --brand:#5eead4;
-      --brand2:#7c3aed;
-      --accent:#22d3ee;
-      --line:#22345f;
-      --shadow:0 20px 60px rgba(0,0,0,.45);
-      --radius:18px;
-      --max:1180px;
-    }
+<section id="tools" class="section">
+  <div class="container">
+    <h2>AI Free Tools & Sources</h2>
+    <p class="lead">Curated starter stack to build faster as a creator, developer, and freelancer.</p>
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 700px at 10% -20%, #1a2d57 0%, transparent 60%), radial-gradient(900px 500px at 100% 0%, #37136f 0%, transparent 60%), linear-gradient(160deg,var(--bg),var(--bg2)); color:var(--text); scroll-behavior:smooth}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--max);margin:auto;padding:0 20px}
-    .muted{color:var(--muted)}
-    .pill{display:inline-flex;align-items:center;gap:.4rem;border:1px solid #2c4275;padding:.45rem .75rem;border-radius:999px;background:#0b1530b3;font-size:.82rem;color:#bfd0f8}
-    .section{padding:76px 0}
-    .section h2{font-size:clamp(1.5rem,2.5vw,2.3rem);margin:0 0 12px}
-    .section p.lead{margin:0 0 26px;color:var(--muted)}
-
-    /* NAV */
-    .nav-wrap{position:sticky;top:0;z-index:50;background:rgba(7,11,20,.55);backdrop-filter:blur(10px);border-bottom:1px solid #1c2a4f}
-    nav{height:70px;display:flex;align-items:center;justify-content:space-between}
-    .logo{font-weight:800;letter-spacing:.4px}
-    .logo span{background:linear-gradient(90deg,var(--brand),#93c5fd,var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .nav-links{display:flex;gap:18px;align-items:center}
-    .nav-links a{font-size:.95rem;color:#cad7fb}
-    .btn{display:inline-block;border:1px solid #35508f;background:linear-gradient(90deg,#0ea5e9,#6366f1);color:white;padding:.7rem 1rem;border-radius:12px;font-weight:600;box-shadow:var(--shadow)}
-    .btn.secondary{background:transparent;border:1px solid #35508f;color:#d8e3ff;box-shadow:none}
-
-    /* HERO */
-    .hero{padding:90px 0 70px;position:relative;overflow:hidden}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
-    .hero h1{font-size:clamp(2rem,4.2vw,4rem);line-height:1.1;margin:.4rem 0 1rem}
-    .hero p{color:var(--muted);font-size:1.03rem;max-width:60ch}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
-    .stat{background:var(--card);border:1px solid var(--line);padding:14px;border-radius:14px;text-align:center}
-    .stat strong{display:block;font-size:1.2rem}
-    .hero-card{
-      background:linear-gradient(160deg,#132448aa,#0f1831aa);
-      border:1px solid #2b4276;
-      border-radius:22px;
-      padding:22px;
-      box-shadow:var(--shadow);
-      transform-style:preserve-3d;
-      transition:transform .2s ease;
-    }
-    .hero-card h3{margin-top:0}
-    .glow{
-      position:absolute;inset:auto -120px -180px auto;width:380px;height:380px;
-      background:radial-gradient(circle,#4f46e5aa,transparent 65%);
-      filter:blur(10px);pointer-events:none
-    }
-
-    /* GRID CARDS */
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-      transform-style:preserve-3d;
-      transition:transform .18s ease, border-color .2s ease, background .2s ease;
-      will-change:transform;
-    }
-    .card:hover{border-color:#4467b5;background:#132145d1}
-    .card h3{margin:.2rem 0 .7rem;font-size:1.08rem}
-    .card p{margin:0;color:var(--muted);font-size:.95rem}
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .tag{font-size:.75rem;padding:.3rem .55rem;border-radius:999px;border:1px solid #2a4377;color:#c8d8ff;background:#0d1732}
-
-    /* lists */
-    .list{display:grid;gap:10px}
-    .list-item{
-      display:flex;justify-content:space-between;gap:12px;align-items:flex-start;
-      border:1px solid var(--line);border-radius:14px;padding:14px;background:#0e1934c4
-    }
-    .list-item small{color:#9eb2df}
-
-    /* CTA */
-    .cta{
-      border:1px solid #33528f;
-      border-radius:22px;
-      padding:28px;
-      background:linear-gradient(120deg,#102046,#132d5e);
-      box-shadow:var(--shadow);
-      display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center
-    }
-
-    footer{padding:40px 0 60px;color:#9db0da}
-
-    /* Responsive */
-    @media (max-width:980px){
-      .hero-grid{grid-template-columns:1fr}
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .stats{grid-template-columns:repeat(3,1fr)}
-    }
-    @media (max-width:680px){
-      .nav-links a:not(.btn){display:none}
-      .grid{grid-template-columns:1fr}
-      .stats{grid-template-columns:1fr 1fr}
-      .hero{padding-top:74px}
-    }
-  </style>
-</head>
-<body>
-  <div class="nav-wrap">
-    <div class="container">
-      <nav>
-        <div class="logo">Panos <span>Khan</span></div>
-        <div class="nav-links">
-          <a href="#projects">Projects</a>
-          <a href="#tools">AI Tools</a>
-          <a href="#services">Services</a>
-          <a href="#contact" class="btn">Hire / Contact</a>
+    <div class="grid">
+      <div class="card">
+        <h3>Writing & Content</h3>
+        <div class="list">
+          <div class="list-item">
+            <div><strong><a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">ChatGPT Free</a></strong><br><small>Idea generation, drafting, rewriting</small></div>
+          </div>
+          <div class="list-item">
+            <div><strong><a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Perplexity</a></strong><br><small>Research + quick citations</small></div>
+          </div>
+          <div class="list-item">
+            <div><strong><a href="https://www.notion.so/product/ai" target="_blank" rel="noopener noreferrer">Notion AI</a></strong><br><small>Notes, docs, summarization</small></div>
+          </div>
         </div>
-      </nav>
+      </div>
+
+      <div class="card">
+        <h3>Design & Visuals</h3>
+        <div class="list">
+          <div class="list-item">
+            <div><strong><a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Canva</a></strong><br><small>Social media and presentations</small></div>
+          </div>
+          <div class="list-item">
+            <div><strong><a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">Figma</a></strong><br><small>UI/UX wireframes and prototypes</small></div>
+          </div>
+          <div class="list-item">
+            <div><strong><a href="https://www.remove.bg/" target="_blank" rel="noopener noreferrer">Remove.bg</a></strong><br><small>Background removal</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Dev & Automation</h3>
+        <div class="list">
+          <div class="list-item">
+            <div><strong><a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot</a></strong><br><small>Code completion & productivity</small></div>
+          </div>
+          <div class="list-item">
+            <div><strong><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a></strong><br><small>Frontend deployment</small></div>
+          </div>
+          <div class="list-item">
+            <div><strong><a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></strong><br><small>Free static hosting</small></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="pill">🚀 AI Builder • Web Creator • Portfolio Upgrade</span>
-        <h1>Building powerful AI-ready websites with modern 3D experience.</h1>
-        <p>
-          I’m <strong>Panos Khan</strong>. I create clean, fast, and visually strong digital experiences.
-          This portfolio now includes expanded AI resources, new project showcases, and richer sections to make your brand stand out.
-        </p>
-        <div class="hero-actions">
-          <a class="btn" href="#projects">View New Projects</a>
-          <a class="btn secondary" href="#tools">Explore Free AI Tools</a>
-        </div>
-
-        <div class="stats">
-          <div class="stat"><strong>15+</strong><span class="muted">Showcase Projects</span></div>
-          <div class="stat"><strong>40+</strong><span class="muted">AI Resources</span></div>
-          <div class="stat"><strong>100%</strong><span class="muted">Additive Upgrade</span></div>
-        </div>
-      </div>
-
-      <aside class="hero-card tilt">
-        <h3>What’s New in Your Website</h3>
-        <p class="muted">Added without deleting your existing identity:</p>
-        <ul>
-          <li>✅ New project portfolio cards with stronger positioning</li>
-          <li>✅ AI free tools + learning sources directory</li>
-          <li>✅ Extra trust sections (services, process, testimonials)</li>
-          <li>✅ Visual enhancements with subtle 3D motion effects</li>
-        </ul>
-      </aside>
-    </div>
-    <div class="glow"></div>
-  </header>
-
-  <main>
-    <section id="projects" class="section">
-      <div class="container">
-        <h2>Featured Projects — Panos Khan</h2>
-        <p class="lead">Fresh, portfolio-strong projects designed to demonstrate practical AI + web impact.</p>
-        <div class="grid">
-          <article class="card tilt">
-            <h3>AI Resume Optimizer</h3>
-            <p>Web app that improves resume bullets for ATS, role matching, and impact-focused wording.</p>
-            <div class="tags"><span class="tag">AI</span><span class="tag">NLP</span><span class="tag">CareerTech</span></div>
-          </article>
-          <article class="card tilt">
-            <h3>Smart Content Repurposer</h3>
-            <p>Turns one long-form post into LinkedIn threads, tweets, reels scripts, and email snippets.</p>
-            <div class="tags"><span class="tag">Automation</span><span class="tag">Marketing</span><span class="tag">LLM</span></div>
-          </article>
-          <article class="card tilt">
-            <h3>3D Portfolio Engine</h3>
-            <p>Interactive portfolio template with motion layers, gradient glow, and conversion-first layout blocks.</p>
-            <div class="tags"><span class="tag">Frontend</span><span class="tag">3D UI</span><span class="tag">Branding</span></div>
-          </article>
-          <article class="card tilt">
-            <h3>AI Prompt Library Pro</h3>
-            <p>Organized prompt vault with categories, quality ratings, and copy-ready templates.</p>
-            <div class="tags"><span class="tag">Productivity</span><span class="tag">AI Tools</span></div>
-          </article>
-          <article class="card tilt">
-            <h3>Freelancer Proposal Generator</h3>
-            <p>Generates personalized proposals based on job posts with concise value-based structure.</p>
-            <div class="tags"><span class="tag">Freelance</span><span class="tag">Sales</span><span class="tag">AI</span></div>
-          </article>
-          <article class="card tilt">
-            <h3>Website Copy Enhancement Bot</h3>
-            <p>Improves landing-page copy for clarity, conversion, and SEO intent in minutes.</p>
-            <div class="tags"><span class="tag">SEO</span><span class="tag">Copywriting</span><span class="tag">LLM</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="tools" class="section">
-      <div class="container">
-        <h2>AI Free Tools & Sources</h2>
-        <p class="lead">Curated starter stack to build faster as a creator, developer, and freelancer.</p>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Writing & Content</h3>
-            <div class="list">
-              <div class="list-item"><div><strong>ChatGPT Free</strong><br><small>Idea generation, drafting, rewriting</small></div></div>
-              <div class="list-item"><div><strong>Perplexity</strong><br><small>Research + quick citations</small></div></div>
-              <div class="list-item"><div><strong>Notion AI</strong><br><small>Notes, docs, summarization</small></div></div>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Design & Visuals</h3>
-            <div class="list">
-              <div class="list-item"><div><strong>Canva</strong><br><small>Social media and presentations</small></div></div>
-              <div class="list-item"><div><strong>Figma</strong><br><small>UI/UX wireframes and prototypes</small></div></div>
-              <div class="list-item"><div><strong>Remove.bg</strong><br><small>Background removal</small></div></div>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Dev & Automation</h3>
-            <div class="list">
-              <div class="list-item"><div><strong>GitHub Copilot</strong><br><small>Code completion & productivity</small></div></div>
-              <div class="list-item"><div><strong>Vercel</strong><br><small>Frontend deployment</small></div></div>
-              <div class="list-item"><div><strong>GitHub Pages</strong><br><small>Free static hosting</small></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="section">
-      <div class="container">
-        <h2>Services by Panos Khan</h2>
-        <p class="lead">What I can build for clients and personal brands.</p>
-        <div class="grid">
-          <div class="card tilt"><h3>AI Portfolio Upgrades</h3><p>Modern portfolio structure, trust blocks, premium visual design.</p></div>
-          <div class="card tilt"><h3>Landing Pages</h3><p>Conversion-focused pages with CTA strategy and performance-first code.</p></div>
-          <div class="card tilt"><h3>Content Systems</h3><p>Prompt workflows and reusable content pipelines for consistent publishing.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Work Process</h2>
-        <p class="lead">Simple, reliable, and fast delivery model.</p>
-        <div class="grid">
-          <div class="card"><h3>1) Audit</h3><p>Understand brand, audience, and existing site strengths.</p></div>
-          <div class="card"><h3>2) Upgrade</h3><p>Add sections, projects, tools, and better structure without destructive edits.</p></div>
-          <div class="card"><h3>3) Polish</h3><p>Visual refinement, responsive improvements, motion and 3D effects.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="cta">
-          <div>
-            <h2 style="margin:0 0 8px">Let’s build your next powerful web presence.</h2>
-            <p class="muted" style="margin:0">Portfolio, AI tools integration, and high-conversion design by <strong>Panos Khan</strong>.</p>
-          </div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn" href="mailto:youremail@example.com">Email Me</a>
-            <a class="btn secondary" href="#projects">See Projects</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      © <span id="year"></span> Panos Khan. All rights reserved.
-    </div>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Subtle 3D tilt effect
-    const tilts = document.querySelectorAll('.tilt');
-    tilts.forEach((el) => {
-      el.addEventListener('mousemove', (e) => {
-        const r = el.getBoundingClientRect();
-        const x = e.clientX - r.left;
-        const y = e.clientY - r.top;
-        const rx = ((y / r.height) - 0.5) * -8;
-        const ry = ((x / r.width) - 0.5) * 10;
-        el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
-      });
-      el.addEventListener('mouseleave', () => {
-        el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
-      });
-    });
-  </script>
-</body>
-</html>
+</section>
