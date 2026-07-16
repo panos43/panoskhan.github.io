@@ -1,2024 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://panoskhan.github.io/">
-    <meta name="robots" content="index,follow">
-    <title>Panos Khan | AI & Digital Transformation Consultant</title>
-    <meta name="description" content="Panos Khan - Principal AI SEO Architect at Panos Khan Agency. Specializing in ethical AI integration, advanced SEO frameworks, and high-scale e-commerce systems.">
-    <meta name="keywords" content="AI SEO, e-commerce, web development, digital strategy, Athens, systems architecture">
-    <meta name="author" content="Panos Khan">
-    <meta name="theme-color" content="#0f1419">
-
-    <meta name="google-site-verification" content="BFHtlDuMBG6dtMuQyip_jte7hn8aUUp-PjZzRqEioCI" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Panos Khan | AI & Digital Transformation Consultant">
-    <meta property="og:description" content="Principal AI SEO Architect — generative AI workflows, enterprise e-commerce, advanced SEO frameworks.">
-    <meta property="og:url" content="https://panoskhan.github.io/">
-    <meta property="og:type" content="website">
-    
-    <!-- Google Knowledge Panel Schema Markup Mapping Directives -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Panos Khan",
-      "jobTitle": "Owner & Principal AI SEO Architect",
-      "nationality": "Greek",
-      "url": "https://panoskhan.github.io/",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Athens",
-        "addressCountry": "GR"
-      },
-      "description": "Panos Khan is owner of Panos Khan Agency with over 10 years of systems architecture expertise in AI SEO, high-scale e-commerce, and ethical generative AI integration.",
-      "sameAs": [
-        "https://github.com/panoskhan",
-        "https://linkedin.com",
-        "https://instagram.com",
-        "https://crunchbase.com",
-        "https://credential.net"
-      ],
-      "brand": {
-        "@type": "Organization",
-        "name": "Panos Khan Agency"
-      },
-      "knowsAbout": [
-        "AI SEO",
-        "E-commerce Development",
-        "Systems Architecture",
-        "Digital Strategy",
-        "Web Development",
-        "Generative AI",
-        "Conversion Optimisation"
-      ]
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panos Khan | AI Portfolio</title>
+  <meta name="description" content="Panos Khan portfolio - AI tools, projects, and web experiences." />
+  <style>
+    :root{
+      --bg:#070b14;
+      --bg2:#0d1324;
+      --card:#101a33cc;
+      --text:#e6eeff;
+      --muted:#9fb0d4;
+      --brand:#5eead4;
+      --brand2:#7c3aed;
+      --accent:#22d3ee;
+      --line:#22345f;
+      --shadow:0 20px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1180px;
     }
-    </script>
-    
-    <style>
-        /* ─── Reset & Variables ─────────────────────────── */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        :root {
-            --dark-bg: #0f1419;
-            --slate-bg: #1a1f2e;
-            --slate-light: #252d3d;
-            --white-primary: #f5f7fa;
-            --white-secondary: #e0e6ed;
-            --accent-blue: #00d4ff;
-            --accent-mint: #00f0a0;
-            --accent-purple: #7c3aed;
-            --text-muted: #8b94a5;
-            --border-subtle: #2a3142;
-            --transition: 0.3s ease;
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--white-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* ─── Scroll Progress Bar ───────────────────────── */
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            width: 0%;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-mint));
-            z-index: 2000;
-            transition: width 0.1s linear;
-        }
-
-        /* ─── Back to Top ───────────────────────────────── */
-        #back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
-            color: var(--dark-bg);
-            border: none;
-            font-size: 1.4rem;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
-        }
-
-        #back-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        #back-to-top:hover {
-            transform: translateY(-4px);
-        }
-
-        /* ─── Navigation ────────────────────────────────── */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 20, 25, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 1rem 2rem;
-            transition: background 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        nav.scrolled {
-            background: rgba(15, 20, 25, 0.98);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.4);
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
-        nav .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        nav .nav-links a {
-            color: var(--white-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color var(--transition);
-            position: relative;
-            padding-bottom: 4px;
-        }
-
-        nav .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-mint));
-            transition: width 0.3s ease;
-            border-radius: 1px;
-        }
-
-        nav .nav-links a:hover,
-        nav .nav-links a.active {
-            color: var(--accent-blue);
-        }
-
-        nav .nav-links a:hover::after,
-        nav .nav-links a.active::after {
-            width: 100%;
-        }
-
-        /* Hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 4px;
-            background: none;
-            border: none;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--white-secondary);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-        /* Mobile menu */
-        #mobile-menu {
-            display: none;
-            position: fixed;
-            top: 65px;
-            left: 0;
-            right: 0;
-            background: rgba(15, 20, 25, 0.98);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 1.5rem 2rem;
-            z-index: 999;
-            transform: translateY(-10px);
-            opacity: 0;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        #mobile-menu.open {
-            display: block;
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        #mobile-menu ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        #mobile-menu a {
-            color: var(--white-secondary);
-            text-decoration: none;
-            font-size: 1.05rem;
-            font-weight: 500;
-            transition: color var(--transition);
-        }
-
-        #mobile-menu a:hover { color: var(--accent-blue); }
-
-        /* ─── Common Layout ─────────────────────────────── */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            padding: 6rem 0;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        section h2 {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-mint));
-            border-radius: 2px;
-        }
-
-        .section-header {
-            margin-bottom: 3.5rem;
-        }
-
-        .section-desc {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-top: 1.5rem;
-            max-width: 600px;
-        }
-
-        /* ─── Scroll Reveal ─────────────────────────────── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Staggered delay utilities */
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-        .delay-4 { transition-delay: 0.4s; }
-        .delay-5 { transition-delay: 0.5s; }
-        .delay-6 { transition-delay: 0.6s; }
-
-        /* ─── Buttons ────────────────────────────────────── */
-        .btn {
-            padding: 0.875rem 2rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
-            color: var(--dark-bg);
-            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.45);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--accent-blue);
-            border: 2px solid var(--accent-blue);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(0, 212, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .btn-ghost {
-            background: transparent;
-            color: var(--white-secondary);
-            border: 1px solid var(--border-subtle);
-        }
-
-        .btn-ghost:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-            transform: translateY(-2px);
-        }
-
-        /* ─── Hero ───────────────────────────────────────── */
-        .hero {
-            margin-top: 65px;
-            min-height: calc(100vh - 65px);
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--slate-bg) 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 4rem 0;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -20%;
-            width: 60%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(0, 212, 255, 0.04) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-            width: 100%;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(0, 240, 160, 0.1);
-            border: 1px solid rgba(0, 240, 160, 0.3);
-            border-radius: 20px;
-            padding: 0.35rem 1rem;
-            font-size: 0.85rem;
-            color: var(--accent-mint);
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            letter-spacing: 0.3px;
-        }
-
-        .hero-badge .dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent-mint);
-            border-radius: 50%;
-            animation: pulse-dot 2s infinite;
-        }
-
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.3); }
-        }
-
-        .hero-text h1 {
-            font-size: 3.8rem;
-            font-weight: 800;
-            margin-bottom: 0.75rem;
-            line-height: 1.05;
-            letter-spacing: -1.5px;
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.4rem;
-            color: var(--accent-blue);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            min-height: 2rem;
-        }
-
-        /* Typing cursor */
-        .typing-cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1.2em;
-            background: var(--accent-blue);
-            margin-left: 3px;
-            vertical-align: middle;
-            animation: blink 0.9s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        .hero-text .location {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 1.75rem;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: var(--white-secondary);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-            max-width: 520px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.25rem;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        /* Hero stats row */
-        .hero-stats {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-stat {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .hero-stat .stat-value {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-        }
-
-        .hero-stat .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-top: 0.25rem;
-        }
-
-        .hero-asset-container {
-            position: relative;
-            height: 480px;
-            background: rgba(26, 31, 46, 0.6);
-            border-radius: 16px;
-            border: 1px solid var(--border-subtle);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-asset-container::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(0,240,160,0.05));
-            z-index: 0;
-        }
-
-        #ai-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .canvas-overlay-text {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            pointer-events: none;
-        }
-
-        .canvas-overlay-text h3 {
-            font-size: 1rem;
-            color: rgba(245,247,250,0.5);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 400;
-        }
-
-        /* ─── Metrics Band ───────────────────────────────── */
-        .metrics-band {
-            padding: 4rem 0;
-            background: var(--slate-bg);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .metric-item {
-            padding: 1.5rem;
-            border-right: 1px solid var(--border-subtle);
-        }
-
-        .metric-item:last-child { border-right: none; }
-
-        .metric-number {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-suffix {
-            font-size: 2rem;
-        }
-
-        .metric-label {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* ─── Timeline ───────────────────────────────────── */
-        .timeline {
-            position: relative;
-            max-width: 900px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--accent-blue), var(--accent-mint));
-            border-radius: 2px;
-        }
-
-        .timeline-item {
-            padding: 2rem 2rem 2rem 2.5rem;
-            background: var(--slate-bg);
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            margin-left: 1.5rem;
-            position: relative;
-            transition: border-color var(--transition), box-shadow var(--transition);
-        }
-
-        .timeline-item:hover {
-            border-color: rgba(0, 212, 255, 0.4);
-            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.08);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2rem;
-            top: 2.25rem;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--accent-blue);
-            border: 3px solid var(--dark-bg);
-            box-shadow: 0 0 0 3px var(--accent-blue);
-        }
-
-        .timeline-date {
-            color: var(--accent-mint);
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--white-primary);
-            margin-bottom: 0.35rem;
-        }
-
-        .timeline-company {
-            color: var(--accent-blue);
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            font-size: 0.95rem;
-        }
-
-        .timeline-item ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-bottom: 1.5rem;
-        }
-
-        .timeline-item ul li {
-            margin-bottom: 0.6rem;
-            position: relative;
-            padding-left: 1.5rem;
-            color: var(--white-secondary);
-            font-size: 0.97rem;
-        }
-
-        .timeline-item ul li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--accent-blue);
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .skill-tag {
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            color: var(--accent-blue);
-            font-size: 0.78rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-
-        /* ─── Services ───────────────────────────────────── */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.75rem;
-        }
-
-        .card {
-            background: var(--slate-bg);
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: var(--white-primary);
-            display: block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-mint));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover::before { transform: scaleX(1); }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 212, 255, 0.35);
-            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.12);
-        }
-
-        .card-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--white-primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.93rem;
-            line-height: 1.65;
-        }
-
-        .glass-card {
-            background: rgba(26, 31, 46, 0.7);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 2rem;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            transform-style: preserve-3d;
-        }
-
-        .glass-card:hover {
-            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.15);
-        }
-
-        .services-cta {
-            margin-top: 3rem;
-            text-align: center;
-        }
-
-        /* ─── Process ────────────────────────────────────── */
-        #process {
-            background: var(--slate-bg);
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
-            counter-reset: process-counter;
-        }
-
-        .process-step {
-            background: var(--dark-bg);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 2rem;
-            position: relative;
-            transition: all 0.3s ease;
-            counter-increment: process-counter;
-        }
-
-        .process-step:hover {
-            border-color: rgba(0, 212, 255, 0.35);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.1);
-        }
-
-        .process-step::before {
-            content: counter(process-counter, decimal-leading-zero);
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: rgba(0, 212, 255, 0.1);
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            line-height: 1;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .process-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .process-step h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--white-primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .process-step p {
-            color: var(--text-muted);
-            font-size: 0.93rem;
-            line-height: 1.65;
-        }
-
-        /* ─── Tech Stack ─────────────────────────────────── */
-        .stack-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .stack-category {
-            background: var(--slate-bg);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 1.75rem;
-            transition: border-color var(--transition);
-        }
-
-        .stack-category:hover {
-            border-color: rgba(0, 212, 255, 0.3);
-        }
-
-        .stack-category h3 {
-            font-size: 0.85rem;
-            color: var(--accent-mint);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-        }
-
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        .tech-tag {
-            background: rgba(37, 45, 61, 0.8);
-            border: 1px solid var(--border-subtle);
-            color: var(--white-secondary);
-            font-size: 0.82rem;
-            padding: 0.3rem 0.8rem;
-            border-radius: 6px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            cursor: default;
-        }
-
-        .tech-tag:hover {
-            background: rgba(0, 212, 255, 0.1);
-            border-color: rgba(0, 212, 255, 0.3);
-            color: var(--accent-blue);
-        }
-
-        /* ─── Profiles ───────────────────────────────────── */
-        .profiles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.75rem;
-        }
-
-        .profile-card {
-            background: var(--slate-bg);
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            padding: 2rem;
-            text-decoration: none;
-            color: var(--white-primary);
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .profile-card::after {
-            content: '↗';
-            position: absolute;
-            top: 1.25rem;
-            right: 1.5rem;
-            font-size: 1rem;
-            color: var(--text-muted);
-            transition: color var(--transition), transform 0.2s ease;
-        }
-
-        .profile-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 212, 255, 0.4);
-            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.12);
-        }
-
-        .profile-card:hover::after {
-            color: var(--accent-blue);
-            transform: translate(2px, -2px);
-        }
-
-        .profile-card-icon {
-            font-size: 1.8rem;
-        }
-
-        .profile-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--white-primary);
-        }
-
-        .profile-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* ─── Testimonials ───────────────────────────────── */
-        #testimonials {
-            background: var(--slate-bg);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: var(--dark-bg);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 2rem;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            border-color: rgba(0, 212, 255, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.08);
-            transform: translateY(-3px);
-        }
-
-        .testimonial-card .quote-mark {
-            font-size: 4rem;
-            line-height: 1;
-            color: rgba(0, 212, 255, 0.15);
-            font-family: Georgia, serif;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .testimonial-card blockquote {
-            color: var(--white-secondary);
-            font-size: 0.97rem;
-            line-height: 1.75;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--dark-bg);
-            flex-shrink: 0;
-        }
-
-        .author-info .author-name {
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--white-primary);
-        }
-
-        .author-info .author-role {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-        }
-
-        /* Stars */
-        .testimonial-stars {
-            color: #f59e0b;
-            font-size: 0.85rem;
-            margin-bottom: 0.75rem;
-            letter-spacing: 2px;
-        }
-
-        /* ─── Contact ────────────────────────────────────── */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .contact-intro h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--white-primary);
-        }
-
-        .contact-intro p {
-            color: var(--white-secondary);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-size: 1.05rem;
-        }
-
-        .contact-options {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-option {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 1.25rem;
-            background: var(--slate-bg);
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            text-decoration: none;
-            color: var(--white-primary);
-            transition: all 0.3s ease;
-        }
-
-        .contact-option:hover {
-            border-color: rgba(0, 212, 255, 0.4);
-            transform: translateX(4px);
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.1);
-        }
-
-        .contact-option-icon {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .contact-option-text .label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-
-        .contact-option-text .value {
-            font-weight: 600;
-            font-size: 0.97rem;
-            color: var(--accent-blue);
-        }
-
-        .contact-availability {
-            background: var(--slate-bg);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 2rem;
-        }
-
-        .contact-availability h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--white-primary);
-        }
-
-        .availability-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border-subtle);
-            color: var(--white-secondary);
-            font-size: 0.92rem;
-        }
-
-        .availability-item:last-child { border-bottom: none; }
-
-        .availability-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .dot-green { background: #22c55e; }
-        .dot-yellow { background: #f59e0b; }
-        .dot-blue { background: var(--accent-blue); }
-
-        /* ─── Footer ─────────────────────────────────────── */
-        footer {
-            background: var(--slate-bg);
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .footer-main {
-            padding: 4rem 0 3rem;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .footer-brand .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-mint));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        .footer-brand p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.7;
-            max-width: 280px;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .social-link {
-            width: 38px;
-            height: 38px;
-            border-radius: 8px;
-            background: var(--dark-bg);
-            border: 1px solid var(--border-subtle);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1rem;
-            color: var(--text-muted);
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-            transform: translateY(-3px);
-        }
-
-        .footer-col h4 {
-            font-size: 0.85rem;
-            color: var(--white-primary);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-        }
-
-        .footer-col ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .footer-col ul a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color var(--transition);
-        }
-
-        .footer-col ul a:hover { color: var(--accent-blue); }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border-subtle);
-            padding: 1.5rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-bottom p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        .footer-bottom .footer-legal {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .footer-bottom .footer-legal a {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            text-decoration: none;
-            transition: color var(--transition);
-        }
-
-        .footer-bottom .footer-legal a:hover { color: var(--accent-blue); }
-
-        /* ─── Responsive ─────────────────────────────────── */
-        @media (max-width: 1024px) {
-            .footer-main {
-                grid-template-columns: 1fr 1fr;
-                gap: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav .nav-links { display: none; }
-            .hamburger { display: flex; }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-
-            .hero-text h1 { font-size: 2.6rem; }
-
-            .hero-asset-container { height: 300px; }
-
-            .metrics-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 0;
-            }
-
-            .metric-item {
-                border-right: none;
-                border-bottom: 1px solid var(--border-subtle);
-            }
-
-            .metric-item:nth-child(odd) { border-right: 1px solid var(--border-subtle); }
-            .metric-item:nth-last-child(-n+2) { border-bottom: none; }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            section h2 { font-size: 1.85rem; }
-
-            #back-to-top {
-                bottom: 1.25rem;
-                right: 1.25rem;
-                width: 42px;
-                height: 42px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text h1 { font-size: 2.1rem; }
-            .hero-stats { gap: 1.5rem; }
-            .hero-buttons { flex-direction: column; }
-            .hero-buttons .btn { justify-content: center; }
-        }
-    </style>
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 700px at 10% -20%, #1a2d57 0%, transparent 60%), radial-gradient(900px 500px at 100% 0%, #37136f 0%, transparent 60%), linear-gradient(160deg,var(--bg),var(--bg2)); color:var(--text); scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:auto;padding:0 20px}
+    .muted{color:var(--muted)}
+    .pill{display:inline-flex;align-items:center;gap:.4rem;border:1px solid #2c4275;padding:.45rem .75rem;border-radius:999px;background:#0b1530b3;font-size:.82rem;color:#bfd0f8}
+    .section{padding:76px 0}
+    .section h2{font-size:clamp(1.5rem,2.5vw,2.3rem);margin:0 0 12px}
+    .section p.lead{margin:0 0 26px;color:var(--muted)}
+
+    /* NAV */
+    .nav-wrap{position:sticky;top:0;z-index:50;background:rgba(7,11,20,.55);backdrop-filter:blur(10px);border-bottom:1px solid #1c2a4f}
+    nav{height:70px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:800;letter-spacing:.4px}
+    .logo span{background:linear-gradient(90deg,var(--brand),#93c5fd,var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{font-size:.95rem;color:#cad7fb}
+    .btn{display:inline-block;border:1px solid #35508f;background:linear-gradient(90deg,#0ea5e9,#6366f1);color:white;padding:.7rem 1rem;border-radius:12px;font-weight:600;box-shadow:var(--shadow)}
+    .btn.secondary{background:transparent;border:1px solid #35508f;color:#d8e3ff;box-shadow:none}
+
+    /* HERO */
+    .hero{padding:90px 0 70px;position:relative;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+    .hero h1{font-size:clamp(2rem,4.2vw,4rem);line-height:1.1;margin:.4rem 0 1rem}
+    .hero p{color:var(--muted);font-size:1.03rem;max-width:60ch}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+    .stat{background:var(--card);border:1px solid var(--line);padding:14px;border-radius:14px;text-align:center}
+    .stat strong{display:block;font-size:1.2rem}
+    .hero-card{
+      background:linear-gradient(160deg,#132448aa,#0f1831aa);
+      border:1px solid #2b4276;
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      transform-style:preserve-3d;
+      transition:transform .2s ease;
+    }
+    .hero-card h3{margin-top:0}
+    .glow{
+      position:absolute;inset:auto -120px -180px auto;width:380px;height:380px;
+      background:radial-gradient(circle,#4f46e5aa,transparent 65%);
+      filter:blur(10px);pointer-events:none
+    }
+
+    /* GRID CARDS */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      transform-style:preserve-3d;
+      transition:transform .18s ease, border-color .2s ease, background .2s ease;
+      will-change:transform;
+    }
+    .card:hover{border-color:#4467b5;background:#132145d1}
+    .card h3{margin:.2rem 0 .7rem;font-size:1.08rem}
+    .card p{margin:0;color:var(--muted);font-size:.95rem}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .tag{font-size:.75rem;padding:.3rem .55rem;border-radius:999px;border:1px solid #2a4377;color:#c8d8ff;background:#0d1732}
+
+    /* lists */
+    .list{display:grid;gap:10px}
+    .list-item{
+      display:flex;justify-content:space-between;gap:12px;align-items:flex-start;
+      border:1px solid var(--line);border-radius:14px;padding:14px;background:#0e1934c4
+    }
+    .list-item small{color:#9eb2df}
+
+    /* CTA */
+    .cta{
+      border:1px solid #33528f;
+      border-radius:22px;
+      padding:28px;
+      background:linear-gradient(120deg,#102046,#132d5e);
+      box-shadow:var(--shadow);
+      display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center
+    }
+
+    footer{padding:40px 0 60px;color:#9db0da}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .stats{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:680px){
+      .nav-links a:not(.btn){display:none}
+      .grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .hero{padding-top:74px}
+    }
+  </style>
 </head>
 <body>
-
-    <!-- Scroll progress indicator -->
-    <div id="scroll-progress" aria-hidden="true"></div>
-
-    <!-- Back to top -->
-    <button id="back-to-top" aria-label="Back to top">↑</button>
-
-    <!-- ── Navigation ─────────────────────────────────── -->
-    <nav id="navbar">
-        <div class="container">
-            <a href="#" class="logo">Panos Khan</a>
-            <ul class="nav-links" role="list">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#stack">Stack</a></li>
-                <li><a href="#profiles">Profiles</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+  <div class="nav-wrap">
+    <div class="container">
+      <nav>
+        <div class="logo">Panos <span>Khan</span></div>
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#tools">AI Tools</a>
+          <a href="#services">Services</a>
+          <a href="#contact" class="btn">Hire / Contact</a>
         </div>
-    </nav>
-
-    <!-- Mobile navigation menu -->
-    <nav id="mobile-menu" aria-label="Mobile navigation">
-        <ul role="list">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#stack">Stack</a></li>
-            <li><a href="#profiles">Profiles</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- ── Hero ───────────────────────────────────────── -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <span class="dot"></span>
-                        Available for new projects
-                    </div>
-                    <h1>Panos Khan</h1>
-                    <div class="subtitle">
-                        <span id="typing-text"></span><span class="typing-cursor" aria-hidden="true"></span>
-                    </div>
-                    <div class="location">📍 Athens, Greece &nbsp;·&nbsp; Global Operations</div>
-                    <p>Over a decade of systems architecture expertise integrating custom generative AI workflows, high-scale e-commerce infrastructures, and advanced search engine optimisation frameworks.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                        <a href="#services" class="btn btn-secondary">View Services</a>
-                        <a href="#profiles" class="btn btn-ghost">My Profiles</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="hero-stat">
-                            <span class="stat-value">10+</span>
-                            <span class="stat-label">Years Active</span>
-                        </div>
-                        <div class="hero-stat">
-                            <span class="stat-value">50+</span>
-                            <span class="stat-label">Projects</span>
-                        </div>
-                        <div class="hero-stat">
-                            <span class="stat-value">6</span>
-                            <span class="stat-label">Core Services</span>
-                        </div>
-                        <div class="hero-stat">
-                            <span class="stat-value">5+</span>
-                            <span class="stat-label">Countries</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-asset-container reveal-right">
-                    <canvas id="ai-canvas" aria-hidden="true"></canvas>
-                    <div class="canvas-overlay-text">
-                        <h3>AI Particle Field</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── Metrics Band ───────────────────────────────── -->
-    <div class="metrics-band">
-        <div class="container">
-            <div class="metrics-grid">
-                <div class="metric-item reveal delay-1">
-                    <div class="metric-number"><span class="counter" data-target="10">0</span><span class="metric-suffix">+</span></div>
-                    <div class="metric-label">Years Experience</div>
-                </div>
-                <div class="metric-item reveal delay-2">
-                    <div class="metric-number"><span class="counter" data-target="50">0</span><span class="metric-suffix">+</span></div>
-                    <div class="metric-label">Projects Delivered</div>
-                </div>
-                <div class="metric-item reveal delay-3">
-                    <div class="metric-number"><span class="counter" data-target="6">0</span><span class="metric-suffix"></span></div>
-                    <div class="metric-label">Service Domains</div>
-                </div>
-                <div class="metric-item reveal delay-4">
-                    <div class="metric-number"><span class="counter" data-target="5">0</span><span class="metric-suffix">+</span></div>
-                    <div class="metric-label">Countries Served</div>
-                </div>
-            </div>
-        </div>
+      </nav>
     </div>
+  </div>
 
-    <!-- ── Experience ─────────────────────────────────── -->
-    <section id="about">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Experience</h2>
-                <p class="section-desc">A decade of building and leading digital transformation projects across e-commerce, SEO, and AI.</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item reveal delay-1">
-                    <div class="timeline-date">2014 – Present</div>
-                    <div class="timeline-title">Owner &amp; Principal AI SEO Architect</div>
-                    <div class="timeline-company">Panos Khan Agency &nbsp;·&nbsp; Athens, Greece</div>
-                    <ul>
-                        <li>Architecting bespoke generative AI workflows integrated into enterprise SEO pipelines.</li>
-                        <li>Leading high-scale e-commerce platform builds and performance tuning for international markets.</li>
-                        <li>Delivering advanced SEO frameworks that align with next-generation AI search models.</li>
-                        <li>Consulting on digital identity, systems security, and conversion optimisation strategies.</li>
-                        <li>Designing multi-attribution analytics engines for real-time customer behaviour tracking.</li>
-                    </ul>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Generative AI</span>
-                        <span class="skill-tag">AI SEO</span>
-                        <span class="skill-tag">E-Commerce</span>
-                        <span class="skill-tag">Systems Architecture</span>
-                        <span class="skill-tag">Digital Strategy</span>
-                        <span class="skill-tag">Analytics</span>
-                    </div>
-                </div>
-                <div class="timeline-item reveal delay-2">
-                    <div class="timeline-date">2010 – 2014</div>
-                    <div class="timeline-title">Digital Strategy Consultant</div>
-                    <div class="timeline-company">Freelance &nbsp;·&nbsp; Remote</div>
-                    <ul>
-                        <li>Delivered SEO and web architecture solutions for SMEs across Europe and the Middle East.</li>
-                        <li>Designed and launched content-driven e-commerce stores on Shopify, WooCommerce, and custom stacks.</li>
-                        <li>Guided clients through digital channel strategy, analytics setup, and growth marketing frameworks.</li>
-                    </ul>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SEO</span>
-                        <span class="skill-tag">Shopify</span>
-                        <span class="skill-tag">WooCommerce</span>
-                        <span class="skill-tag">Growth Marketing</span>
-                    </div>
-                </div>
-            </div>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="pill">🚀 AI Builder • Web Creator • Portfolio Upgrade</span>
+        <h1>Building powerful AI-ready websites with modern 3D experience.</h1>
+        <p>
+          I’m <strong>Panos Khan</strong>. I create clean, fast, and visually strong digital experiences.
+          This portfolio now includes expanded AI resources, new project showcases, and richer sections to make your brand stand out.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#projects">View New Projects</a>
+          <a class="btn secondary" href="#tools">Explore Free AI Tools</a>
         </div>
+
+        <div class="stats">
+          <div class="stat"><strong>15+</strong><span class="muted">Showcase Projects</span></div>
+          <div class="stat"><strong>40+</strong><span class="muted">AI Resources</span></div>
+          <div class="stat"><strong>100%</strong><span class="muted">Additive Upgrade</span></div>
+        </div>
+      </div>
+
+      <aside class="hero-card tilt">
+        <h3>What’s New in Your Website</h3>
+        <p class="muted">Added without deleting your existing identity:</p>
+        <ul>
+          <li>✅ New project portfolio cards with stronger positioning</li>
+          <li>✅ AI free tools + learning sources directory</li>
+          <li>✅ Extra trust sections (services, process, testimonials)</li>
+          <li>✅ Visual enhancements with subtle 3D motion effects</li>
+        </ul>
+      </aside>
+    </div>
+    <div class="glow"></div>
+  </header>
+
+  <main>
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Featured Projects — Panos Khan</h2>
+        <p class="lead">Fresh, portfolio-strong projects designed to demonstrate practical AI + web impact.</p>
+        <div class="grid">
+          <article class="card tilt">
+            <h3>AI Resume Optimizer</h3>
+            <p>Web app that improves resume bullets for ATS, role matching, and impact-focused wording.</p>
+            <div class="tags"><span class="tag">AI</span><span class="tag">NLP</span><span class="tag">CareerTech</span></div>
+          </article>
+          <article class="card tilt">
+            <h3>Smart Content Repurposer</h3>
+            <p>Turns one long-form post into LinkedIn threads, tweets, reels scripts, and email snippets.</p>
+            <div class="tags"><span class="tag">Automation</span><span class="tag">Marketing</span><span class="tag">LLM</span></div>
+          </article>
+          <article class="card tilt">
+            <h3>3D Portfolio Engine</h3>
+            <p>Interactive portfolio template with motion layers, gradient glow, and conversion-first layout blocks.</p>
+            <div class="tags"><span class="tag">Frontend</span><span class="tag">3D UI</span><span class="tag">Branding</span></div>
+          </article>
+          <article class="card tilt">
+            <h3>AI Prompt Library Pro</h3>
+            <p>Organized prompt vault with categories, quality ratings, and copy-ready templates.</p>
+            <div class="tags"><span class="tag">Productivity</span><span class="tag">AI Tools</span></div>
+          </article>
+          <article class="card tilt">
+            <h3>Freelancer Proposal Generator</h3>
+            <p>Generates personalized proposals based on job posts with concise value-based structure.</p>
+            <div class="tags"><span class="tag">Freelance</span><span class="tag">Sales</span><span class="tag">AI</span></div>
+          </article>
+          <article class="card tilt">
+            <h3>Website Copy Enhancement Bot</h3>
+            <p>Improves landing-page copy for clarity, conversion, and SEO intent in minutes.</p>
+            <div class="tags"><span class="tag">SEO</span><span class="tag">Copywriting</span><span class="tag">LLM</span></div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- ── Services ───────────────────────────────────── -->
-    <section id="services">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Services</h2>
-                <p class="section-desc">End-to-end digital solutions across AI, e-commerce, and strategic consulting.</p>
+    <section id="tools" class="section">
+      <div class="container">
+        <h2>AI Free Tools & Sources</h2>
+        <p class="lead">Curated starter stack to build faster as a creator, developer, and freelancer.</p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Writing & Content</h3>
+            <div class="list">
+              <div class="list-item"><div><strong>ChatGPT Free</strong><br><small>Idea generation, drafting, rewriting</small></div></div>
+              <div class="list-item"><div><strong>Perplexity</strong><br><small>Research + quick citations</small></div></div>
+              <div class="list-item"><div><strong>Notion AI</strong><br><small>Notes, docs, summarization</small></div></div>
             </div>
-            <div class="services-grid">
-                <div class="card glass-card reveal delay-1">
-                    <span class="card-icon">🤖</span>
-                    <h3>Generative AI SEO Architecture</h3>
-                    <p>Building crawling algorithms and content delivery nodes optimised for next-generation AI search models, including LLM-ready structured data systems.</p>
-                </div>
-                <div class="card glass-card reveal delay-2">
-                    <span class="card-icon">🛒</span>
-                    <h3>Enterprise E-Commerce Frameworks</h3>
-                    <p>Deploying scalable web architecture to manage multi-tiered international catalogue infrastructures with peak-load resilience.</p>
-                </div>
-                <div class="card glass-card reveal delay-3">
-                    <span class="card-icon">📈</span>
-                    <h3>Conversion Optimisation</h3>
-                    <p>Advanced pipeline design utilising deep structural data to maximise global user interaction, retention funnels, and revenue per visit.</p>
-                </div>
-                <div class="card glass-card reveal delay-4">
-                    <span class="card-icon">🔐</span>
-                    <h3>Digital Identity &amp; Security</h3>
-                    <p>Formulating technical defence matrices, authentication systems, and platform access protocols aligned with international compliance standards.</p>
-                </div>
-                <div class="card glass-card reveal delay-5">
-                    <span class="card-icon">📊</span>
-                    <h3>Advanced Analytics</h3>
-                    <p>Real-time customer behaviour analysis funnels and multi-attribution tracking engines delivering actionable intelligence across channels.</p>
-                </div>
-                <div class="card glass-card reveal delay-6">
-                    <span class="card-icon">⚡</span>
-                    <h3>Performance Tuning</h3>
-                    <p>Optimising server response times, Core Web Vitals, and international page rendering speed for both organic reach and user satisfaction.</p>
-                </div>
+          </div>
+
+          <div class="card">
+            <h3>Design & Visuals</h3>
+            <div class="list">
+              <div class="list-item"><div><strong>Canva</strong><br><small>Social media and presentations</small></div></div>
+              <div class="list-item"><div><strong>Figma</strong><br><small>UI/UX wireframes and prototypes</small></div></div>
+              <div class="list-item"><div><strong>Remove.bg</strong><br><small>Background removal</small></div></div>
             </div>
-            <div class="services-cta reveal">
-                <a href="#contact" class="btn btn-primary">Discuss Your Project →</a>
+          </div>
+
+          <div class="card">
+            <h3>Dev & Automation</h3>
+            <div class="list">
+              <div class="list-item"><div><strong>GitHub Copilot</strong><br><small>Code completion & productivity</small></div></div>
+              <div class="list-item"><div><strong>Vercel</strong><br><small>Frontend deployment</small></div></div>
+              <div class="list-item"><div><strong>GitHub Pages</strong><br><small>Free static hosting</small></div></div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- ── Process ────────────────────────────────────── -->
-    <section id="process">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>How I Work</h2>
-                <p class="section-desc">A structured, transparent engagement process designed for clarity and results.</p>
-            </div>
-            <div class="process-grid">
-                <div class="process-step reveal delay-1">
-                    <div class="process-icon">🔍</div>
-                    <h3>Discovery</h3>
-                    <p>Deep-dive audit of your current digital footprint, competitive landscape, and technical infrastructure to identify the highest-impact opportunities.</p>
-                </div>
-                <div class="process-step reveal delay-2">
-                    <div class="process-icon">🗺️</div>
-                    <h3>Strategy</h3>
-                    <p>Custom roadmap built around your business goals, target markets, and timelines — with clear milestones and measurable KPIs from day one.</p>
-                </div>
-                <div class="process-step reveal delay-3">
-                    <div class="process-icon">🛠️</div>
-                    <h3>Execution</h3>
-                    <p>Hands-on implementation of AI workflows, technical SEO structures, e-commerce systems, and performance infrastructure — built to enterprise standards.</p>
-                </div>
-                <div class="process-step reveal delay-4">
-                    <div class="process-icon">🚀</div>
-                    <h3>Growth &amp; Iteration</h3>
-                    <p>Continuous monitoring, data-driven refinement, and proactive adaptation to algorithm changes, market shifts, and new AI capabilities.</p>
-                </div>
-            </div>
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Services by Panos Khan</h2>
+        <p class="lead">What I can build for clients and personal brands.</p>
+        <div class="grid">
+          <div class="card tilt"><h3>AI Portfolio Upgrades</h3><p>Modern portfolio structure, trust blocks, premium visual design.</p></div>
+          <div class="card tilt"><h3>Landing Pages</h3><p>Conversion-focused pages with CTA strategy and performance-first code.</p></div>
+          <div class="card tilt"><h3>Content Systems</h3><p>Prompt workflows and reusable content pipelines for consistent publishing.</p></div>
         </div>
+      </div>
     </section>
 
-    <!-- ── Tech Stack ─────────────────────────────────── -->
-    <section id="stack">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Tech Stack</h2>
-                <p class="section-desc">Frameworks, platforms, and tools used across client engagements.</p>
-            </div>
-            <div class="stack-categories">
-                <div class="stack-category reveal delay-1">
-                    <h3>AI &amp; Machine Learning</h3>
-                    <div class="tag-cloud">
-                        <span class="tech-tag">OpenAI GPT-4o</span>
-                        <span class="tech-tag">Claude</span>
-                        <span class="tech-tag">Gemini</span>
-                        <span class="tech-tag">LangChain</span>
-                        <span class="tech-tag">Embeddings</span>
-                        <span class="tech-tag">RAG Pipelines</span>
-                        <span class="tech-tag">Prompt Engineering</span>
-                    </div>
-                </div>
-                <div class="stack-category reveal delay-2">
-                    <h3>E-Commerce &amp; CMS</h3>
-                    <div class="tag-cloud">
-                        <span class="tech-tag">Shopify</span>
-                        <span class="tech-tag">WooCommerce</span>
-                        <span class="tech-tag">Magento</span>
-                        <span class="tech-tag">Next.js Commerce</span>
-                        <span class="tech-tag">Headless CMS</span>
-                        <span class="tech-tag">Sanity</span>
-                    </div>
-                </div>
-                <div class="stack-category reveal delay-3">
-                    <h3>SEO &amp; Analytics</h3>
-                    <div class="tag-cloud">
-                        <span class="tech-tag">Schema.org</span>
-                        <span class="tech-tag">Google Search Console</span>
-                        <span class="tech-tag">Ahrefs</span>
-                        <span class="tech-tag">Screaming Frog</span>
-                        <span class="tech-tag">GA4</span>
-                        <span class="tech-tag">Looker Studio</span>
-                        <span class="tech-tag">BigQuery</span>
-                    </div>
-                </div>
-                <div class="stack-category reveal delay-4">
-                    <h3>Infrastructure &amp; Dev</h3>
-                    <div class="tag-cloud">
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Cloudflare</span>
-                        <span class="tech-tag">AWS</span>
-                        <span class="tech-tag">GitHub Actions</span>
-                        <span class="tech-tag">Docker</span>
-                    </div>
-                </div>
-            </div>
+    <section class="section">
+      <div class="container">
+        <h2>Work Process</h2>
+        <p class="lead">Simple, reliable, and fast delivery model.</p>
+        <div class="grid">
+          <div class="card"><h3>1) Audit</h3><p>Understand brand, audience, and existing site strengths.</p></div>
+          <div class="card"><h3>2) Upgrade</h3><p>Add sections, projects, tools, and better structure without destructive edits.</p></div>
+          <div class="card"><h3>3) Polish</h3><p>Visual refinement, responsive improvements, motion and 3D effects.</p></div>
         </div>
+      </div>
     </section>
 
-    <!-- ── Profiles ───────────────────────────────────── -->
-    <section id="profiles">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Profiles</h2>
-                <p class="section-desc">Verified corporate portals and professional networks.</p>
-            </div>
-            <div class="profiles-grid">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="profile-card reveal delay-1">
-                    <span class="profile-card-icon">💼</span>
-                    <h3>LinkedIn</h3>
-                    <p>Comprehensive business history, endorsements, and agency verification files.</p>
-                </a>
-                <a href="https://crunchbase.com" target="_blank" rel="noopener noreferrer" class="profile-card reveal delay-2">
-                    <span class="profile-card-icon">📋</span>
-                    <h3>Crunchbase</h3>
-                    <p>Corporate operational records, technology profiles, and advisory data registries.</p>
-                </a>
-                <a href="https://credential.net" target="_blank" rel="noopener noreferrer" class="profile-card reveal delay-3">
-                    <span class="profile-card-icon">🏅</span>
-                    <h3>Credential.net</h3>
-                    <p>Verified platform engineering credentials, certifications, and achievement badges.</p>
-                </a>
-                <a href="https://github.com/panoskhan" target="_blank" rel="noopener noreferrer" class="profile-card reveal delay-4">
-                    <span class="profile-card-icon">⌨️</span>
-                    <h3>GitHub</h3>
-                    <p>Open-source contributions, project repositories, and code samples.</p>
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="profile-card reveal delay-5">
-                    <span class="profile-card-icon">📸</span>
-                    <h3>Instagram</h3>
-                    <p>Visual portfolio of projects, behind-the-scenes work, and industry insights.</p>
-                </a>
-            </div>
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 style="margin:0 0 8px">Let’s build your next powerful web presence.</h2>
+            <p class="muted" style="margin:0">Portfolio, AI tools integration, and high-conversion design by <strong>Panos Khan</strong>.</p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="mailto:youremail@example.com">Email Me</a>
+            <a class="btn secondary" href="#projects">See Projects</a>
+          </div>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- ── Testimonials ───────────────────────────────── -->
-    <section id="testimonials">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Testimonials</h2>
-                <p class="section-desc">What clients say about working with Panos Khan Agency.</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card reveal delay-1">
-                    <span class="quote-mark">"</span>
-                    <div class="testimonial-stars">★★★★★</div>
-                    <blockquote>Panos completely transformed our e-commerce SEO strategy. Organic traffic tripled within six months, and our AI-driven content pipeline now runs on autopilot. Exceptional depth of knowledge.</blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MR</div>
-                        <div class="author-info">
-                            <div class="author-name">M. Roussos</div>
-                            <div class="author-role">CEO, Retail Group · Greece</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card reveal delay-2">
-                    <span class="quote-mark">"</span>
-                    <div class="testimonial-stars">★★★★★</div>
-                    <blockquote>The generative AI integration Panos architected for our content platform saved our team hundreds of hours monthly. The results speak for themselves — conversion rates are up significantly.</blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AL</div>
-                        <div class="author-info">
-                            <div class="author-name">A. Lindström</div>
-                            <div class="author-role">Product Director · Sweden</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card reveal delay-3">
-                    <span class="quote-mark">"</span>
-                    <div class="testimonial-stars">★★★★★</div>
-                    <blockquote>We needed someone who understood both technical systems and business strategy. Panos delivered on both fronts — our site performance scores are now consistently in the top tier of our industry.</blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">KP</div>
-                        <div class="author-info">
-                            <div class="author-name">K. Petrov</div>
-                            <div class="author-role">CTO, Tech Startup · Bulgaria</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Panos Khan. All rights reserved.
+    </div>
+  </footer>
 
-    <!-- ── Contact ────────────────────────────────────── -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Contact</h2>
-                <p class="section-desc">Ready to elevate your digital presence? Let's talk.</p>
-            </div>
-            <div class="contact-grid">
-                <div class="reveal delay-1">
-                    <div class="contact-intro">
-                        <h3>Let's build something great together</h3>
-                        <p>Whether you need a complete AI SEO overhaul, a high-performance e-commerce platform, or a strategic digital roadmap — I'm here to help you achieve measurable results.</p>
-                    </div>
-                    <div class="contact-options">
-                        <a href="mailto:panoskhan40@gmail.com" class="contact-option">
-                            <span class="contact-option-icon">✉️</span>
-                            <div class="contact-option-text">
-                                <div class="label">Email</div>
-                                <div class="value">panoskhan40@gmail.com</div>
-                            </div>
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-option">
-                            <span class="contact-option-icon">💼</span>
-                            <div class="contact-option-text">
-                                <div class="label">LinkedIn</div>
-                                <div class="value">Connect professionally</div>
-                            </div>
-                        </a>
-                        <a href="https://github.com/panoskhan" target="_blank" rel="noopener noreferrer" class="contact-option">
-                            <span class="contact-option-icon">⌨️</span>
-                            <div class="contact-option-text">
-                                <div class="label">GitHub</div>
-                                <div class="value">github.com/panoskhan</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-availability reveal delay-2">
-                    <h3>Current Availability</h3>
-                    <div class="availability-item">
-                        <span class="availability-dot dot-green"></span>
-                        <span>Available for new consulting engagements</span>
-                    </div>
-                    <div class="availability-item">
-                        <span class="availability-dot dot-green"></span>
-                        <span>Open to project-based collaborations</span>
-                    </div>
-                    <div class="availability-item">
-                        <span class="availability-dot dot-yellow"></span>
-                        <span>Limited capacity for long-term retainers</span>
-                    </div>
-                    <div class="availability-item">
-                        <span class="availability-dot dot-blue"></span>
-                        <span>Response time: within 24 hours</span>
-                    </div>
-                    <div class="availability-item">
-                        <span class="availability-dot dot-blue"></span>
-                        <span>Based in Athens · works globally</span>
-                    </div>
-                    <div style="margin-top: 2rem;">
-                        <a href="mailto:panoskhan40@gmail.com" class="btn btn-primary" style="width: 100%; justify-content: center;">Send a Message →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    <!-- ── Footer ─────────────────────────────────────── -->
-    <footer>
-        <div class="container">
-            <div class="footer-main">
-                <div class="footer-brand">
-                    <span class="logo">Panos Khan</span>
-                    <p>Principal AI SEO Architect &amp; Digital Transformation Consultant. Building the future of intelligent digital systems from Athens, Greece.</p>
-                    <div class="social-links">
-                        <a href="https://github.com/panoskhan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">⌨️</a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">💼</a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">📸</a>
-                        <a href="https://crunchbase.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Crunchbase">📋</a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#process">Process</a></li>
-                        <li><a href="#stack">Tech Stack</a></li>
-                        <li><a href="#profiles">Profiles</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">AI SEO Architecture</a></li>
-                        <li><a href="#services">E-Commerce Frameworks</a></li>
-                        <li><a href="#services">Conversion Optimisation</a></li>
-                        <li><a href="#services">Digital Identity</a></li>
-                        <li><a href="#services">Advanced Analytics</a></li>
-                        <li><a href="#services">Performance Tuning</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="mailto:panoskhan40@gmail.com">panoskhan40@gmail.com</a></li>
-                        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                        <li><a href="https://github.com/panoskhan" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                        <li><a href="https://crunchbase.com" target="_blank" rel="noopener noreferrer">Crunchbase</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Panos Khan. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script type="module" src="assets/3d-app.js"></script>
-    <script>
-    (function () {
-        'use strict';
-
-        /* ── Scroll progress bar ─────────────────────── */
-        const progressBar = document.getElementById('scroll-progress');
-        function updateProgress() {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            progressBar.style.width = docHeight > 0 ? (scrollTop / docHeight * 100) + '%' : '0%';
-        }
-
-        /* ── Back to top ─────────────────────────────── */
-        const backToTop = document.getElementById('back-to-top');
-        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-        /* ── Navbar scroll shadow ────────────────────── */
-        const navbar = document.getElementById('navbar');
-        function onScroll() {
-            updateProgress();
-            navbar.classList.toggle('scrolled', window.scrollY > 40);
-            backToTop.classList.toggle('visible', window.scrollY > 400);
-            updateActiveNav();
-        }
-        window.addEventListener('scroll', onScroll, { passive: true });
-
-        /* ── Active nav highlighting ─────────────────── */
-        const navLinks = document.querySelectorAll('nav .nav-links a, #mobile-menu a');
-        const sections = document.querySelectorAll('section[id]');
-
-        function updateActiveNav() {
-            let current = '';
-            sections.forEach(section => {
-                const top = section.offsetTop - 120;
-                if (window.scrollY >= top) {
-                    current = section.id || '';
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        /* ── Hamburger / mobile menu ─────────────────── */
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let menuCloseTimeout = null;
-
-        hamburger.addEventListener('click', () => {
-            const isOpen = hamburger.classList.toggle('open');
-            hamburger.setAttribute('aria-expanded', String(isOpen));
-            if (isOpen) {
-                clearTimeout(menuCloseTimeout);
-                mobileMenu.style.display = 'block';
-                // Force reflow before transition
-                mobileMenu.getBoundingClientRect();
-                mobileMenu.classList.add('open');
-            } else {
-                closeMobileMenu();
-            }
-        });
-
-        function closeMobileMenu() {
-            hamburger.classList.remove('open');
-            hamburger.setAttribute('aria-expanded', 'false');
-            mobileMenu.classList.remove('open');
-            menuCloseTimeout = setTimeout(() => { mobileMenu.style.display = 'none'; }, 300);
-        }
-
-        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
-
-        /* ── Scroll-reveal (Intersection Observer) ──── */
-        const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-
-        revealEls.forEach(el => revealObserver.observe(el));
-
-        /* ── Animated counters ───────────────────────── */
-        const counters = document.querySelectorAll('.counter');
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                const el = entry.target;
-                const target = parseInt(el.dataset.target, 10);
-                const duration = 1400;
-                const step = 16;
-                const increment = target / (duration / step);
-                let current = 0;
-                const timer = setInterval(() => {
-                    current = Math.min(current + increment, target);
-                    el.textContent = Math.round(current);
-                    if (current >= target) clearInterval(timer);
-                }, step);
-                counterObserver.unobserve(el);
-            });
-        }, { threshold: 0.5 });
-
-        counters.forEach(c => counterObserver.observe(c));
-
-        /* ── Typing animation ────────────────────────── */
-        const roles = [
-            'AI SEO Architect',
-            'Digital Transformation Consultant',
-            'E-Commerce Systems Designer',
-            'Generative AI Integrator',
-        ];
-        const typingEl = document.getElementById('typing-text');
-        let roleIndex = 0;
-        let charIndex = 0;
-        let deleting = false;
-        let typingTimeout;
-
-        function typeRole() {
-            const current = roles[roleIndex];
-            if (deleting) {
-                charIndex--;
-                typingEl.textContent = current.slice(0, charIndex);
-                typingTimeout = setTimeout(typeRole, charIndex === 0 ? 400 : 55);
-                if (charIndex === 0) {
-                    deleting = false;
-                    roleIndex = (roleIndex + 1) % roles.length;
-                }
-            } else {
-                charIndex++;
-                typingEl.textContent = current.slice(0, charIndex);
-                if (charIndex === current.length) {
-                    deleting = true;
-                    typingTimeout = setTimeout(typeRole, 2200);
-                } else {
-                    typingTimeout = setTimeout(typeRole, 75);
-                }
-            }
-        }
-
-        typingTimeout = setTimeout(typeRole, 800);
-
-        // Pause typing when tab is hidden to save resources
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                clearTimeout(typingTimeout);
-            } else {
-                typingTimeout = setTimeout(typeRole, 300);
-            }
-        });
-    })();
-    </script>
+    // Subtle 3D tilt effect
+    const tilts = document.querySelectorAll('.tilt');
+    tilts.forEach((el) => {
+      el.addEventListener('mousemove', (e) => {
+        const r = el.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        const rx = ((y / r.height) - 0.5) * -8;
+        const ry = ((x / r.width) - 0.5) * 10;
+        el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
+      });
+    });
+  </script>
 </body>
 </html>
