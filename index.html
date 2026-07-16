@@ -1,53 +1,356 @@
-<section id="tools" class="section">
-  <div class="container">
-    <h2>AI Free Tools & Sources</h2>
-    <p class="lead">Curated starter stack to build faster as a creator, developer, and freelancer.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panos Khan | AI Portfolio</title>
+  <meta name="description" content="Panos Khan portfolio - AI projects, tools, and modern web experiences." />
+  <style>
+    :root{
+      --bg:#050913;
+      --bg2:#0b1326;
+      --card:#0f1a35cc;
+      --card2:#132449cc;
+      --text:#eaf1ff;
+      --muted:#a7b8df;
+      --brand:#5eead4;
+      --brand2:#7c3aed;
+      --accent:#22d3ee;
+      --line:#263f72;
+      --glow:#4f46e588;
+      --shadow:0 18px 50px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1180px;
+    }
 
-    <div class="grid">
-      <div class="card">
-        <h3>Writing & Content</h3>
-        <div class="list">
-          <div class="list-item">
-            <div><strong><a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">ChatGPT Free</a></strong><br><small>Idea generation, drafting, rewriting</small></div>
-          </div>
-          <div class="list-item">
-            <div><strong><a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Perplexity</a></strong><br><small>Research + quick citations</small></div>
-          </div>
-          <div class="list-item">
-            <div><strong><a href="https://www.notion.so/product/ai" target="_blank" rel="noopener noreferrer">Notion AI</a></strong><br><small>Notes, docs, summarization</small></div>
-          </div>
-        </div>
-      </div>
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;color:var(--text);
+      font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 700px at 10% -20%, #1b3170 0%, transparent 60%),
+        radial-gradient(900px 500px at 100% 0%, #391574 0%, transparent 60%),
+        linear-gradient(160deg,var(--bg),var(--bg2));
+      scroll-behavior:smooth;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:auto;padding:0 20px}
+    .muted{color:var(--muted)}
+    .section{padding:78px 0}
+    .section h2{font-size:clamp(1.5rem,2.6vw,2.4rem);margin:0 0 10px}
+    .section .lead{margin:0 0 26px;color:var(--muted)}
+    .pill{
+      display:inline-flex;align-items:center;gap:.45rem;
+      border:1px solid #2b4786;background:#0b1736b0;color:#c8d8ff;
+      padding:.45rem .8rem;border-radius:999px;font-size:.83rem
+    }
 
-      <div class="card">
-        <h3>Design & Visuals</h3>
-        <div class="list">
-          <div class="list-item">
-            <div><strong><a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Canva</a></strong><br><small>Social media and presentations</small></div>
-          </div>
-          <div class="list-item">
-            <div><strong><a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">Figma</a></strong><br><small>UI/UX wireframes and prototypes</small></div>
-          </div>
-          <div class="list-item">
-            <div><strong><a href="https://www.remove.bg/" target="_blank" rel="noopener noreferrer">Remove.bg</a></strong><br><small>Background removal</small></div>
-          </div>
-        </div>
-      </div>
+    /* animated 3D background */
+    .bg-wrap{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+    .blob{
+      position:absolute;border-radius:50%;filter:blur(36px);opacity:.35;mix-blend-mode:screen;
+      animation:float 14s ease-in-out infinite;
+    }
+    .b1{width:420px;height:420px;left:-120px;top:8%;background:#3b82f6}
+    .b2{width:360px;height:360px;right:-100px;top:20%;background:#7c3aed;animation-delay:1.6s}
+    .b3{width:320px;height:320px;left:30%;bottom:-120px;background:#06b6d4;animation-delay:3s}
+    @keyframes float{
+      0%,100%{transform:translateY(0) translateX(0) scale(1)}
+      50%{transform:translateY(-22px) translateX(18px) scale(1.06)}
+    }
 
-      <div class="card">
-        <h3>Dev & Automation</h3>
-        <div class="list">
-          <div class="list-item">
-            <div><strong><a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot</a></strong><br><small>Code completion & productivity</small></div>
-          </div>
-          <div class="list-item">
-            <div><strong><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a></strong><br><small>Frontend deployment</small></div>
-          </div>
-          <div class="list-item">
-            <div><strong><a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></strong><br><small>Free static hosting</small></div>
-          </div>
+    /* NAV */
+    .nav-wrap{
+      position:sticky;top:0;z-index:50;
+      background:rgba(6,10,20,.58);backdrop-filter:blur(10px);
+      border-bottom:1px solid #1e2f5a;
+    }
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:800;letter-spacing:.4px}
+    .logo span{
+      background:linear-gradient(90deg,var(--brand),#93c5fd,var(--brand2));
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .nav-links{display:flex;gap:16px;align-items:center}
+    .nav-links a{color:#cad8fb;font-size:.95rem}
+    .btn{
+      display:inline-block;padding:.72rem 1rem;border-radius:12px;
+      border:1px solid #3f5ea8;
+      background:linear-gradient(90deg,#0ea5e9,#6366f1);
+      color:#fff;font-weight:700;box-shadow:var(--shadow);
+      transform:translateZ(0);transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px) scale(1.01)}
+    .btn.secondary{background:transparent;color:#dce7ff;box-shadow:none}
+
+    /* HERO */
+    .hero{padding:92px 0 72px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    h1{
+      font-size:clamp(2rem,4.4vw,4.1rem);line-height:1.08;margin:.5rem 0 1rem;
+      text-wrap:balance;
+    }
+    .hero p{color:var(--muted);max-width:62ch}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+    .stat{
+      background:var(--card);border:1px solid var(--line);border-radius:13px;padding:13px;text-align:center
+    }
+    .stat strong{display:block;font-size:1.2rem}
+
+    .hero-card{
+      background:linear-gradient(155deg,#142750d1,#101c38d1);
+      border:1px solid #355392;
+      border-radius:22px;padding:22px;box-shadow:var(--shadow);
+      transform-style:preserve-3d;transition:transform .2s ease;
+    }
+    .hero-card h3{margin:0 0 .6rem}
+    .hero-card ul{margin:.3rem 0 0 1.1rem;padding:0}
+    .hero-card li{margin:.5rem 0;color:#c9d8fb}
+    .beam{
+      position:absolute;right:-140px;bottom:-180px;width:420px;height:420px;
+      background:radial-gradient(circle,var(--glow),transparent 65%);
+      filter:blur(8px);pointer-events:none
+    }
+
+    /* cards */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{
+      background:var(--card);border:1px solid var(--line);
+      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
+      transform-style:preserve-3d;
+      transition:transform .2s ease,border-color .2s ease,background .2s ease;
+      will-change:transform;
+    }
+    .card:hover{border-color:#4e71ba;background:var(--card2)}
+    .card h3{margin:.2rem 0 .6rem;font-size:1.08rem}
+    .card p{margin:0;color:var(--muted);font-size:.95rem}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .tag{
+      font-size:.74rem;padding:.3rem .58rem;border-radius:999px;
+      border:1px solid #31528f;background:#0b1837;color:#caddff
+    }
+
+    /* tools list */
+    .list{display:grid;gap:10px}
+    .list-item{
+      border:1px solid var(--line);
+      border-radius:13px;padding:13px;background:#0e1a38c4
+    }
+    .list-item small{color:#9eb2df}
+    .list-item a{color:#cfe3ff;text-decoration:underline}
+    .list-item a:hover{color:#5eead4}
+
+    /* about timeline */
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+    .timeline{display:grid;gap:10px}
+    .t-item{
+      border:1px solid var(--line);border-radius:14px;padding:14px;background:#0f1a36c8
+    }
+
+    .cta{
+      border:1px solid #35599e;border-radius:22px;padding:28px;
+      background:linear-gradient(120deg,#10224c,#153368);box-shadow:var(--shadow);
+      display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap
+    }
+
+    footer{padding:40px 0 60px;color:#9fb1da}
+    .reveal{opacity:0;transform:translateY(16px);transition:.55s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    @media (max-width:980px){
+      .hero-grid,.about-grid{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:680px){
+      .nav-links a:not(.btn){display:none}
+      .grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .hero{padding-top:78px}
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-wrap" aria-hidden="true">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  </div>
+
+  <div class="nav-wrap">
+    <div class="container">
+      <nav>
+        <div class="logo">Panos <span>Khan</span></div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#tools">AI Tools</a>
+          <a href="#services">Services</a>
+          <a href="#contact" class="btn">Hire / Contact</a>
         </div>
-      </div>
+      </nav>
     </div>
   </div>
-</section>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <span class="pill">🚀 AI Builder • Web Creator • Portfolio Upgrade</span>
+        <h1>Building powerful AI-ready websites with deeper 3D interaction.</h1>
+        <p>
+          I’m <strong>Panos Khan</strong> — focused on modern web experiences, AI-enhanced workflows,
+          and portfolio systems that look premium and convert better.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn secondary" href="#tools">Explore AI Tools</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>15+</strong><span class="muted">Projects</span></div>
+          <div class="stat"><strong>40+</strong><span class="muted">AI Resources</span></div>
+          <div class="stat"><strong>100%</strong><span class="muted">Responsive UI</span></div>
+        </div>
+      </div>
+      <aside class="hero-card tilt reveal">
+        <h3>What’s improved in V2</h3>
+        <ul>
+          <li>✅ Stronger 3D UI animations (tilt + floating blobs + reveal)</li>
+          <li>✅ Fixed AI tools with real clickable links</li>
+          <li>✅ Expanded About section and personal positioning</li>
+          <li>✅ Better visual depth and premium styling</li>
+        </ul>
+      </aside>
+    </div>
+    <div class="beam"></div>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Panos Khan</h2>
+        <p class="lead">Creator-focused web developer blending design, AI, and practical execution.</p>
+        <div class="about-grid">
+          <article class="card reveal">
+            <h3>Professional Summary</h3>
+            <p>
+              I build modern, high-impact websites with a focus on speed, visual quality, and clear messaging.
+              My work combines front-end craftsmanship, AI tooling, and conversion-first structure so portfolios and business pages feel alive — not generic.
+            </p>
+            <p style="margin-top:12px">
+              I work on real outcomes: cleaner user journeys, stronger branding, and deploy-ready builds that are easy to maintain.
+            </p>
+          </article>
+          <div class="timeline">
+            <div class="t-item reveal"><strong>Core Skills:</strong><br><span class="muted">HTML, CSS, JavaScript, GitHub Pages, UI systems, prompt workflows</span></div>
+            <div class="t-item reveal"><strong>Focus Areas:</strong><br><span class="muted">Portfolio sites, AI tools integration, landing pages, visual polish</span></div>
+            <div class="t-item reveal"><strong>Work Style:</strong><br><span class="muted">Fast iteration, clean structure, practical delivery, quality-first mindset</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Featured Projects — Panos Khan</h2>
+        <p class="lead">Portfolio-strength concepts showing practical AI + web impact.</p>
+        <div class="grid">
+          <article class="card tilt reveal"><h3>AI Resume Optimizer</h3><p>Improves resume bullets for ATS matching and measurable impact.</p><div class="tags"><span class="tag">AI</span><span class="tag">NLP</span><span class="tag">CareerTech</span></div></article>
+          <article class="card tilt reveal"><h3>Smart Content Repurposer</h3><p>Converts one post into threads, reels scripts, and email snippets.</p><div class="tags"><span class="tag">Automation</span><span class="tag">Marketing</span><span class="tag">LLM</span></div></article>
+          <article class="card tilt reveal"><h3>3D Portfolio Engine</h3><p>Interactive personal brand template with depth effects and glow UI.</p><div class="tags"><span class="tag">Frontend</span><span class="tag">3D UI</span><span class="tag">Branding</span></div></article>
+          <article class="card tilt reveal"><h3>Prompt Library Pro</h3><p>Categorized prompt vault for creators and freelancers.</p><div class="tags"><span class="tag">Productivity</span><span class="tag">AI</span></div></article>
+          <article class="card tilt reveal"><h3>Proposal Generator</h3><p>Builds personalized freelance proposals from job descriptions.</p><div class="tags"><span class="tag">Freelance</span><span class="tag">Sales</span><span class="tag">AI</span></div></article>
+          <article class="card tilt reveal"><h3>Copy Enhancement Bot</h3><p>Improves landing-page copy for clarity, SEO, and conversion.</p><div class="tags"><span class="tag">SEO</span><span class="tag">Copywriting</span><span class="tag">LLM</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="section">
+      <div class="container">
+        <h2>AI Free Tools & Sources</h2>
+        <p class="lead">Now fully clickable — opens in new tab.</p>
+        <div class="grid">
+          <div class="card reveal">
+            <h3>Writing & Content</h3>
+            <div class="list">
+              <div class="list-item"><div><strong><a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">ChatGPT Free</a></strong><br><small>Idea generation, drafting, rewriting</small></div></div>
+              <div class="list-item"><div><strong><a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Perplexity</a></strong><br><small>Research + quick citations</small></div></div>
+              <div class="list-item"><div><strong><a href="https://www.notion.so/product/ai" target="_blank" rel="noopener noreferrer">Notion AI</a></strong><br><small>Notes, docs, summarization</small></div></div>
+            </div>
+          </div>
+          <div class="card reveal">
+            <h3>Design & Visuals</h3>
+            <div class="list">
+              <div class="list-item"><div><strong><a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Canva</a></strong><br><small>Social media and presentations</small></div></div>
+              <div class="list-item"><div><strong><a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">Figma</a></strong><br><small>UI/UX wireframes and prototypes</small></div></div>
+              <div class="list-item"><div><strong><a href="https://www.remove.bg/" target="_blank" rel="noopener noreferrer">Remove.bg</a></strong><br><small>Background removal</small></div></div>
+            </div>
+          </div>
+          <div class="card reveal">
+            <h3>Dev & Automation</h3>
+            <div class="list">
+              <div class="list-item"><div><strong><a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot</a></strong><br><small>Code completion & productivity</small></div></div>
+              <div class="list-item"><div><strong><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a></strong><br><small>Frontend deployment</small></div></div>
+              <div class="list-item"><div><strong><a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></strong><br><small>Free static hosting</small></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Services</h2>
+        <p class="lead">What I can build for creators, freelancers, and startups.</p>
+        <div class="grid">
+          <div class="card tilt reveal"><h3>AI Portfolio Upgrades</h3><p>Premium structure, trust sections, stronger visual identity.</p></div>
+          <div class="card tilt reveal"><h3>Landing Pages</h3><p>Conversion-focused pages with clean UI and clear CTA paths.</p></div>
+          <div class="card tilt reveal"><h3>Content Systems</h3><p>Prompt workflows and reusable publishing pipelines.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <h2 style="margin:0 0 8px">Let’s build your next high-impact website.</h2>
+            <p class="muted" style="margin:0">Need this personalized? Send your real bio and links — I’ll tailor it fully.</p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="mailto:youremail@example.com">Email Me</a>
+            <a class="btn secondary" href="#about">Read About Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Panos Khan. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 3D tilt
+    const tilts = document.querySelectorAll('.tilt');
+    tilts.forEach((el) => {
+      el.addEventListener('mousemove', (e) => {
+        const r = el.getBoundingClientRect();
+        const x = e.clientX - r.left, y = e.clientY - r.top;
+        const rx = ((y / r.height) - 0.5) * -9;
+        const ry = ((x / r.width) - 0.5) * 11;
+        el.style.transform = `perspective(950px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = 'perspective(950px) rotateX(0) rotateY(0)';
+      });
+    });
+
+    // scroll reveal
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    },{threshold:.14});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
