@@ -9,13 +9,19 @@
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow" />
   <meta name="description" content="Panos Khan - International Web Developer, Systems Architect, and E-Commerce Solutions Architect specializing in cross-border deployments between Greece and Geneva, Switzerland." />
-  <link rel="canonical" href="https://panoskhan.github.io" />
+  <link rel="canonical" href="https://panoskhan.github.io/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Panos Khan | Professional Portfolio Record" />
   <meta property="og:description" content="Professional portfolio and verification record of Panos Khan across Greece and Geneva, Switzerland." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://panoskhan.github.io" />
+  <meta property="og:url" content="https://panoskhan.github.io/" />
+  <meta property="og:site_name" content="Panos Khan" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Panos Khan | Professional Portfolio Record" />
+  <meta name="twitter:description" content="Professional portfolio and verification record of Panos Khan across Greece and Geneva, Switzerland." />
 
   <!-- JSON-LD Person Schema -->
   <script type="application/ld+json">
@@ -64,7 +70,7 @@
       "https://facebook.com",
       "https://sindho.gr"
     ],
-    "url":"https://panoskhan.github.io"
+    "url":"https://panoskhan.github.io/"
   }
   </script>
 
@@ -261,7 +267,7 @@
         <span class="lang-gr">Γλώσσα:</span>
         <strong id="lang-state">English</strong>
       </div>
-      <button id="lang-toggle" class="toggle-btn" type="button">Ελληνικά / English</button>
+      <button id="lang-toggle" class="toggle-btn" type="button" aria-label="Switch language between English and Greek">Ελληνικά / English</button>
     </div>
   </div>
 
@@ -403,7 +409,8 @@
         <p class="lang-en">This form is configured for secure zero-code processing via Formspree and can be connected to the final account endpoint.</p>
         <p class="lang-gr">Αυτή η φόρμα έχει ρυθμιστεί για ασφαλή zero-code επεξεργασία μέσω Formspree και μπορεί να συνδεθεί με το τελικό account endpoint.</p>
 
-        <form method="POST" action="https://formspree.io">
+        <!-- TODO: replace YOUR_FORM_ID with your Formspree form ID from https://formspree.io/forms -->
+        <form method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
           <input type="text" name="_gotcha" style="display:none">
 
           <div class="grid">
@@ -412,29 +419,39 @@
                 <span class="lang-en">Full Name</span>
                 <span class="lang-gr">Ονοματεπώνυμο</span>
               </label>
-              <input id="fullname" name="fullname" type="text" required>
+              <input id="fullname" name="fullname" type="text" autocomplete="name" required>
             </div>
 
+            <div class="field">
+              <label for="email">
+                <span class="lang-en">Email Address</span>
+                <span class="lang-gr">Διεύθυνση Email</span>
+              </label>
+              <input id="email" name="_replyto" type="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="grid">
             <div class="field">
               <label for="company">
                 <span class="lang-en">Company Name</span>
                 <span class="lang-gr">Επωνυμία Εταιρείας</span>
               </label>
-              <input id="company" name="company" type="text">
+              <input id="company" name="company" type="text" autocomplete="organization">
             </div>
-          </div>
 
-          <div class="field">
-            <label for="jurisdiction">
-              <span class="lang-en">Region Selection</span>
-              <span class="lang-gr">Επιλογή Περιοχής</span>
-            </label>
-            <select id="jurisdiction" name="jurisdiction" required>
-              <option value="">-- Select --</option>
-              <option value="Greece">Greece</option>
-              <option value="Switzerland">Switzerland</option>
-              <option value="International">International</option>
-            </select>
+            <div class="field">
+              <label for="jurisdiction">
+                <span class="lang-en">Region Selection</span>
+                <span class="lang-gr">Επιλογή Περιοχής</span>
+              </label>
+              <select id="jurisdiction" name="jurisdiction" required>
+                <option value="">-- Select --</option>
+                <option value="Greece">Greece</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="International">International</option>
+              </select>
+            </div>
           </div>
 
           <div class="field">
