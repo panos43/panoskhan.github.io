@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Khan AI Website Audit Assistant | Panos Khan</title>
+  <meta name="description" content="Khan AI Website Audit Assistant demo for consultant-style website reviews across messaging, SEO, UX trust, and conversions." />
+  <style>
+    :root{--bg:#070b14;--surface:#0f172a;--surface-2:#111c33;--text:#e6edf7;--muted:#9aa9c4;--line:#24324d;--neon:#00e5ff;--neon2:#7c3aed;--max:1080px;--radius:16px;}
+    *{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:var(--neon);text-decoration:none}a:hover{text-decoration:underline}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .section{padding:34px 0}
+    .card{background:linear-gradient(180deg,var(--surface),var(--surface-2));border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:0 12px 34px rgba(0,0,0,.28)}
+    .topbar{position:sticky;top:0;background:rgba(10,16,31,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(8px);z-index:10}
+    .topbar-inner{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+    .brand{font-weight:900}.brand span{color:var(--neon)}
+    .nav{display:flex;gap:8px;flex-wrap:wrap}
+    .nav a,.btn{display:inline-block;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:#0d172c;color:#dff6ff;font-weight:700}
+    .btn-primary{border-color:var(--neon);background:linear-gradient(90deg,#083642,#212c4e);box-shadow:0 0 18px rgba(0,229,255,.18)}
+    .grid{display:grid;gap:14px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}@media (max-width:760px){.grid-2{grid-template-columns:1fr}}
+    h1{font-size:clamp(1.6rem,3.2vw,2.4rem);margin:.2rem 0 .6rem}h2{margin:0 0 10px}h3{margin:0 0 8px}
+    .muted{color:var(--muted)}
+    label{display:block;margin-bottom:6px;font-weight:600}
+    input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #2a3b5d;background:#0b1428;color:#e8f0ff;outline:none}
+    input:focus,textarea:focus{border-color:var(--neon);box-shadow:0 0 0 3px rgba(0,229,255,.15)}
+    textarea{min-height:120px;resize:vertical}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .report{display:none}
+    .report.visible{display:block}
+    .report section{border:1px solid var(--line);background:#0b1428;border-radius:12px;padding:14px;margin-bottom:12px}
+    .report ul{margin:0;padding-left:18px}
+    .result-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:.92rem;color:#cde6ff}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Panos <span>Khan</span> · AI Tool Demo</div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/#tools">AI Tools</a>
+        <a href="/tools/seo-brief.html">SEO Brief</a>
+        <a href="/tools/ad-copy-studio.html">Ad Copy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h1>Khan AI Website Audit Assistant</h1>
+      <p class="muted">Static demo for portfolio use. It builds a structured consultant-style audit report using deterministic rules from your inputs.</p>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Business Inputs</h2>
+        <form id="auditForm">
+          <div class="grid grid-2">
+            <div>
+              <label for="businessName">Business name</label>
+              <input id="businessName" name="businessName" type="text" required />
+            </div>
+            <div>
+              <label for="websiteUrl">Website URL</label>
+              <input id="websiteUrl" name="websiteUrl" type="url" placeholder="https://example.com" required />
+            </div>
+            <div>
+              <label for="industry">Industry</label>
+              <input id="industry" name="industry" type="text" required />
+            </div>
+            <div>
+              <label for="audience">Target audience</label>
+              <input id="audience" name="audience" type="text" required />
+            </div>
+          </div>
+          <div style="margin-top:12px">
+            <label for="goals">Goals</label>
+            <textarea id="goals" name="goals" placeholder="Example: increase qualified leads, improve conversion rate, rank for service keywords" required></textarea>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Generate Audit Report</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="report" class="section report">
+      <div class="card">
+        <div class="result-head">
+          <h2 style="margin:0">Audit Report</h2>
+          <button id="copyBtn" class="btn" type="button">Copy Report</button>
+        </div>
+        <p class="mono" id="reportMeta"></p>
+        <div id="reportBody"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function escapeHtml(text){
+      return String(text).replace(/[&<>"']/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[ch]));
+    }
+
+    function safeText(text){
+      return escapeHtml(String(text || '').trim().replace(/\s+/g, ' '));
+    }
+
+    function normalizeDomain(url){
+      try{
+        const parsed = new URL(url);
+        return parsed.hostname.replace(/^www\./, '');
+      } catch {
+        return url.replace(/^https?:\/\//, '').replace(/\/.*/, '');
+      }
+    }
+
+    function buildAudit(data){
+      const goalText = data.goals.toLowerCase();
+      const primaryGoal = goalText.includes('lead') ? 'lead generation' : goalText.includes('sale') ? 'sales conversion' : goalText.includes('rank') ? 'organic visibility' : 'website performance';
+      const domain = normalizeDomain(data.websiteUrl);
+
+      const positioning = [
+        `Clarify the first-screen message so ${data.audience} immediately understands why ${data.businessName} is the right ${data.industry} partner.`,
+        `Use one core value proposition tied to your main goal (${primaryGoal}) and support it with a measurable proof point.`,
+        `Align headlines, service labels, and CTA wording so the same promise is repeated consistently across homepage and key service pages.`
+      ];
+
+      const seo = [
+        `Build one optimized page per high-intent service topic in the ${data.industry} space, with internal links from the homepage.`,
+        `Strengthen on-page relevance for ${domain} by matching title tags, H1s, and intro copy to commercial-intent phrases your audience actually searches.`,
+        `Add structured data (Organization, Service, FAQ) to improve rich-result visibility and trust in search snippets.`
+      ];
+
+      const uxTrust = [
+        `Move trust assets (testimonials, credentials, case outcomes) above the fold to reduce early drop-off for new visitors.`,
+        `Simplify navigation labels and keep the top menu focused on core paths: Services, Proof, Contact/Book.`,
+        `Audit mobile readability: font scale, spacing, and button contrast should support fast scanning and confidence.`
+      ];
+
+      const conversion = [
+        `Use one primary CTA per page (for example: "Book a Consultation") and one secondary CTA for lower-intent users.`,
+        `Reduce form friction by limiting required fields and adding a response-time expectation near the submit button.`,
+        `Create page-specific CTAs tied to user intent (audit, quote, strategy call) to improve lead qualification.`
+      ];
+
+      const priorities = [
+        `Priority 1 (Week 1): Rewrite hero message + CTA around ${primaryGoal} for ${data.audience}.`,
+        `Priority 2 (Week 1-2): Add/refresh trust evidence block with concrete outcomes and client-context examples.`,
+        `Priority 3 (Week 2): Publish one SEO-focused service page with schema and internal linking.`,
+        `Priority 4 (Week 3): Optimize lead form and add conversion tracking for core CTA clicks/submissions.`,
+        `Priority 5 (Week 4): Review analytics and refine messaging based on top landing pages and user behavior.`
+      ];
+
+      return { positioning, seo, uxTrust, conversion, priorities };
+    }
+
+    function sectionHtml(title, items){
+      return `<section><h3>${title}</h3><ul>${items.map(item => `<li>${item}</li>`).join('')}</ul></section>`;
+    }
+
+    document.getElementById('auditForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const form = e.currentTarget;
+      const data = {
+        businessName: safeText(form.businessName.value),
+        websiteUrl: safeText(form.websiteUrl.value),
+        industry: safeText(form.industry.value),
+        audience: safeText(form.audience.value),
+        goals: safeText(form.goals.value)
+      };
+
+      const report = buildAudit(data);
+      const meta = `${data.businessName} · ${normalizeDomain(data.websiteUrl)} · ${data.industry}`;
+      document.getElementById('reportMeta').textContent = meta;
+
+      const body = [
+        sectionHtml('Positioning & Messaging', report.positioning),
+        sectionHtml('SEO Opportunities', report.seo),
+        sectionHtml('UX / Trust Suggestions', report.uxTrust),
+        sectionHtml('Conversion Improvements', report.conversion),
+        sectionHtml('Priority Actions', report.priorities)
+      ].join('');
+
+      document.getElementById('reportBody').innerHTML = body;
+      document.getElementById('report').classList.add('visible');
+      document.getElementById('report').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    document.getElementById('copyBtn').addEventListener('click', async function(){
+      const text = document.getElementById('report').innerText.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+        this.textContent = 'Copied';
+      } catch {
+        this.textContent = 'Copy failed';
+      }
+      setTimeout(() => { this.textContent = 'Copy Report'; }, 1500);
+    });
+  </script>
+</body>
+</html>

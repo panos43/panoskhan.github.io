@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Khan AI Ad Copy Studio | Panos Khan</title>
+  <meta name="description" content="Khan AI Ad Copy Studio demo for generating deterministic ad headlines, descriptions, CTA ideas, and test angles." />
+  <style>
+    :root{--bg:#070b14;--surface:#0f172a;--surface-2:#111c33;--text:#e6edf7;--muted:#9aa9c4;--line:#24324d;--neon:#00e5ff;--max:1080px;--radius:16px;}
+    *{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:var(--neon);text-decoration:none}a:hover{text-decoration:underline}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}.section{padding:34px 0}
+    .card{background:linear-gradient(180deg,var(--surface),var(--surface-2));border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:0 12px 34px rgba(0,0,0,.28)}
+    .topbar{position:sticky;top:0;background:rgba(10,16,31,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(8px);z-index:10}
+    .topbar-inner{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+    .brand{font-weight:900}.brand span{color:var(--neon)}.nav{display:flex;gap:8px;flex-wrap:wrap}
+    .nav a,.btn{display:inline-block;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:#0d172c;color:#dff6ff;font-weight:700}
+    .btn-primary{border-color:var(--neon);background:linear-gradient(90deg,#083642,#212c4e);box-shadow:0 0 18px rgba(0,229,255,.18)}
+    .grid{display:grid;gap:14px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}@media (max-width:760px){.grid-2{grid-template-columns:1fr}}
+    label{display:block;margin-bottom:6px;font-weight:600}
+    input{width:100%;padding:12px;border-radius:10px;border:1px solid #2a3b5d;background:#0b1428;color:#e8f0ff;outline:none}
+    input:focus{border-color:var(--neon);box-shadow:0 0 0 3px rgba(0,229,255,.15)}
+    .muted{color:var(--muted)}h1{font-size:clamp(1.6rem,3.2vw,2.4rem);margin:.2rem 0 .6rem}h2,h3{margin:0 0 10px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .report{display:none}.report.visible{display:block}
+    .report section{border:1px solid var(--line);background:#0b1428;border-radius:12px;padding:14px;margin-bottom:12px}
+    .report ul{margin:0;padding-left:18px}
+    .result-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Panos <span>Khan</span> · AI Tool Demo</div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/#tools">AI Tools</a>
+        <a href="/tools/website-audit.html">Website Audit</a>
+        <a href="/tools/seo-brief.html">SEO Brief</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h1>Khan AI Ad Copy Studio</h1>
+      <p class="muted">Portfolio-ready static demo for generating deterministic ad concepts by audience, benefit, and tone.</p>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Campaign Inputs</h2>
+        <form id="copyForm">
+          <div class="grid grid-2">
+            <div>
+              <label for="offer">Product / service</label>
+              <input id="offer" name="offer" type="text" required />
+            </div>
+            <div>
+              <label for="audience">Audience</label>
+              <input id="audience" name="audience" type="text" required />
+            </div>
+            <div>
+              <label for="benefit">Key benefit</label>
+              <input id="benefit" name="benefit" type="text" required />
+            </div>
+            <div>
+              <label for="tone">Tone</label>
+              <input id="tone" name="tone" type="text" placeholder="e.g. premium, direct, friendly" required />
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Generate Ad Copy Set</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="report" class="section report">
+      <div class="card">
+        <div class="result-head">
+          <h2 style="margin:0">Ad Copy Output</h2>
+          <button id="copyBtn" class="btn" type="button">Copy Set</button>
+        </div>
+        <div id="reportBody"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function esc(v){ return String(v).replace(/[&<>"']/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[ch])); }
+    function t(v){ return esc(String(v || '').trim().replace(/\s+/g, ' ')); }
+    function ul(items){ return `<ul>${items.map(i => `<li>${i}</li>`).join('')}</ul>`; }
+    function section(title, html){ return `<section><h3>${title}</h3>${html}</section>`; }
+
+    function buildCopy(data){
+      const headlines = [
+        `${data.offer} for ${data.audience}`,
+        `${data.benefit} Without the Usual Complexity`,
+        `${data.tone} Results with ${data.offer}`,
+        `${data.audience}: Upgrade with ${data.offer}`,
+        `See How ${data.offer} Delivers ${data.benefit}`
+      ];
+
+      const descriptions = [
+        `${data.offer} helps ${data.audience} achieve ${data.benefit} with a ${data.tone} approach built for measurable performance.`,
+        `Built for ${data.audience}, this solution focuses on ${data.benefit} through a clear, conversion-focused process.`,
+        `Move faster with ${data.offer}. Get ${data.benefit} and a practical implementation path from day one.`
+      ];
+
+      const ctas = [
+        `Book Your Strategy Call`,
+        `Get a Custom Plan`,
+        `Start with an Audit`,
+        `Request a Demo`,
+        `See Pricing & Next Steps`
+      ];
+
+      const angles = [
+        `Pain-point angle: Highlight current obstacles blocking ${data.benefit} for ${data.audience}.`,
+        `Outcome angle: Lead with the measurable end result (${data.benefit}) and support with proof.`,
+        `Process angle: Emphasize the step-by-step method behind ${data.offer}.`,
+        `Trust angle: Focus on reliability, experience, and implementation quality in a ${data.tone} tone.`
+      ];
+
+      return { headlines, descriptions, ctas, angles };
+    }
+
+    document.getElementById('copyForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const form = e.currentTarget;
+      const data = {
+        offer: t(form.offer.value),
+        audience: t(form.audience.value),
+        benefit: t(form.benefit.value),
+        tone: t(form.tone.value)
+      };
+
+      const copy = buildCopy(data);
+      const content = [
+        section('Headline Variations', ul(copy.headlines)),
+        section('Description Variations', ul(copy.descriptions)),
+        section('CTA Ideas', ul(copy.ctas)),
+        section('Test Angles', ul(copy.angles))
+      ].join('');
+
+      document.getElementById('reportBody').innerHTML = content;
+      document.getElementById('report').classList.add('visible');
+      document.getElementById('report').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    document.getElementById('copyBtn').addEventListener('click', async function(){
+      const text = document.getElementById('report').innerText.trim();
+      try{
+        await navigator.clipboard.writeText(text);
+        this.textContent = 'Copied';
+      } catch {
+        this.textContent = 'Copy failed';
+      }
+      setTimeout(() => { this.textContent = 'Copy Set'; }, 1500);
+    });
+  </script>
+</body>
+</html>
