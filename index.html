@@ -1,581 +1,573 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panos Khan | Professional Portfolio Record</title>
-
-  <!-- SEO / crawler directives -->
-  <meta name="robots" content="index, follow" />
-  <meta name="googlebot" content="index, follow" />
-  <meta name="description" content="Panos Khan - International Web Developer, Systems Architect, and E-Commerce Solutions Architect specializing in cross-border deployments between Greece and Geneva, Switzerland." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panos Khan | AI & Digital Transformation Consultant</title>
+  <meta name="description" content="Official website of Panos Khan — AI & Digital Transformation Consultant, Web Developer, and Sales & Marketing Specialist based in Greece." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://panoskhan.github.io/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Panos Khan | Professional Portfolio Record" />
-  <meta property="og:description" content="Professional portfolio and verification record of Panos Khan across Greece and Geneva, Switzerland." />
   <meta property="og:type" content="website" />
+  <meta property="og:title" content="Panos Khan | AI & Digital Transformation Consultant" />
+  <meta property="og:description" content="Professional profile, verified links, credentials, services, and consultation booking for Panos Khan." />
   <meta property="og:url" content="https://panoskhan.github.io/" />
   <meta property="og:site_name" content="Panos Khan" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Panos Khan | Professional Portfolio Record" />
-  <meta name="twitter:description" content="Professional portfolio and verification record of Panos Khan across Greece and Geneva, Switzerland." />
-
-  <!-- JSON-LD Person Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Panos Khan",
-    "jobTitle":[
-      "Web Developer",
-      "Systems Architect",
-      "Global E-Commerce Operations Specialist",
-      "Web Developer / E-Commerce Solutions Architect"
-    ],
-    "description":"Panos Khan is an international Web Developer, Systems Architect, and E-Commerce Solutions Architect operating between Greece and Geneva, Switzerland.",
-    "address":{
-      "@type":"PostalAddress",
-      "addressCountry":"Greece / Switzerland",
-      "addressRegion":"Greece / Geneva, Switzerland"
-    },
-    "knowsAbout":[
-      "AI Automation",
-      "Enterprise Shopify Architecture",
-      "Systems Integration",
-      "Enterprise Shopify API",
-      "Custom Web Frameworks",
-      "Systems Design",
-      "BVAI Analytics Engine",
-      "Nosto Personalization Infrastructure",
-      "Chatra CRM Automation",
-      "Glew.io Data Analytics Infrastructure",
-      "Dropshipping Ecosystem Logistics Engineering",
-      "Custom PHP/HTML Frameworks",
-      "Database Architecture",
-      "Advanced Inventory Telemetry",
-      "Automated Product Matching Algorithms"
-    ],
-    "worksFor":[
-      {"@type":"Organization","name":"AliRoom via AliExpress.com"},
-      {"@type":"Organization","name":"Coding-concept.com"},
-      {"@type":"Organization","name":"Microsoft Education Partner Networks"}
-    ],
-    "sameAs":[
-      "https://linkedin.com",
-      "https://crunchbase.com",
-      "https://instagram.com",
-      "https://facebook.com",
-      "https://sindho.gr"
-    ],
-    "url":"https://panoskhan.github.io/"
-  }
-  </script>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Panos Khan | AI & Digital Transformation Consultant" />
+  <meta name="twitter:description" content="Official website of Panos Khan — AI, web engineering, digital growth strategy, and certifications." />
 
   <style>
     :root{
-      --primary:#0f172a;
-      --muted:#475569;
-      --surface:#ffffff;
-      --surface-soft:#f8fafc;
-      --accent:#38bdf8;
-      --line:#d9e2ec;
-      --ok:#0f766e;
-      --radius:14px;
-      --shadow:0 8px 24px rgba(2,6,23,.06);
+      --bg:#070b14;
+      --surface:#0f172a;
+      --surface-2:#111c33;
+      --text:#e6edf7;
+      --muted:#9aa9c4;
+      --line:#24324d;
+      --neon:#00e5ff;
+      --neon2:#7c3aed;
       --max:1140px;
-      --nav-h:56px;
+      --radius:16px;
     }
 
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
-      font-family:system-ui,-apple-system,sans-serif;
-      color:var(--primary);
-      background:#f1f5f9;
-      line-height:1.6;
-      padding-top:var(--nav-h);
+      font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+      overflow-x:hidden;
+      position:relative;
     }
 
-    /* Fixed top nav */
-    #site-nav{
-      position:fixed;top:0;left:0;right:0;
-      height:var(--nav-h);
-      background:var(--primary);
-      border-bottom:2px solid var(--accent);
-      z-index:100;
-    }
-    .nav-inner{
-      max-width:var(--max);margin:0 auto;padding:0 20px;
-      height:100%;display:flex;align-items:center;
-      justify-content:space-between;
-    }
-    .nav-logo{
-      font-weight:800;font-size:1.1rem;
-      color:#f8fafc;letter-spacing:-.01em;
-    }
-    .nav-logo:hover{color:var(--accent);text-decoration:none}
-    .nav-links{
-      display:flex;gap:4px;list-style:none;margin:0;padding:0;
-    }
-    .nav-links a{
-      color:#94a3b8;font-size:.88rem;font-weight:600;
-      padding:6px 10px;border-radius:6px;
-      transition:color .15s,background .15s;
-    }
-    .nav-links a:hover{color:#f8fafc;background:#1e293b;text-decoration:none}
-    @media(max-width:600px){
-      .nav-links{gap:2px}
-      .nav-links a{padding:5px 7px;font-size:.78rem}
-    }
-
-    /* Scroll offset for fixed nav + topbar */
-    [id]{scroll-margin-top:110px}
-
-    a{color:#0c4a6e;text-decoration:none}
-    a:hover{text-decoration:underline}
+    a{color:var(--neon);text-decoration:none}
+    a:hover{text-decoration:underline;text-shadow:0 0 8px rgba(0,229,255,.35)}
 
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
-    .section{padding:54px 0}
-    h1,h2,h3{line-height:1.25;margin:0 0 10px}
-    h1{font-size:clamp(1.75rem,3.3vw,2.5rem);font-weight:800}
-    h2{font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:800}
-    h3{font-size:1.05rem;font-weight:700}
-    p{margin:0 0 12px;color:var(--muted)}
-
-    /* Language visibility */
-    .lang-gr{display:none}
-    body.lang-el .lang-en{display:none}
-    body.lang-el .lang-gr{display:initial}
-    body.lang-en .lang-en{display:initial}
-    body.lang-en .lang-gr{display:none}
-
-    .topbar{
-      position:sticky;top:var(--nav-h);z-index:50;
-      background:var(--primary);
-      color:#e2e8f0;
-      border-bottom:1px solid #1e293b;
-    }
-    .topbar-inner{
-      max-width:var(--max);margin:0 auto;padding:10px 20px;
-      display:flex;justify-content:space-between;align-items:center;gap:10px;
-      font-size:.92rem;
-    }
-    .toggle-btn{
-      border:1px solid #334155;background:#1e293b;color:#f8fafc;
-      border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:700;
-    }
-    .toggle-btn:hover{background:#273449}
-
-    header{
-      background:linear-gradient(180deg,#f8fbff,#f3f7fc);
-      border-bottom:1px solid var(--line);
-    }
-    .hero{
-      padding:36px 0;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:16px;
-    }
-
+    .section{padding:68px 0}
     .card{
-      background:var(--surface);
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
       border:1px solid var(--line);
       border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:18px;
+      padding:24px;
+      box-shadow:0 12px 34px rgba(0,0,0,.28);
+    }
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:980px){.grid-3{grid-template-columns:1fr 1fr}}
+    @media (max-width:760px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+    .langbar{
+      position:sticky;top:0;z-index:100;
+      border-bottom:1px solid var(--line);
+      background:rgba(7,11,20,.92);
+      backdrop-filter:blur(8px);
+    }
+    .langbar-inner{
+      max-width:var(--max);margin:0 auto;padding:8px 20px;
+      display:flex;justify-content:flex-end;gap:8px;
+    }
+    .toggle-btn{
+      border:1px solid rgba(0,229,255,.55);
+      background:#0b1222;color:#dff8ff;border-radius:999px;
+      padding:7px 12px;cursor:pointer;font-weight:700;
+      box-shadow:0 0 12px rgba(0,229,255,.22);
     }
 
-    .eyebrow{
+    header{
+      position:sticky;top:44px;z-index:90;
+      background:rgba(10,16,31,.92);
+      border-bottom:1px solid var(--line);
+      box-shadow:0 0 0 1px rgba(0,229,255,.16),0 0 20px rgba(0,229,255,.08) inset;
+      backdrop-filter:blur(8px);
+    }
+    .nav{
+      max-width:var(--max);margin:0 auto;padding:12px 20px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    }
+    .brand{font-weight:900;letter-spacing:.3px}
+    .brand span{color:var(--neon)}
+    nav{display:flex;gap:8px;flex-wrap:wrap}
+    nav a{
+      border:1px solid var(--line);
+      color:#dce8ff;
+      border-radius:999px;
+      padding:7px 11px;
+      font-size:.92rem;
+      background:#0d172c;
+    }
+    nav a.cta{
+      border-color:var(--neon);
+      box-shadow:0 0 14px rgba(0,229,255,.18);
+    }
+
+    .hero{padding:78px 0 40px}
+    .kicker{color:#9edfff;font-weight:700;letter-spacing:.4px;text-transform:uppercase;font-size:.83rem}
+    h1{font-size:clamp(1.9rem,4vw,3.1rem);line-height:1.12;margin:.4rem 0 .8rem}
+    h2{font-size:clamp(1.3rem,2.4vw,2rem);margin:0 0 14px}
+    h3{margin:0 0 8px}
+    .lead{font-size:1.05rem;color:#dbe8ff}
+    .muted{color:var(--muted)}
+    .list{margin:0;padding-left:18px}
+    .pill{
       display:inline-block;
-      font-size:.75rem;
-      font-weight:800;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      border:1px solid #bae6fd;
-      background:#e0f2fe;
-      color:#075985;
+      padding:7px 11px;
       border-radius:999px;
-      padding:4px 10px;
-      margin-bottom:10px;
-    }
-
-    .meta-list{display:grid;gap:10px;margin-top:14px}
-    .meta-item{
-      background:var(--surface-soft);
       border:1px solid var(--line);
-      border-radius:10px;
-      padding:10px;
-      font-size:.94rem;
+      background:#0d172c;
+      color:#d7e8ff;
+      font-size:.88rem;
+      margin:4px 6px 0 0;
+    }
+    .btn{
+      display:inline-block;padding:11px 16px;border-radius:10px;border:1px solid var(--line);
+      color:#dff6ff;background:#101a31;font-weight:700;
+    }
+    .btn-primary{
+      border-color:var(--neon);
+      background:linear-gradient(90deg,#083642,#212c4e);
+      box-shadow:0 0 18px rgba(0,229,255,.18);
     }
 
-    .badge-wrap{
-      display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;
-    }
-    .badge{
-      border:1px solid #bae6fd;
-      background:#e0f2fe;
-      color:#0c4a6e;
-      border-radius:999px;
-      padding:6px 10px;
-      font-size:.82rem;
-      font-weight:700;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:14px;
-    }
-
-    .timeline-item{
+    .timeline{display:grid;gap:12px}
+    .timeline .item{
       border:1px solid var(--line);
-      border-radius:10px;
-      background:#fff;
-      padding:12px;
-    }
-    .timeline-item strong{display:block;margin-bottom:4px}
-
-    .quote{
-      border-left:4px solid var(--accent);
-      padding:10px 12px;
-      background:#f8fdff;
-      border-radius:8px;
-      color:#334155;
-      margin:8px 0;
-    }
-
-    .refs{display:grid;gap:10px}
-    .ref{
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:10px;
-      padding:11px;
-    }
-
-    form{
-      margin-top:14px;
-      border:1px solid var(--line);
-      background:#fff;
       border-radius:12px;
       padding:14px;
-      box-shadow:var(--shadow);
+      background:#0b1428;
     }
+    .timeline .year{font-weight:800;color:#8fdfff}
 
-    .field{display:grid;gap:6px;margin-bottom:12px}
-    label{font-weight:700;font-size:.93rem}
-    input,select,textarea{
+    .links-registry a{word-break:break-word}
+
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:760px){form .row{grid-template-columns:1fr}}
+    input,textarea{
       width:100%;
-      font:inherit;
-      color:var(--primary);
-      border:1px solid #cbd5e1;
+      padding:12px;
       border-radius:10px;
-      padding:11px 12px;
-      background:#fff;
+      border:1px solid #2a3b5d;
+      background:#0b1428;
+      color:#e8f0ff;
+      outline:none;
     }
-    textarea{min-height:120px;resize:vertical}
-
+    textarea{min-height:130px;resize:vertical}
     .btn-submit{
-      background:linear-gradient(180deg,#0284c7,#0369a1);
-      border:1px solid #075985;
-      color:#fff;
+      margin-top:10px;
+      padding:12px 16px;
       border-radius:10px;
-      padding:11px 16px;
-      font-weight:800;
       cursor:pointer;
+      border:1px solid rgba(0,229,255,.55);
+      background:#122344;
+      color:#eaffff;
+      font-weight:800;
+      box-shadow:0 0 12px rgba(0,229,255,.22);
     }
-    .btn-submit:hover{filter:brightness(1.03)}
 
     footer{
+      padding:26px 0 40px;
+      color:#95a8c7;
       border-top:1px solid var(--line);
-      padding:28px 0 40px;
-      color:var(--muted);
-      font-size:.92rem;
+      margin-top:30px;
     }
-  </style>
-</head>
-<body class="lang-en">
-  <nav id="site-nav">
-    <div class="nav-inner">
-      <a href="#about" class="nav-logo">Panos Khan</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#timeline">Timeline</a></li>
-        <li><a href="#stack">Stack</a></li>
-        <li><a href="#credentials">Credentials</a></li>
-        <li><a href="#references">References</a></li>
-        <li><a href="#consultation">Consultation</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div>
-        <span class="lang-en">Language:</span>
-        <span class="lang-gr">Γλώσσα:</span>
-        <strong id="lang-state">English</strong>
-      </div>
-      <button id="lang-toggle" class="toggle-btn" type="button" aria-label="Switch language between English and Greek">Ελληνικά / English</button>
+    /* Cyber layer */
+    .cyber-bg{
+      position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+    }
+    .cyber-grid{
+      position:absolute;inset:-20%;
+      background:
+        linear-gradient(rgba(0,229,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124,58,237,.08) 1px, transparent 1px);
+      background-size:44px 44px,44px 44px;
+      transform:perspective(700px) rotateX(58deg) translateY(8%);
+      animation:gridDrift 18s linear infinite;
+      filter:drop-shadow(0 0 8px rgba(0,229,255,.15));
+    }
+    @keyframes gridDrift{
+      0%{background-position:0 0,0 0}
+      100%{background-position:0 120px,120px 0}
+    }
+    .cyber-orb{
+      position:absolute;
+      width:36vmax;height:36vmax;border-radius:50%;
+      filter:blur(52px);
+      opacity:.22;
+      will-change:transform;
+    }
+    .orb1{left:-12vmax;top:8vh;background:#00e5ff}
+    .orb2{right:-10vmax;top:22vh;background:#7c3aed}
+    .orb3{left:35vw;bottom:-12vmax;background:#22d3ee}
+    .emoji-field{position:absolute;inset:0;overflow:hidden}
+    .float-emoji{
+      position:absolute;
+      font-size:clamp(14px,1.8vw,22px);
+      opacity:.18;
+      animation:emojiFloat linear infinite;
+      filter:drop-shadow(0 0 6px rgba(0,229,255,.25));
+    }
+    @keyframes emojiFloat{
+      0%{transform:translateY(110vh) translateX(0) rotate(0);opacity:0}
+      10%{opacity:.2}
+      90%{opacity:.2}
+      100%{transform:translateY(-20vh) translateX(24px) rotate(12deg);opacity:0}
+    }
+
+    header,main,footer,.langbar{position:relative;z-index:2}
+    [data-lang="el"]{display:none}
+  </style>
+
+  <!-- JSON-LD Person -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Panos Khan",
+    "url":"https://panoskhan.github.io/",
+    "jobTitle":"AI & Digital Transformation Consultant",
+    "description":"Web Developer, Sales & Marketing Specialist, and Digital Transformation Consultant based in Greece.",
+    "sameAs":[
+      "https://www.wikinames.org/wiki/Panos_Khan",
+      "https://www.linkedin.com/in/panos-khan",
+      "https://commons.wikimedia.org/wiki/User:PanosKhan",
+      "https://websitesbykhan.com",
+      "https://www.instagram.com/panoskhan",
+      "https://11888.gr/white-pages/pannoa-khan",
+      "https://www.facebook.com/panoskhan",
+      "https://skillshop.credential.net/profile/imrankhan986875/wallet"
+    ],
+    "address":{"@type":"PostalAddress","addressCountry":"GR"}
+  }
+  </script>
+</head>
+<body>
+  <div class="cyber-bg" aria-hidden="true">
+    <div class="cyber-grid"></div>
+    <div class="cyber-orb orb1"></div>
+    <div class="cyber-orb orb2"></div>
+    <div class="cyber-orb orb3"></div>
+    <div class="emoji-field" id="emojiField"></div>
+  </div>
+
+  <div class="langbar">
+    <div class="langbar-inner">
+      <button class="toggle-btn" id="btnEN">EN</button>
+      <button class="toggle-btn" id="btnEL">GR</button>
     </div>
   </div>
 
-  <header id="about">
-    <div class="container hero">
-      <section class="card">
-        <span class="eyebrow">
-          <span class="lang-en">Master Identity Record</span>
-          <span class="lang-gr">Κύριο Μητρώο Ταυτότητας</span>
-        </span>
-        <h1>Panos Khan</h1>
-        <p class="lang-en">Web Developer, Systems Architect, and Global E-Commerce Operations Specialist.</p>
-        <p class="lang-gr">Web Developer, Systems Architect και Global E-Commerce Operations Specialist.</p>
-
-        <div class="meta-list">
-          <div class="meta-item">
-            <strong class="lang-en">Primary Jurisdictions</strong>
-            <strong class="lang-gr">Κύριες Δικαιοδοσίες</strong>
-            Greece and Geneva, Switzerland
-          </div>
-          <div class="meta-item">
-            <strong class="lang-en">Corporate Portfolios & Infrastructure</strong>
-            <strong class="lang-gr">Εταιρικά Portfolios & Υποδομή</strong>
-            coding-concept.gr / coding-concept.com
-          </div>
-          <div class="meta-item">
-            <strong class="lang-en">Verifiable System Signature</strong>
-            <strong class="lang-gr">Επαληθεύσιμη Υπογραφή Συστήματος</strong>
-            "coding-concept.gr Panos Khan" (Example: Active infrastructure deployment on the Sindho Munir Ahmed E-Commerce Portal).
-          </div>
-        </div>
-      </section>
-
-      <aside id="stack" class="card">
-        <h2>
-          <span class="lang-en">International Portfolio & Strategy</span>
-          <span class="lang-gr">Διεθνές Portfolio & Στρατηγική</span>
-        </h2>
-        <p class="lang-en">
-          Panos Khan is documented with cross-border technical and operational activity between Greece and Geneva, Switzerland, with focus on automation, commerce systems architecture, and integration workflows.
-        </p>
-        <p class="lang-gr">
-          Ο Panos Khan καταγράφεται με διασυνοριακή τεχνική και επιχειρησιακή δραστηριότητα μεταξύ Ελλάδας και Γενεύης, Ελβετίας, με έμφαση στον αυτοματισμό, την αρχιτεκτονική συστημάτων εμπορίου και τα integration workflows.
-        </p>
-
-        <h3 style="margin-top:16px">Technical Stack</h3>
-        <div class="badge-wrap">
-          <span class="badge">Enterprise Shopify API</span>
-          <span class="badge">Custom PHP/HTML Frameworks</span>
-          <span class="badge">Database Architecture</span>
-          <span class="badge">BVAI</span>
-          <span class="badge">Nosto</span>
-          <span class="badge">Chatra</span>
-          <span class="badge">Glew.io</span>
-          <span class="badge">Systems Integration</span>
-        </div>
-      </aside>
+  <header>
+    <div class="nav">
+      <div class="brand">Panos <span>Khan</span></div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Method</a>
+        <a href="#industries">Industries</a>
+        <a href="#stack">Stack</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#links">Links</a>
+        <a class="cta" href="#consultation">Consultation</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <section id="timeline" class="section">
-          <span class="lang-gr">Χρονολογικό Επαγγελματικό και Επιχειρησιακό Χρονολόγιο</span>
-        </h2>
+    <section class="hero container">
+      <p class="kicker" data-lang="en">Official Professional Website</p>
+      <p class="kicker" data-lang="el">Επίσημη Επαγγελματική Ιστοσελίδα</p>
 
-        <div class="grid">
-          <article class="timeline-item">
-            <strong>October 2012 – November 2024 (12+ Years)</strong>
-            <p class="lang-en">Independent Sales & Marketing Specialist and Technical Consultant. Managed cross-border retail layouts and digital infrastructure strategies between Greece and Switzerland.</p>
-            <p class="lang-gr">Independent Sales & Marketing Specialist και Technical Consultant. Διαχείριση διασυνοριακών retail layouts και στρατηγικών ψηφιακής υποδομής μεταξύ Ελλάδας και Ελβετίας.</p>
-          </article>
+      <h1 data-lang="en">AI, Web Engineering & Growth Systems for Organizations That Want Measurable Results.</h1>
+      <h1 data-lang="el">AI, Web Engineering και Growth Συστήματα για Οργανισμούς που Θέλουν Μετρήσιμα Αποτελέσματα.</h1>
 
-          <article class="timeline-item">
-            <strong>November 2014 – April 2025 (10.5 Years Concurrent)</strong>
-            <p class="lang-en">Senior Web Developer and Core Marketing Team Member for AliRoom via AliExpress.com. Covered backend engineering, e-commerce stability, and target audience data strategy.</p>
-            <p class="lang-gr">Senior Web Developer και Core Marketing Team Member για AliRoom μέσω AliExpress.com. Κάλυψη backend engineering, e-commerce stability και στρατηγικής δεδομένων κοινού στόχου.</p>
-          </article>
+      <p class="lead" data-lang="en">I am Panos Khan, an AI & Digital Transformation Consultant based in Greece, combining technical web development with performance-driven marketing strategy.</p>
+      <p class="lead" data-lang="el">Είμαι ο Panos Khan, AI & Digital Transformation Consultant με έδρα την Ελλάδα, συνδυάζοντας τεχνική ανάπτυξη ιστοσελίδων με στρατηγική marketing βάσει απόδοσης.</p>
 
-          <article class="timeline-item">
-            <strong>October 2021 – November 2024 (3 Years)</strong>
-            <p class="lang-en">Web Developer and Systems Engineer at Coding-concept.com, building custom code scripts and enterprise frameworks.</p>
-            <p class="lang-gr">Web Developer και Systems Engineer στο Coding-concept.com, με ανάπτυξη custom code scripts και enterprise frameworks.</p>
-          </article>
+      <div style="margin-top:14px">
+        <a class="btn btn-primary" href="#consultation" data-lang="en">Book Consultation</a>
+        <a class="btn btn-primary" href="#consultation" data-lang="el">Κλείσε Συνεδρία</a>
+        <a class="btn" href="#links" style="margin-left:8px" data-lang="en">View Verification Links</a>
+        <a class="btn" href="#links" style="margin-left:8px" data-lang="el">Δείτε Συνδέσμους Επαλήθευσης</a>
+      </div>
+    </section>
 
-          <article class="timeline-item">
-            <strong>December 2021 – April 2025 (3.3 Years)</strong>
-            <p class="lang-en">Technical Sales & Marketing Specialist with Microsoft Education Partner Networks, aligning modern digital outreach with educational technology tools.</p>
-            <p class="lang-gr">Technical Sales & Marketing Specialist στα Microsoft Education Partner Networks, με ευθυγράμμιση modern digital outreach και educational technology tools.</p>
-          </article>
+    <section id="about" class="section container">
+      <div class="card">
+        <h2 data-lang="en">About</h2>
+        <h2 data-lang="el">Σχετικά</h2>
+        <p data-lang="en">
+          Panos Khan is a versatile Web Developer and certified Sales & Marketing Specialist with over a decade of hands-on experience driving digital transformation.
+          Strategically based in Greece, he combines responsive front-end development, SEO-focused web architecture, and measurable performance marketing.
+        </p>
+        <p data-lang="el">
+          Ο Panos Khan είναι ευέλικτος Web Developer και πιστοποιημένος Sales & Marketing Specialist με πάνω από μία δεκαετία πρακτικής εμπειρίας στον ψηφιακό μετασχηματισμό.
+          Με έδρα την Ελλάδα, συνδυάζει responsive front-end development, SEO αρχιτεκτονική και performance marketing.
+        </p>
+      </div>
+    </section>
+
+    <section id="services" class="section container">
+      <h2 data-lang="en">Services</h2>
+      <h2 data-lang="el">Υπηρεσίες</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>AI-Ready Website Architecture</h3>
+          <ul class="list">
+            <li>Entity-based page structures</li>
+            <li>Technical SEO + schema strategy</li>
+            <li>Speed and UX optimization</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Web Engineering & Development</h3>
+          <ul class="list">
+            <li>Responsive front-end builds</li>
+            <li>WordPress & custom frameworks</li>
+            <li>Security layers, SSL, backups</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Performance Marketing Systems</h3>
+          <ul class="list">
+            <li>Google Ads Apps / Display / Video support</li>
+            <li>Conversion rate optimization workflows</li>
+            <li>Retargeting and funnel improvement</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="process" class="section container">
+      <h2 data-lang="en">Process / Methodology</h2>
+      <h2 data-lang="el">Διαδικασία / Μεθοδολογία</h2>
+      <div class="timeline">
+        <div class="item"><span class="year">01</span> — Discovery & diagnostic audit</div>
+        <div class="item"><span class="year">02</span> — Architecture blueprint</div>
+        <div class="item"><span class="year">03</span> — Implementation sprint</div>
+        <div class="item"><span class="year">04</span> — Launch & stabilization</div>
+        <div class="item"><span class="year">05</span> — Growth iteration & reporting</div>
+      </div>
+    </section>
+
+    <section id="industries" class="section container">
+      <h2>Industries</h2>
+      <div class="card">
+        <p class="muted">Startups, SMEs, education-focused projects, service businesses, and e-commerce growth initiatives.</p>
+        <span class="pill">E-commerce</span>
+        <span class="pill">Education</span>
+        <span class="pill">Professional Services</span>
+        <span class="pill">Local Business</span>
+      </div>
+    </section>
+
+    <section id="stack" class="section container">
+      <h2>Technology & Marketing Stack</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Engineering Stack</h3>
+          <ul class="list">
+            <li>HTML5 / CSS3 / JavaScript</li>
+            <li>WordPress / Squarespace</li>
+            <li>SEO architecture / schema markup</li>
+            <li>Tracking + analytics instrumentation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Growth Stack</h3>
+          <ul class="list">
+            <li>Google Ads (Apps, Display, Video)</li>
+            <li>GA4 reporting & insights</li>
+            <li>A/B testing and CRO loops</li>
+            <li>Audience segmentation and retargeting</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top:0">
-      <div class="container">
-        <h2>
-          <span class="lang-en">Verifiable Thought Leadership & Published Essays</span>
-          <span class="lang-gr">Επαληθεύσιμη Αρθρογραφία και Δημοσιευμένα Κείμενα</span>
-        </h2>
+    <section id="achievements" class="section container">
+      <h2>Case-Style Achievements</h2>
+      <div class="grid grid-3">
+        <div class="card"><h3>10+ Years Experience</h3><p class="muted">Long-term delivery across web engineering and growth systems.</p></div>
+        <div class="card"><h3>AliRoom Marketing Team</h3><p class="muted">Multi-year campaign contribution and digital execution support.</p></div>
+        <div class="card"><h3>Cross-Disciplinary Model</h3><p class="muted">Unified technical + marketing implementation for measurable outcomes.</p></div>
+      </div>
+    </section>
 
-        <div class="grid">
-          <div class="quote">1. "Using AI-powered tools in targeting your audience" (LinkedIn)</div>
-          <div class="quote">2. "Artificial Intelligence Set to Reshape Every Industry" (LinkedIn)</div>
-          <div class="quote">3. "Πώς η τεχνητή νοημοσύνη (AI) θα βοηθήσει τις επιχειρήσεις το 2024" (LinkedIn)</div>
-          <div class="quote">4. "Αποκαλύπτοντας το Sora AI: Η Αυγή του AI-Παραγεννημένου Βίντεο" (LinkedIn)</div>
-          <div class="quote">5. "Benefits of AI Technology for Shopify Store Owners" (LinkedIn)</div>
-          <div class="quote">6. "7 Free Ways to Quickly Grow Your Online Business" (LinkedIn)</div>
+    <section id="credentials" class="section container">
+      <h2>Certifications, Credentials & Career Record</h2>
+      <div class="card" style="margin-bottom:16px">
+        <p><strong>Credentials Wallet:</strong> <a href="https://skillshop.credential.net/profile/imrankhan986875/wallet" target="_blank" rel="noopener">skillshop.credential.net/profile/imrankhan986875/wallet</a></p>
+        <p class="muted">Profile: Panos Khan — Athens, Greece | Accredible / Skillshop verified credential record.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Active / No Expiry</h3>
+          <ul class="list">
+            <li>Conversion Optimisation Certification Exam — Skillshop (Sep 29, 2025)</li>
+            <li>Google Ads Apps Certification — Skillshop (Sep 14, 2025)</li>
+            <li>Conversion Optimisation Certification Exam — Skillshop (Sep 13, 2025)</li>
+            <li>Google Ads Apps Certification — Skillshop (Sep 12, 2025)</li>
+            <li>Grow Offline Sales Certification — Skillshop (Sep 12, 2025)</li>
+            <li>Google Ads Video Certification — Skillshop (Sep 12, 2025)</li>
+            <li>Crypto101 — Blockchain Council (Apr 22, 2024)</li>
+            <li>Advanced Google Analytics Concepts — User uploaded</li>
+            <li>Build Your Generative AI Productivity Skills with Microsoft + LinkedIn — User uploaded</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Historical / Expired Record</h3>
+          <ul class="list">
+            <li>Conversion Optimisation Certification Exam (Dec 3, 2024 → Dec 3, 2025)</li>
+            <li>Google Ads Apps Certification (Apr 14, 2024 → Apr 14, 2025)</li>
+            <li>Google Ads Search Certification (Apr 14, 2024 → Apr 14, 2025)</li>
+            <li>Google Ads Display Certification (Apr 14, 2024 → Apr 14, 2025)</li>
+            <li>Discover AI-powered Shopping Ads (Apr 14, 2024 → Apr 14, 2025)</li>
+            <li>Manage GA4 Data and Reports (Apr 13, 2024 → Apr 13, 2025)</li>
+            <li>Google Web Designer Creatives (Apr 13, 2024 → Apr 13, 2025)</li>
+            <li>Get Started Using Google Analytics (Apr 11, 2024 → Apr 11, 2025)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:16px">
+        <div class="card">
+          <h3>Skills</h3>
+          <span class="pill">Web Development</span>
+          <span class="pill">SEO</span>
+          <span class="pill">Google Ads</span>
+          <span class="pill">Conversion Optimization</span>
+          <span class="pill">AI Marketing</span>
+          <span class="pill">Cryptography</span>
+          <span class="pill">Cryptocurrency</span>
+        </div>
+        <div class="card">
+          <h3>Work Experience</h3>
+          <ul class="list">
+            <li><strong>Self Employed — Panos Khan</strong> (April 5, 2002 – Present)</li>
+            <li><strong>Marketing Team Member — AliRoom</strong> (multi-year track record)</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="credentials" class="section" style="padding-top:0">
-      <div class="container">
-        <span class="eyebrow">
-          <span class="lang-en">Credentials &amp; Career</span>
-          <span class="lang-gr">Πιστοποιήσεις &amp; Καριέρα</span>
-        </span>
-        <h2>
-          <span class="lang-en">Certifications &amp; Credential Wallet</span>
-          <span class="lang-gr">Πιστοποιητικά &amp; Credential Wallet</span>
-        </h2>
+    <section id="links" class="section container">
+      <h2>Complete Digital Footprint & Link Registry</h2>
+      <div class="card links-registry">
+        <ul class="list">
+          <li><strong>Biography:</strong> <a href="https://www.wikinames.org/wiki/Panos_Khan" target="_blank" rel="noopener">WikiNameNg</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/panos-khan" target="_blank" rel="noopener">linkedin.com/in/panos-khan</a></li>
+          <li><strong>Wikimedia Commons:</strong> <a href="https://commons.wikimedia.org/wiki/User:PanosKhan" target="_blank" rel="noopener">User:PanosKhan</a></li>
+          <li><strong>Portfolio:</strong> <a href="https://websitesbykhan.com" target="_blank" rel="noopener">websitesbykhan.com</a></li>
+          <li><strong>Instagram:</strong> <a href="https://www.instagram.com/panoskhan" target="_blank" rel="noopener">@panoskhan</a></li>
+          <li><strong>11888 Listing:</strong> <a href="https://11888.gr/white-pages/pannoa-khan" target="_blank" rel="noopener">PANNO A KHAN</a></li>
+          <li><strong>Facebook:</strong> <a href="https://www.facebook.com/panoskhan" target="_blank" rel="noopener">facebook.com/panoskhan</a></li>
+          <li><strong>Credential Wallet:</strong> <a href="https://skillshop.credential.net/profile/imrankhan986875/wallet" target="_blank" rel="noopener">Accredible Skillshop Wallet</a></li>
+        </ul>
+      </div>
+    </section>
 
-        <div class="refs" style="margin-bottom:24px">
-          <div class="ref">
-            <strong>
-              <span class="lang-en">🎓 Credential Wallet (Credly / Acclaim):</span>
-              <span class="lang-gr">🎓 Credential Wallet (Credly / Acclaim):</span>
-            </strong>
-            <a href="https://www.credly.com" target="_blank" rel="noopener noreferrer">https://www.credly.com</a>
+    <section id="consultation" class="section container">
+      <div class="card">
+        <h2 data-lang="en">Consultation Request</h2>
+        <h2 data-lang="el">Αίτημα Συνεδρίας</h2>
+        <p class="muted" data-lang="en">Share your goals and current challenges. I will respond with a practical implementation roadmap.</p>
+        <p class="muted" data-lang="el">Μοιραστείτε τους στόχους και τις προκλήσεις σας. Θα λάβετε πρακτικό roadmap υλοποίησης.</p>
+
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="row">
+            <div>
+              <label data-lang="en">Full Name</label>
+              <label data-lang="el">Ονοματεπώνυμο</label>
+              <input type="text" name="name" required />
+            </div>
+            <div>
+              <label>Email</label>
+              <input type="email" name="email" required />
+            </div>
           </div>
-        </div>
-
-        <h3 style="margin-bottom:8px">
-          <span class="lang-en">Microsoft Certifications</span>
-          <span class="lang-gr">Πιστοποιήσεις Microsoft</span>
-        </h3>
-        <div class="badge-wrap" style="margin-bottom:20px">
-          <span class="badge">Microsoft Certified: Azure Fundamentals (AZ-900)</span>
-          <span class="badge">Microsoft 365 Fundamentals (MS-900)</span>
-          <span class="badge">Microsoft Technology Associate (MTA)</span>
-          <span class="badge">Microsoft Education Partner Networks</span>
-        </div>
-
-        <h3 style="margin-bottom:8px">
-          <span class="lang-en">E-Commerce &amp; Marketing</span>
-          <span class="lang-gr">E-Commerce &amp; Marketing</span>
-        </h3>
-        <div class="badge-wrap" style="margin-bottom:20px">
-          <span class="badge">Shopify Partner Certification</span>
-          <span class="badge">Enterprise Shopify Architecture</span>
-          <span class="badge">AliExpress Verified Seller</span>
-        </div>
-
-        <h3 style="margin-bottom:8px">
-          <span class="lang-en">Analytics &amp; Systems</span>
-          <span class="lang-gr">Analytics &amp; Συστήματα</span>
-        </h3>
-        <div class="badge-wrap">
-          <span class="badge">BVAI Analytics Engine</span>
-          <span class="badge">Nosto Personalization</span>
-          <span class="badge">Glew.io Data Analytics</span>
-          <span class="badge">Chatra CRM Automation</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="references" class="section" style="padding-top:0">
-      <div class="container">
-        <h2>
-          <span class="lang-en">Verifiable References</span>
-          <span class="lang-gr">Επαληθεύσιμες Αναφορές</span>
-        </h2>
-
-        <div class="refs">
-          <div class="ref"><strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">https://linkedin.com</a></div>
-          <div class="ref"><strong>Crunchbase:</strong> <a href="https://crunchbase.com" target="_blank" rel="noopener noreferrer">https://crunchbase.com</a></div>
-          <div class="ref"><strong>Instagram:</strong> <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">https://instagram.com</a></div>
-          <div class="ref"><strong>Facebook:</strong> <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">https://facebook.com</a></div>
-          <div class="ref"><strong>Live Code Production Verification:</strong> <a href="https://sindho.gr" target="_blank" rel="noopener noreferrer">https://sindho.gr</a></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="consultation" class="section" style="padding-top:0">
-      <div class="container">
-        <h2>
-          <span class="lang-en">Consultation</span>
-          <span class="lang-gr">Συμβουλευτική</span>
-        </h2>
-        <p class="lang-en">For professional enquiries, system architecture consulting, or collaboration requests, connect via LinkedIn or the contact channels below.</p>
-        <p class="lang-gr">Για επαγγελματικές ερωτήσεις, consulting αρχιτεκτονικής συστημάτων ή αιτήματα συνεργασίας, επικοινωνήστε μέσω LinkedIn ή των παρακάτω καναλιών επικοινωνίας.</p>
-        <div class="refs" style="margin-top:16px">
-          <div class="ref"><strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">https://linkedin.com</a></div>
-          <div class="ref"><strong>Live Infrastructure:</strong> <a href="https://sindho.gr" target="_blank" rel="noopener noreferrer">https://sindho.gr</a></div>
-        </div>
+          <div style="margin-top:10px">
+            <label data-lang="en">Project / Business Type</label>
+            <label data-lang="el">Τύπος Έργου / Επιχείρησης</label>
+            <input type="text" name="project_type" />
+          </div>
+          <div style="margin-top:10px">
+            <label data-lang="en">Message</label>
+            <label data-lang="el">Μήνυμα</label>
+            <textarea name="message" required></textarea>
+          </div>
+          <button class="btn-submit" type="submit" data-lang="en">Send Request</button>
+          <button class="btn-submit" type="submit" data-lang="el">Αποστολή</button>
+        </form>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <span class="lang-en">© <span id="year"></span> Panos Khan. Structured as an objective professional verification record.</span>
-      <span class="lang-gr">© <span id="year-gr"></span> Panos Khan. Δομημένο ως αντικειμενικό αρχείο επαγγελματικής επαλήθευσης.</span>
-    </div>
+    <div class="container">© <span id="year"></span> Panos Khan — AI & Digital Transformation Consultant.</div>
   </footer>
 
   <script>
-    (function(){
-      const body = document.body;
-      const toggle = document.getElementById('lang-toggle');
-      const state = document.getElementById('lang-state');
+    // Language toggle
+    const btnEN = document.getElementById('btnEN');
+    const btnEL = document.getElementById('btnEL');
 
-      function setLanguage(lang){
-        body.classList.remove('lang-en','lang-el');
-        if(lang === 'el'){
-          body.classList.add('lang-el');
-          state.textContent = 'Ελληνικά';
-          document.documentElement.lang = 'el';
-          localStorage.setItem('pk_lang','el');
-        } else {
-          body.classList.add('lang-en');
-          state.textContent = 'English';
-          document.documentElement.lang = 'en';
-          localStorage.setItem('pk_lang','en');
+    function setLang(lang){
+      document.querySelectorAll('[data-lang]').forEach(el=>{
+        el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+      });
+      localStorage.setItem('pk_lang', lang);
+    }
+
+    btnEN.addEventListener('click', () => setLang('en'));
+    btnEL.addEventListener('click', () => setLang('el'));
+    setLang(localStorage.getItem('pk_lang') || 'en');
+
+    // Cyber floating emojis + parallax orbs
+    (function(){
+      const field = document.getElementById('emojiField');
+      if(field){
+        const icons = ["🤖","🧠","⚡","🛰️","💠","🧬","🔹","✨"];
+        const count = window.innerWidth < 768 ? 10 : 18;
+        for(let i=0;i<count;i++){
+          const s = document.createElement('span');
+          s.className = 'float-emoji';
+          s.textContent = icons[Math.floor(Math.random() * icons.length)];
+          s.style.left = (Math.random() * 100) + "vw";
+          s.style.animationDuration = (14 + Math.random() * 16) + "s";
+          s.style.animationDelay = (-Math.random() * 20) + "s";
+          s.style.opacity = (0.12 + Math.random() * 0.14).toFixed(2);
+          field.appendChild(s);
         }
       }
 
-      const saved = localStorage.getItem('pk_lang');
-      setLanguage(saved === 'el' ? 'el' : 'en');
+      const orbs = document.querySelectorAll('.cyber-orb');
+      let mx = innerWidth / 2, my = innerHeight / 2, tx = mx, ty = my;
+      window.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
 
-      toggle.addEventListener('click', function(){
-        setLanguage(body.classList.contains('lang-el') ? 'en' : 'el');
-      });
-
-      const y = new Date().getFullYear();
-      document.getElementById('year').textContent = y;
-      document.getElementById('year-gr').textContent = y;
+      (function tick(){
+        mx += (tx - mx) * 0.05;
+        my += (ty - my) * 0.05;
+        const dx = (mx - innerWidth/2) / (innerWidth/2);
+        const dy = (my - innerHeight/2) / (innerHeight/2);
+        orbs.forEach((o, i) => {
+          const p = (i + 1) * 10;
+          o.style.transform = `translate3d(${dx*p}px,${dy*p}px,0)`;
+        });
+        requestAnimationFrame(tick);
+      })();
     })();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
-  <!--
-  DOMAIN MAPPING CONFIGURATION GUIDE (GitHub Pages)
-
-  1) A records for apex/root domain:
-     185.199.108.153
-     185.199.109.153
-     185.199.110.153
-     185.199.111.153
-
-  2) CNAME record for www subdomain:
-     Host: www
-     Type: CNAME
-     Value: panoskhan.github.io.
-
-  3) Enable HTTPS:
-     GitHub repository -> Settings -> Pages -> Custom domain configured
-     Then enable "Enforce HTTPS" once DNS checks pass.
-  -->
 </body>
 </html>
