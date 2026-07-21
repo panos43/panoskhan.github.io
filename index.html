@@ -14,11 +14,17 @@
   <meta property="og:description" content="Professional profile, verified links, credentials, services, and consultation booking for Panos Khan." />
   <meta property="og:url" content="https://panoskhan.github.io/" />
   <meta property="og:site_name" content="Panos Khan" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="el_GR" />
+  <meta property="og:image" content="https://panoskhan.github.io/assets/og-preview.svg" />
+  <meta property="og:image:alt" content="Panos Khan — AI & Digital Transformation Consultant" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Panos Khan | AI & Digital Transformation Consultant" />
   <meta name="twitter:description" content="Official website of Panos Khan — AI, web engineering, digital growth strategy, and certifications." />
+  <meta name="twitter:image" content="https://panoskhan.github.io/assets/og-preview.svg" />
+  <meta name="twitter:image:alt" content="Panos Khan — AI & Digital Transformation Consultant" />
 
   <style>
     :root{
@@ -36,6 +42,7 @@
 
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
+    html{scroll-behavior:smooth}
     body{
       font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
       background:var(--bg);
@@ -49,7 +56,7 @@
     a:hover{text-decoration:underline;text-shadow:0 0 8px rgba(0,229,255,.35)}
 
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
-    .section{padding:68px 0}
+    .section{padding:68px 0;scroll-margin-top:110px}
     .card{
       background:linear-gradient(180deg,var(--surface),var(--surface-2));
       border:1px solid var(--line);
@@ -78,6 +85,10 @@
       background:#0b1222;color:#dff8ff;border-radius:999px;
       padding:7px 12px;cursor:pointer;font-weight:700;
       box-shadow:0 0 12px rgba(0,229,255,.22);
+    }
+    .toggle-btn[aria-pressed="true"]{
+      background:linear-gradient(90deg,#083642,#212c4e);
+      border-color:var(--neon);
     }
 
     header{
@@ -148,6 +159,7 @@
 
     form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     @media (max-width:760px){form .row{grid-template-columns:1fr}}
+    label{display:block;margin-bottom:6px}
     input,textarea{
       width:100%;
       padding:12px;
@@ -156,6 +168,10 @@
       background:#0b1428;
       color:#e8f0ff;
       outline:none;
+    }
+    input:focus,textarea:focus{
+      border-color:var(--neon);
+      box-shadow:0 0 0 3px rgba(0,229,255,.15);
     }
     textarea{min-height:130px;resize:vertical}
     .btn-submit{
@@ -169,6 +185,7 @@
       font-weight:800;
       box-shadow:0 0 12px rgba(0,229,255,.22);
     }
+    .form-note{font-size:.9rem;margin-top:10px}
 
     footer{
       padding:26px 0 40px;
@@ -228,22 +245,59 @@
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Panos Khan",
-    "url":"https://panoskhan.github.io/",
-    "jobTitle":"AI & Digital Transformation Consultant",
-    "description":"Web Developer, Sales & Marketing Specialist, and Digital Transformation Consultant based in Greece.",
-    "sameAs":[
-      "https://www.wikinames.org/wiki/Panos_Khan",
-      "https://www.linkedin.com/in/panos-khan",
-      "https://commons.wikimedia.org/wiki/User:PanosKhan",
-      "https://websitesbykhan.com",
-      "https://www.instagram.com/panoskhan",
-      "https://11888.gr/white-pages/pannoa-khan",
-      "https://www.facebook.com/panoskhan",
-      "https://skillshop.credential.net/profile/imrankhan986875/wallet"
-    ],
-    "address":{"@type":"PostalAddress","addressCountry":"GR"}
+    "@graph":[
+      {
+        "@type":"Person",
+        "@id":"https://panoskhan.github.io/#person",
+        "name":"Panos Khan",
+        "url":"https://panoskhan.github.io/",
+        "jobTitle":"AI & Digital Transformation Consultant",
+        "description":"Web Developer, Sales & Marketing Specialist, and Digital Transformation Consultant based in Greece.",
+        "sameAs":[
+          "https://www.wikinames.org/wiki/Panos_Khan",
+          "https://www.linkedin.com/in/panos-khan",
+          "https://commons.wikimedia.org/wiki/User:PanosKhan",
+          "https://websitesbykhan.com",
+          "https://www.instagram.com/panoskhan",
+          "https://11888.gr/white-pages/pannoa-khan",
+          "https://www.facebook.com/panoskhan",
+          "https://skillshop.credential.net/profile/imrankhan986875/wallet"
+        ],
+        "address":{"@type":"PostalAddress","addressCountry":"GR"}
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://panoskhan.github.io/#website",
+        "url":"https://panoskhan.github.io/",
+        "name":"Panos Khan",
+        "inLanguage":["en","el"],
+        "publisher":{"@id":"https://panoskhan.github.io/#person"}
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://panoskhan.github.io/#webpage",
+        "url":"https://panoskhan.github.io/",
+        "name":"Panos Khan | AI & Digital Transformation Consultant",
+        "description":"Official website of Panos Khan — AI & Digital Transformation Consultant, Web Developer, and Sales & Marketing Specialist based in Greece.",
+        "isPartOf":{"@id":"https://panoskhan.github.io/#website"},
+        "about":{"@id":"https://panoskhan.github.io/#person"},
+        "inLanguage":["en","el"]
+      },
+      {
+        "@type":"ProfessionalService",
+        "@id":"https://panoskhan.github.io/#service",
+        "name":"Panos Khan Consulting",
+        "url":"https://panoskhan.github.io/",
+        "areaServed":"Greece",
+        "founder":{"@id":"https://panoskhan.github.io/#person"},
+        "serviceType":[
+          "AI consulting",
+          "Digital transformation consulting",
+          "Web development",
+          "Performance marketing"
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -258,8 +312,8 @@
 
   <div class="langbar">
     <div class="langbar-inner">
-      <button class="toggle-btn" id="btnEN">EN</button>
-      <button class="toggle-btn" id="btnEL">GR</button>
+      <button class="toggle-btn" id="btnEN" aria-pressed="true">EN</button>
+      <button class="toggle-btn" id="btnEL" aria-pressed="false">GR</button>
     </div>
   </div>
 
@@ -269,6 +323,7 @@
       <nav>
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#tools">AI Tools</a>
         <a href="#process">Method</a>
         <a href="#industries">Industries</a>
         <a href="#stack">Stack</a>
@@ -286,14 +341,14 @@
       <p class="kicker" data-lang="el">Επίσημη Επαγγελματική Ιστοσελίδα</p>
 
       <h1 data-lang="en">AI, Web Engineering & Growth Systems for Organizations That Want Measurable Results.</h1>
-      <h1 data-lang="el">AI, Web Engineering και Growth Συστήματα για Οργανισμούς που Θέλουν Μετρήσιμα Αποτελέσματα.</h1>
+      <h1 data-lang="el">AI, Web Engineering και Συστήματα Ανάπτυξης για Οργανισμούς που Θέλουν Μετρήσιμα Αποτελέσματα.</h1>
 
       <p class="lead" data-lang="en">I am Panos Khan, an AI & Digital Transformation Consultant based in Greece, combining technical web development with performance-driven marketing strategy.</p>
-      <p class="lead" data-lang="el">Είμαι ο Panos Khan, AI & Digital Transformation Consultant με έδρα την Ελλάδα, συνδυάζοντας τεχνική ανάπτυξη ιστοσελίδων με στρατηγική marketing βάσει απόδοσης.</p>
+      <p class="lead" data-lang="el">Είμαι ο Panos Khan, AI & Digital Transformation Consultant με έδρα την Ελλάδα, και συνδυάζω τεχνική ανάπτυξη ιστοσελίδων με στρατηγική marketing προσανατολισμένη σε μετρήσιμη απόδοση.</p>
 
       <div style="margin-top:14px">
         <a class="btn btn-primary" href="#consultation" data-lang="en">Book Consultation</a>
-        <a class="btn btn-primary" href="#consultation" data-lang="el">Κλείσε Συνεδρία</a>
+        <a class="btn btn-primary" href="#consultation" data-lang="el">Κλείστε Συνεδρία</a>
         <a class="btn" href="#links" style="margin-left:8px" data-lang="en">View Verification Links</a>
         <a class="btn" href="#links" style="margin-left:8px" data-lang="el">Δείτε Συνδέσμους Επαλήθευσης</a>
       </div>
@@ -308,8 +363,8 @@
           Strategically based in Greece, he combines responsive front-end development, SEO-focused web architecture, and measurable performance marketing.
         </p>
         <p data-lang="el">
-          Ο Panos Khan είναι ευέλικτος Web Developer και πιστοποιημένος Sales & Marketing Specialist με πάνω από μία δεκαετία πρακτικής εμπειρίας στον ψηφιακό μετασχηματισμό.
-          Με έδρα την Ελλάδα, συνδυάζει responsive front-end development, SEO αρχιτεκτονική και performance marketing.
+          Ο Panos Khan είναι ευέλικτος Web Developer και πιστοποιημένος Sales & Marketing Specialist με περισσότερα από δέκα χρόνια πρακτικής εμπειρίας στον ψηφιακό μετασχηματισμό.
+          Με έδρα την Ελλάδα, συνδυάζει responsive front-end development, SEO-focused αρχιτεκτονική ιστοσελίδων και performance marketing με έμφαση στα μετρήσιμα αποτελέσματα.
         </p>
       </div>
     </section>
@@ -341,6 +396,34 @@
             <li>Conversion rate optimization workflows</li>
             <li>Retargeting and funnel improvement</li>
           </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="tools" class="section container">
+      <h2 data-lang="en">AI Tools &amp; Portfolio Projects</h2>
+      <h2 data-lang="el">AI Εργαλεία &amp; Portfolio Projects</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Khan AI Website Audit Assistant</h3>
+          <p class="muted" data-lang="en">Consultant-style website review for messaging clarity, SEO opportunities, UX trust signals, and conversion priorities.</p>
+          <p class="muted" data-lang="el">Demo έλεγχος ιστοσελίδας με consultant λογική για positioning, SEO, UX εμπιστοσύνη και conversion βελτιώσεις.</p>
+          <a class="btn btn-primary" href="/tools/website-audit.html" data-lang="en">Open Tool</a>
+          <a class="btn btn-primary" href="/tools/website-audit.html" data-lang="el">Άνοιγμα Εργαλείου</a>
+        </article>
+        <article class="card">
+          <h3>Khan AI SEO Brief Generator</h3>
+          <p class="muted" data-lang="en">Generate practical SEO content briefs with title options, structured outlines, FAQs, schema ideas, and search intent guidance.</p>
+          <p class="muted" data-lang="el">Παράγει πρακτικά SEO briefs με τίτλους, H2 outline, FAQs, schema προτάσεις και κατεύθυνση search intent.</p>
+          <a class="btn btn-primary" href="/tools/seo-brief.html" data-lang="en">Open Tool</a>
+          <a class="btn btn-primary" href="/tools/seo-brief.html" data-lang="el">Άνοιγμα Εργαλείου</a>
+        </article>
+        <article class="card">
+          <h3>Khan AI Ad Copy Studio</h3>
+          <p class="muted" data-lang="en">Build ad headline and description variations with CTA ideas and test angles aligned to audience, benefit, and brand tone.</p>
+          <p class="muted" data-lang="el">Δημιουργεί headline/description παραλλαγές, CTA ideas και test angles με βάση audience, benefit και tone.</p>
+          <a class="btn btn-primary" href="/tools/ad-copy-studio.html" data-lang="en">Open Tool</a>
+          <a class="btn btn-primary" href="/tools/ad-copy-studio.html" data-lang="el">Άνοιγμα Εργαλείου</a>
         </article>
       </div>
     </section>
@@ -481,32 +564,34 @@
         <h2 data-lang="en">Consultation Request</h2>
         <h2 data-lang="el">Αίτημα Συνεδρίας</h2>
         <p class="muted" data-lang="en">Share your goals and current challenges. I will respond with a practical implementation roadmap.</p>
-        <p class="muted" data-lang="el">Μοιραστείτε τους στόχους και τις προκλήσεις σας. Θα λάβετε πρακτικό roadmap υλοποίησης.</p>
+        <p class="muted" data-lang="el">Μοιραστείτε τους στόχους και τις προκλήσεις σας. Θα λάβετε ένα πρακτικό roadmap υλοποίησης.</p>
 
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form action="mailto:panoskhan40@gmail.com" method="POST" enctype="text/plain">
           <div class="row">
             <div>
-              <label data-lang="en">Full Name</label>
-              <label data-lang="el">Ονοματεπώνυμο</label>
-              <input type="text" name="name" required />
+              <label data-lang="en" for="name">Full Name</label>
+              <label data-lang="el" for="name">Ονοματεπώνυμο</label>
+              <input id="name" type="text" name="name" required />
             </div>
             <div>
-              <label>Email</label>
-              <input type="email" name="email" required />
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" required />
             </div>
           </div>
           <div style="margin-top:10px">
-            <label data-lang="en">Project / Business Type</label>
-            <label data-lang="el">Τύπος Έργου / Επιχείρησης</label>
-            <input type="text" name="project_type" />
+            <label data-lang="en" for="project_type">Project / Business Type</label>
+            <label data-lang="el" for="project_type">Τύπος Έργου / Επιχείρησης</label>
+            <input id="project_type" type="text" name="project_type" />
           </div>
           <div style="margin-top:10px">
-            <label data-lang="en">Message</label>
-            <label data-lang="el">Μήνυμα</label>
-            <textarea name="message" required></textarea>
+            <label data-lang="en" for="message">Message</label>
+            <label data-lang="el" for="message">Μήνυμα</label>
+            <textarea id="message" name="message" required></textarea>
           </div>
           <button class="btn-submit" type="submit" data-lang="en">Send Request</button>
           <button class="btn-submit" type="submit" data-lang="el">Αποστολή</button>
+          <p class="muted form-note" data-lang="en">This form will open your email app to send the consultation request directly.</p>
+          <p class="muted form-note" data-lang="el">Αυτή η φόρμα θα ανοίξει την εφαρμογή email σας για να στείλετε απευθείας το αίτημα συνεδρίας.</p>
         </form>
       </div>
     </section>
@@ -522,9 +607,12 @@
     const btnEL = document.getElementById('btnEL');
 
     function setLang(lang){
+      document.documentElement.lang = lang === 'el' ? 'el' : 'en';
       document.querySelectorAll('[data-lang]').forEach(el=>{
         el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
       });
+      btnEN.setAttribute('aria-pressed', String(lang === 'en'));
+      btnEL.setAttribute('aria-pressed', String(lang === 'el'));
       localStorage.setItem('pk_lang', lang);
     }
 
