@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# Refer to the canonical sitemap for the site
 Sitemap: https://panoskhan.github.io/sitemap.xml
