@@ -6,18 +6,654 @@
   <title>Panos Khan | AI & Digital Transformation Consultant</title>
   <meta name="description" content="Official website of Panos Khan — AI & Digital Transformation Consultant, Web Developer, and Sales & Marketing Specialist based in Greece." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="google-site-verification" content="hHyfUy52ydPcVZ7GDJy2H55gRZMtRxHJJITAHp1p0ds" />
   <link rel="canonical" href="https://panoskhan.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Panos Khan | AI & Digital Transformation Consultant" />
+  <meta property="og:description" content="Professional profile, services, credentials, verified links, and consultation booking for Panos Khan." />
+  <meta property="og:url" content="https://panoskhan.github.io/" />
+  <meta property="og:site_name" content="Panos Khan" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Panos Khan | AI & Digital Transformation Consultant" />
+  <meta name="twitter:description" content="Official website of Panos Khan — AI, web engineering, digital growth strategy, and certifications." />
+
+  <style>
+    :root{
+      --bg:#070b14;
+      --surface:#0f172a;
+      --surface-2:#111c33;
+      --text:#e6edf7;
+      --muted:#98a8c2;
+      --line:#24324d;
+      --neon:#00e5ff;
+      --neon2:#7c3aed;
+      --max:1140px;
+      --radius:16px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+      overflow-x:hidden;
+      position:relative;
+    }
+
+    a{color:var(--neon);text-decoration:none}
+    a:hover{text-decoration:underline;text-shadow:0 0 8px rgba(0,229,255,.35)}
+
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .section{padding:68px 0}
+    .card{
+      background:linear-gradient(180deg,var(--surface),var(--surface-2));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 12px 34px rgba(0,0,0,.28);
+    }
+
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:980px){.grid-3{grid-template-columns:1fr 1fr}}
+    @media (max-width:760px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+    .langbar{
+      position:sticky;top:0;z-index:100;
+      border-bottom:1px solid var(--line);
+      background:rgba(7,11,20,.92);
+      backdrop-filter:blur(8px);
+    }
+    .langbar-inner{
+      max-width:var(--max);margin:0 auto;padding:8px 20px;
+      display:flex;justify-content:flex-end;gap:8px;
+    }
+    .toggle-btn{
+      border:1px solid rgba(0,229,255,.55);
+      background:#0b1222;color:#dff8ff;border-radius:999px;
+      padding:7px 12px;cursor:pointer;font-weight:700;
+      box-shadow:0 0 12px rgba(0,229,255,.22);
+    }
+
+    header{
+      position:sticky;top:44px;z-index:90;
+      background:rgba(10,16,31,.92);
+      border-bottom:1px solid var(--line);
+      box-shadow:0 0 0 1px rgba(0,229,255,.16),0 0 20px rgba(0,229,255,.08) inset;
+      backdrop-filter:blur(8px);
+    }
+    .nav{
+      max-width:var(--max);margin:0 auto;padding:12px 20px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    }
+    .brand{font-weight:900;letter-spacing:.3px}
+    .brand span{color:var(--neon)}
+    nav{display:flex;gap:8px;flex-wrap:wrap}
+    nav a{
+      border:1px solid var(--line);color:#dce8ff;border-radius:999px;
+      padding:7px 11px;font-size:.92rem;background:#0d172c;
+    }
+    nav a.cta{
+      border-color:var(--neon);
+      box-shadow:0 0 14px rgba(0,229,255,.18);
+    }
+
+    .hero{padding:78px 0 40px}
+    .kicker{color:#9edfff;font-weight:700;letter-spacing:.4px;text-transform:uppercase;font-size:.83rem}
+    h1{font-size:clamp(1.9rem,4vw,3.1rem);line-height:1.12;margin:.4rem 0 .8rem}
+    h2{font-size:clamp(1.3rem,2.4vw,2rem);margin:0 0 14px}
+    h3{margin:0 0 8px}
+    .lead{font-size:1.05rem;color:#dbe8ff}
+    .muted{color:var(--muted)}
+    .list{margin:0;padding-left:18px}
+
+    .pill-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .pill{
+      display:inline-block;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#0d172c;
+      color:#d7e8ff;
+      font-size:.88rem;
+      margin:0;
+    }
+
+    .btn{
+      display:inline-block;padding:11px 16px;border-radius:10px;border:1px solid var(--line);
+      color:#dff6ff;background:#101a31;font-weight:700;
+    }
+    .btn-primary{
+      border-color:var(--neon);
+      background:linear-gradient(90deg,#083642,#212c4e);
+      box-shadow:0 0 18px rgba(0,229,255,.18);
+    }
+
+    .timeline{display:grid;gap:12px}
+    .timeline .item{
+      border:1px solid var(--line);border-radius:12px;padding:14px;background:#0b1428;
+    }
+    .timeline .year{font-weight:800;color:#8fdfff}
+    .links-registry a{word-break:break-word}
+
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:760px){form .row{grid-template-columns:1fr}}
+    input,textarea{
+      width:100%;padding:12px;border-radius:10px;border:1px solid #2a3b5d;
+      background:#0b1428;color:#e8f0ff;outline:none;
+    }
+    textarea{min-height:130px;resize:vertical}
+    .btn-submit{
+      margin-top:10px;padding:12px 16px;border-radius:10px;cursor:pointer;
+      border:1px solid rgba(0,229,255,.55);background:#122344;color:#eaffff;
+      font-weight:800;box-shadow:0 0 12px rgba(0,229,255,.22);
+    }
+
+    footer{
+      padding:26px 0 40px;color:#95a8c7;border-top:1px solid var(--line);margin-top:30px;
+    }
+
+    /* Cyber layer */
+    .cyber-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+    .cyber-grid{
+      position:absolute;inset:-20%;
+      background:
+        linear-gradient(rgba(0,229,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124,58,237,.08) 1px, transparent 1px);
+      background-size:44px 44px,44px 44px;
+      transform:perspective(700px) rotateX(58deg) translateY(8%);
+      animation:gridDrift 18s linear infinite;
+      filter:drop-shadow(0 0 8px rgba(0,229,255,.15));
+    }
+    @keyframes gridDrift{
+      0%{background-position:0 0,0 0}
+      100%{background-position:0 120px,120px 0}
+    }
+    .cyber-orb{
+      position:absolute;width:36vmax;height:36vmax;border-radius:50%;
+      filter:blur(52px);opacity:.22;will-change:transform;
+    }
+    .orb1{left:-12vmax;top:8vh;background:#00e5ff}
+    .orb2{right:-10vmax;top:22vh;background:#7c3aed}
+    .orb3{left:35vw;bottom:-12vmax;background:#22d3ee}
+    .emoji-field{position:absolute;inset:0;overflow:hidden}
+    .float-emoji{
+      position:absolute;font-size:clamp(14px,1.8vw,22px);opacity:.18;
+      animation:emojiFloat linear infinite;
+      filter:drop-shadow(0 0 6px rgba(0,229,255,.25));
+    }
+    @keyframes emojiFloat{
+      0%{transform:translateY(110vh) translateX(0) rotate(0);opacity:0}
+      10%{opacity:.2}
+      90%{opacity:.2}
+      100%{transform:translateY(-20vh) translateX(24px) rotate(12deg);opacity:0}
+    }
+
+    header,main,footer,.langbar{position:relative;z-index:2}
+    [data-lang="el"]{display:none}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Panos Khan",
+    "url":"https://panoskhan.github.io/",
+    "jobTitle":"AI & Digital Transformation Consultant",
+    "description":"Web Developer, Sales & Marketing Specialist, and Digital Transformation Consultant based in Greece.",
+    "sameAs":[
+      "https://www.wikinames.org/wiki/Panos_Khan",
+      "https://www.linkedin.com/in/panos-khan",
+      "https://commons.wikimedia.org/wiki/User:PanosKhan",
+      "https://websitesbykhan.com",
+      "https://www.instagram.com/panoskhan",
+      "https://11888.gr/white-pages/pannoa-khan",
+      "https://www.facebook.com/panoskhan",
+      "https://skillshop.credential.net/profile/imrankhan986875/wallet"
+    ],
+    "address":{"@type":"PostalAddress","addressCountry":"GR"}
+  }
+  </script>
 </head>
-<body style="font-family:Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;line-height:1.6">
-  <h1>Panos Khan</h1>
-  <p>AI & Digital Transformation Consultant</p>
-  <p>This site has moved to a structured multi-page format for better Google indexing.</p>
-  <ul>
-    <li><a href="/services.html">Services</a></li>
-    <li><a href="/credentials.html">Credentials</a></li>
-    <li><a href="/projects.html">Projects</a></li>
-    <li><a href="/ai-blog.html">AI Blog</a></li>
-    <li><a href="/contact.html">Contact</a></li>
-  </ul>
+<body>
+  <div class="cyber-bg" aria-hidden="true">
+    <div class="cyber-grid"></div>
+    <div class="cyber-orb orb1"></div>
+    <div class="cyber-orb orb2"></div>
+    <div class="cyber-orb orb3"></div>
+    <div class="emoji-field" id="emojiField"></div>
+  </div>
+
+  <div class="langbar">
+    <div class="langbar-inner">
+      <button class="toggle-btn" id="btnEN">EN</button>
+      <button class="toggle-btn" id="btnEL">GR</button>
+    </div>
+  </div>
+
+  <header>
+    <div class="nav">
+      <div class="brand">Panos <span>Khan</span></div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#extended-services">More Services</a>
+        <a href="#process">Method</a>
+        <a href="#industries">Industries</a>
+        <a href="#stack">Stack</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#projects">Projects</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#ai-blog">AI Blog</a>
+        <a href="#faq">FAQ</a>
+        <a href="#links">Links</a>
+        <a class="cta" href="#consultation">Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <p class="kicker" data-lang="en">Official Professional Website</p>
+      <p class="kicker" data-lang="el">Επίσημη Επαγγελματική Ιστοσελίδα</p>
+
+      <h1 data-lang="en">AI, Web Engineering & Growth Systems for Organizations That Want Measurable Results.</h1>
+      <h1 data-lang="el">AI, Web Engineering και Growth Συστήματα για Οργανισμούς που Θέλουν Μετρήσιμα Αποτελέσματα.</h1>
+
+      <p class="lead" data-lang="en">
+        I am Panos Khan, an AI & Digital Transformation Consultant based in Greece, combining technical web development with performance-driven marketing strategy.
+      </p>
+      <p class="lead" data-lang="el">
+        Είμαι ο Panos Khan, AI & Digital Transformation Consultant με έδρα την Ελλάδα, συνδυάζοντας τεχνική ανάπτυξη ιστοσελίδων με στρατηγική marketing βάσει απόδοσης.
+      </p>
+
+      <div style="margin-top:14px">
+        <a class="btn btn-primary" href="#consultation" data-lang="en">Book Consultation</a>
+        <a class="btn btn-primary" href="#consultation" data-lang="el">Κλείσε Συνεδρία</a>
+        <a class="btn" href="#links" style="margin-left:8px" data-lang="en">View Verification Links</a>
+        <a class="btn" href="#links" style="margin-left:8px" data-lang="el">Δείτε Συνδέσμους Επαλήθευσης</a>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <div class="card">
+        <h2 data-lang="en">About</h2>
+        <h2 data-lang="el">Σχετικά</h2>
+
+        <p data-lang="en">
+          Panos Khan is a versatile Web Developer and certified Sales & Marketing Specialist with over a decade of hands-on experience driving digital transformation.
+          Strategically based in Greece, he balances responsive front-end engineering (WordPress and custom frameworks) with data-backed digital advertising.
+          His career highlights include long-term contribution in web engineering and marketing architecture for AliRoom (AliExpress ecosystem),
+          work under Microsoft Education Partner standards, and independent consulting for growth-focused organizations.
+        </p>
+        <p data-lang="el">
+          Ο Panos Khan είναι Web Developer και πιστοποιημένος Sales & Marketing Specialist με πάνω από μία δεκαετία πρακτικής εμπειρίας στον ψηφιακό μετασχηματισμό.
+          Με έδρα την Ελλάδα, συνδυάζει responsive front-end engineering (WordPress και custom frameworks) με data-driven digital advertising.
+          Το υπόβαθρό του περιλαμβάνει μακροχρόνια συνεισφορά σε web engineering και marketing architecture για το AliRoom (AliExpress ecosystem),
+          συνεργασίες υπό πρότυπα Microsoft Education Partner και ανεξάρτητη συμβουλευτική για οργανισμούς με στόχο την ανάπτυξη.
+        </p>
+      </div>
+    </section>
+
+    <section id="services" class="section container">
+      <h2 data-lang="en">Core Services</h2>
+      <h2 data-lang="el">Κύριες Υπηρεσίες</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>AI-Ready Website Architecture</h3>
+          <ul class="list">
+            <li>Entity-centered page structures for discoverability</li>
+            <li>Technical SEO foundations and schema alignment</li>
+            <li>Performance and UX optimization</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Web Engineering & Development</h3>
+          <ul class="list">
+            <li>Responsive front-end development</li>
+            <li>WordPress and custom framework implementation</li>
+            <li>Security hardening, SSL setup, and backup layers</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Performance Marketing Systems</h3>
+          <ul class="list">
+            <li>Google Ads Apps / Display / Video strategy</li>
+            <li>CRO workflows and A/B optimization cycles</li>
+            <li>Retargeting, segmentation, and funnel tuning</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="extended-services" class="section container">
+      <h2>Extended Service Catalog</h2>
+      <div class="grid grid-3">
+        <article class="card"><h3>AI Strategy Consulting</h3><p class="muted">AI adoption roadmap, workflow automation design, and practical rollout for SMEs.</p></article>
+        <article class="card"><h3>Custom Website Systems</h3><p class="muted">Authority-focused websites optimized for speed, trust, and conversion.</p></article>
+        <article class="card"><h3>SEO Entity Architecture</h3><p class="muted">Content structure, entity consistency, and schema strategy for credibility signals.</p></article>
+        <article class="card"><h3>Ads Growth Operations</h3><p class="muted">Campaign planning, launch, optimization, and measurable reporting loops.</p></article>
+        <article class="card"><h3>CRO & Funnel Engineering</h3><p class="muted">Landing page testing and conversion path optimization.</p></article>
+        <article class="card"><h3>Technical Audits</h3><p class="muted">Performance bottleneck analysis and prioritized implementation roadmap.</p></article>
+        <article class="card"><h3>Cyber Hygiene for SMBs</h3><p class="muted">Practical baseline cyber-hardening for business web environments.</p></article>
+        <article class="card"><h3>Analytics & Data Layer</h3><p class="muted">GA4/GTM event mapping, KPI alignment, and data quality control.</p></article>
+        <article class="card"><h3>Fractional Digital Leadership</h3><p class="muted">Ongoing strategy support for teams requiring senior digital guidance.</p></article>
+      </div>
+    </section>
+
+    <section id="process" class="section container">
+      <h2 data-lang="en">Process / Methodology</h2>
+      <h2 data-lang="el">Διαδικασία / Μεθοδολογία</h2>
+      <div class="timeline">
+        <div class="item"><span class="year">01</span> — Discovery & diagnostic audit</div>
+        <div class="item"><span class="year">02</span> — Architecture blueprint and content map</div>
+        <div class="item"><span class="year">03</span> — Implementation sprint and QA cycle</div>
+        <div class="item"><span class="year">04</span> — Launch, monitoring, and stabilization</div>
+        <div class="item"><span class="year">05</span> — Growth iteration with monthly optimization</div>
+      </div>
+    </section>
+
+    <section id="industries" class="section container">
+      <h2>Industries</h2>
+      <div class="card">
+        <p class="muted">Startups, SMEs, education projects, local businesses, and e-commerce initiatives.</p>
+        <div class="pill-wrap">
+          <span class="pill">E-commerce</span>
+          <span class="pill">Education</span>
+          <span class="pill">Professional Services</span>
+          <span class="pill">Local Business</span>
+          <span class="pill">Consulting</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="section container">
+      <h2>Technology & Marketing Stack</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Engineering Stack</h3>
+          <ul class="list">
+            <li>HTML5 / CSS3 / JavaScript</li>
+            <li>WordPress + Squarespace implementation</li>
+            <li>Technical SEO + schema markup</li>
+            <li>Performance optimization and UX improvement</li>
+            <li>Tracking instrumentation and analytics setup</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Growth Stack</h3>
+          <ul class="list">
+            <li>Google Ads Apps / Display / Video</li>
+            <li>GA4 reporting and insight workflows</li>
+            <li>Audience segmentation and retargeting</li>
+            <li>Conversion optimization experiments</li>
+            <li>Campaign monitoring and KPI review cycles</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="section container">
+      <h2>Case-Style Achievements</h2>
+      <div class="grid grid-3">
+        <div class="card"><h3>10+ Years Delivery</h3><p class="muted">Consistent implementation across web development and performance growth systems.</p></div>
+        <div class="card"><h3>AliRoom Marketing Contribution</h3><p class="muted">Long-term support in digital architecture and campaign operations.</p></div>
+        <div class="card"><h3>Integrated Execution Model</h3><p class="muted">Technical + commercial strategy under one implementation workflow.</p></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2>Featured Projects & Delivery Patterns</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Authority Website Rebuild Pattern</h3>
+          <ul class="list">
+            <li>Positioning refresh and trust-focused structure</li>
+            <li>SEO/schema improvement + speed enhancement</li>
+            <li>Conversion-ready service pages and CTA flows</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Lead Generation Funnel Pattern</h3>
+          <ul class="list">
+            <li>Audience-segmented landing page clusters</li>
+            <li>Ads-to-funnel message alignment</li>
+            <li>Testing plan and KPI optimization iterations</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>AI-Enhanced Content Engine Pattern</h3>
+          <ul class="list">
+            <li>Prompt library + editorial workflow</li>
+            <li>Human QA for authority and clarity</li>
+            <li>Search intent mapping and topic expansion</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Digital Transformation Sprint Pattern</h3>
+          <ul class="list">
+            <li>Current-state audit and bottleneck diagnosis</li>
+            <li>Automation candidate mapping</li>
+            <li>90-day execution roadmap</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="credentials" class="section container">
+      <h2>Certifications, Credentials & Career Record</h2>
+
+      <div class="card" style="margin-bottom:16px">
+        <h3>Accredible / Skillshop Credentials Wallet</h3>
+        <p>
+          <a href="https://skillshop.credential.net/profile/imrankhan986875/wallet" target="_blank" rel="noopener">
+            https://skillshop.credential.net/profile/imrankhan986875/wallet
+          </a>
+        </p>
+        <p class="muted">Career Record: Panos Khan · Athens, Greece · Portfolio + Credentials Wallet + Skillshop Profile.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Active / No Expiry</h3>
+          <ul class="list">
+            <li>Conversion Optimisation Certification Exam — Skillshop (Sep 29, 2025)</li>
+            <li>Google Ads Apps Certification — Skillshop (Sep 14, 2025)</li>
+            <li>Conversion Optimisation Certification Exam — Skillshop (Sep 13, 2025)</li>
+            <li>Google Ads Apps Certification — Skillshop (Sep 12, 2025)</li>
+            <li>Grow Offline Sales Certification — Skillshop (Sep 12, 2025)</li>
+            <li>Google Ads Video Certification — Skillshop (Sep 12, 2025)</li>
+            <li>Crypto101 — Blockchain Council (Apr 22, 2024)</li>
+            <li>Advanced Google Analytics Concepts — user uploaded</li>
+            <li>Build Generative AI Productivity Skills (Microsoft + LinkedIn) — user uploaded</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Historical / Expired Record</h3>
+          <ul class="list">
+            <li>Conversion Optimisation Certification Exam (Dec 3, 2024 → Dec 3, 2025)</li>
+            <li>Google Ads Apps Certification (Apr 14, 2024 → Apr 14, 2025)</li>
+            <li>Google Ads Search Certification (Apr 14, 2024 → Apr 14, 2025)</li>
+            <li>Google Ads Display Certification (Apr 14, 2024 → Apr 14, 2025)</li>
+            <li>Conversion Optimisation Certification Exam (Apr 14, 2024 → Apr 14, 2025)</li>
+            <li>Discover AI-powered Shopping Ads (Apr 14, 2024 → Apr 14, 2025)</li>
+            <li>Manage GA4 Data and Reports (Apr 13, 2024 → Apr 13, 2025)</li>
+            <li>Google Web Designer learning tracks (Apr 13, 2024 → Apr 13, 2025)</li>
+            <li>Get Started Using Google Analytics (Apr 11, 2024 → Apr 11, 2025)</li>
+          </ul>
+          <p class="muted">Note: some records are user-uploaded and may include manually entered metadata.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:16px">
+        <div class="card">
+          <h3>Skills</h3>
+          <div class="pill-wrap">
+            <span class="pill">Web Development</span>
+            <span class="pill">SEO</span>
+            <span class="pill">Google Ads</span>
+            <span class="pill">Conversion Optimization</span>
+            <span class="pill">AI Marketing</span>
+            <span class="pill">Cryptography</span>
+            <span class="pill">Cryptocurrency</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Work Experience</h3>
+          <ul class="list">
+            <li><strong>Self Employed — Panos Khan</strong> (April 5, 2002 – Present)</li>
+            <li><strong>Marketing Team Member — AliRoom</strong> (multi-year track record)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai-blog" class="section container">
+      <h2>AI Learning Blog & Tool Guides</h2>
+      <div class="grid grid-3">
+        <article class="card"><h3>How to Use AI for Small Business Content</h3><p class="muted">Prompt workflows, quality control, and publishing cadence for practical growth.</p></article>
+        <article class="card"><h3>Prompt Engineering for Marketing Teams</h3><p class="muted">Reusable prompt patterns for copywriting, ad concepts, and audience research.</p></article>
+        <article class="card"><h3>AI + SEO Topic Authority</h3><p class="muted">How to combine AI drafting with entity structure and human editorial standards.</p></article>
+        <article class="card"><h3>Top AI Tools for Web Developers</h3><p class="muted">Assistants, design accelerators, QA helpers, and automation recommendations.</p></article>
+        <article class="card"><h3>No-Code + AI for Client Operations</h3><p class="muted">Simple automation systems that reduce repetitive workload.</p></article>
+        <article class="card"><h3>AI Governance for Teams</h3><p class="muted">Reliability, privacy, and review policy when using AI in production contexts.</p></article>
+      </div>
+    </section>
+
+    <section id="faq" class="section container">
+      <h2>FAQ</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Do you provide both technical development and marketing strategy?</h3>
+          <p class="muted">Yes. The core model is integrated execution: build, track, optimize, and scale.</p>
+        </div>
+        <div class="card">
+          <h3>Can this structure support Knowledge Panel readiness?</h3>
+          <p class="muted">Yes. Entity consistency, sameAs links, and clear authority sections improve credibility signals.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="links" class="section container">
+      <h2>Complete Digital Footprint & Link Registry</h2>
+      <div class="card links-registry">
+        <ul class="list">
+          <li><strong>Professional Identity Registry:</strong> <a href="https://www.wikinames.org/wiki/Panos_Khan" target="_blank" rel="noopener">Panos Khan Biography Page on WikiNameNg</a></li>
+          <li><strong>Professional Network:</strong> <a href="https://www.linkedin.com/in/panos-khan" target="_blank" rel="noopener">Panos Khan LinkedIn Profile</a></li>
+          <li><strong>Media & Upload Registry:</strong> <a href="https://commons.wikimedia.org/wiki/User:PanosKhan" target="_blank" rel="noopener">Panos Khan Wikimedia Commons Portal</a></li>
+          <li><strong>Web Engineering Portfolio:</strong> <a href="https://websitesbykhan.com" target="_blank" rel="noopener">Websites By KHAN Portfolio</a></li>
+          <li><strong>Visual Marketing Channel:</strong> <a href="https://www.instagram.com/panoskhan" target="_blank" rel="noopener">Panos Khan Instagram Page</a></li>
+          <li><strong>Public Directory Verification:</strong> <a href="https://11888.gr/white-pages/pannoa-khan" target="_blank" rel="noopener">PANNO A KHAN 11888 Listing</a></li>
+          <li><strong>Social Engagement Hub:</strong> <a href="https://www.facebook.com/panoskhan" target="_blank" rel="noopener">Panos Khan on Facebook</a></li>
+          <li><strong>Credentials Wallet:</strong> <a href="https://skillshop.credential.net/profile/imrankhan986875/wallet" target="_blank" rel="noopener">Skillshop / Accredible Wallet</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="consultation" class="section container">
+      <div class="card">
+        <h2 data-lang="en">Consultation Request</h2>
+        <h2 data-lang="el">Αίτημα Συνεδρίας</h2>
+        <p class="muted" data-lang="en">Share your goals and current challenges. I will respond with a practical implementation roadmap.</p>
+        <p class="muted" data-lang="el">Μοιραστείτε στόχους και προκλήσεις. Θα λάβετε πρακτικό roadmap υλοποίησης.</p>
+
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="row">
+            <div>
+              <label data-lang="en">Full Name</label>
+              <label data-lang="el">Ονοματεπώνυμο</label>
+              <input type="text" name="name" required />
+            </div>
+            <div>
+              <label>Email</label>
+              <input type="email" name="email" required />
+            </div>
+          </div>
+          <div style="margin-top:10px">
+            <label data-lang="en">Project / Business Type</label>
+            <label data-lang="el">Τύπος Έργου / Επιχείρησης</label>
+            <input type="text" name="project_type" />
+          </div>
+          <div style="margin-top:10px">
+            <label data-lang="en">Message</label>
+            <label data-lang="el">Μήνυμα</label>
+            <textarea name="message" required></textarea>
+          </div>
+          <button class="btn-submit" type="submit" data-lang="en">Send Request</button>
+          <button class="btn-submit" type="submit" data-lang="el">Αποστολή</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Panos Khan — AI & Digital Transformation Consultant.</div>
+  </footer>
+
+  <script>
+    // Language toggle
+    const btnEN = document.getElementById('btnEN');
+    const btnEL = document.getElementById('btnEL');
+
+    function setLang(lang){
+      document.querySelectorAll('[data-lang]').forEach(el=>{
+        el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+      });
+      localStorage.setItem('pk_lang', lang);
+    }
+
+    btnEN.addEventListener('click', ()=>setLang('en'));
+    btnEL.addEventListener('click', ()=>setLang('el'));
+    setLang(localStorage.getItem('pk_lang') || 'en');
+
+    // Cyber visuals
+    (function(){
+      const field = document.getElementById('emojiField');
+      if(field){
+        const icons = ["🤖","🧠","⚡","🛰️","💠","🧬","🔹","✨"];
+        const count = window.innerWidth < 768 ? 10 : 18;
+        for(let i=0;i<count;i++){
+          const s = document.createElement('span');
+          s.className = 'float-emoji';
+          s.textContent = icons[Math.floor(Math.random()*icons.length)];
+          s.style.left = (Math.random()*100) + "vw";
+          s.style.animationDuration = (14 + Math.random()*16) + "s";
+          s.style.animationDelay = (-Math.random()*20) + "s";
+          s.style.opacity = (0.12 + Math.random()*0.14).toFixed(2);
+          field.appendChild(s);
+        }
+      }
+
+      const orbs = document.querySelectorAll('.cyber-orb');
+      let mx = innerWidth/2, my = innerHeight/2, tx = mx, ty = my;
+      window.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
+
+      (function tick(){
+        mx += (tx - mx) * 0.05;
+        my += (ty - my) * 0.05;
+        const dx = (mx - innerWidth/2)/(innerWidth/2);
+        const dy = (my - innerHeight/2)/(innerHeight/2);
+        orbs.forEach((o, i)=>{
+          const p = (i + 1) * 10;
+          o.style.transform = `translate3d(${dx*p}px,${dy*p}px,0)`;
+        });
+        requestAnimationFrame(tick);
+      })();
+    })();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
